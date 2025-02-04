@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+.mobile-schedule-item {
+    @apply border-b border-gray-200 py-4;
+  }
+  
+  .mobile-schedule-item:last-child {
+    @apply border-b-0;
+  }
+  
+  .mobile-schedule-header {
+    @apply flex justify-between items-center cursor-pointer;
+  }
+  
+  .mobile-schedule-content {
+    @apply mt-2 text-sm text-gray-600;
+  }
+  

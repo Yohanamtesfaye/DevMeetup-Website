@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { FaGithub, FaTwitter } from "react-icons/fa"
+import { FaGithub, FaTwitter, FaChevronDown, FaChevronUp } from "react-icons/fa"
 import chapi from "../assets/chapi.jpg"
 import dagi from "../assets/dagi.jpeg"
 import luna from "../assets/luna.jpg"
@@ -46,6 +47,17 @@ const schedule = [
 ]
 
 function V3() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -117,45 +129,49 @@ function V3() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-white shadow-lg rounded-lg overflow-hidden"
           >
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Time
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Event
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Speaker
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {schedule.map((item, index) => (
-                  <motion.tr
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
-                  >
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.time}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.event}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.speaker || "-"}</td>
-                  </motion.tr>
-                ))}
-              </tbody>
-            </table>
+            {isMobile ? (
+              <MobileSchedule schedule={schedule} />
+            ) : (
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Time
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Event
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Speaker
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {schedule.map((item, index) => (
+                    <motion.tr
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                    >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.time}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.event}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.speaker || "-"}</td>
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </motion.div>
         </section>
 
@@ -233,7 +249,7 @@ function V3() {
           </motion.div>
         </section>
 
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <motion.h2
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -265,9 +281,40 @@ function V3() {
               Access Forum
             </button>
           </motion.div>
-        </section>
+        </section> */}
       </div>
     </motion.div>
+  )
+}
+
+function MobileSchedule({ schedule }) {
+  const [expandedIndex, setExpandedIndex] = useState(null)
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index)
+  }
+
+  return (
+    <div className="divide-y divide-gray-200">
+      {schedule.map((item, index) => (
+        <div key={index} className="py-4 px-4">
+          <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleExpand(index)}>
+            <span className="font-medium text-gray-900">{item.time}</span>
+            {expandedIndex === index ? (
+              <FaChevronUp className="text-gray-500" />
+            ) : (
+              <FaChevronDown className="text-gray-500" />
+            )}
+          </div>
+          {expandedIndex === index && (
+            <div className="mt-2">
+              <p className="text-sm text-gray-600">{item.event}</p>
+              <p className="text-sm text-gray-500 mt-1">{item.speaker || "No speaker"}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   )
 }
 
