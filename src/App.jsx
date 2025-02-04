@@ -6,6 +6,7 @@ import V1 from "./pages/V1"
 import V2 from "./pages/V2"
 import V3 from "./pages/V3"
 import { AnimatePresence } from "framer-motion"
+import Register from "./pages/Register"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/v1" element={<V1 />} />
             <Route path="/v2" element={<V2 />} />
             <Route path="/v3" element={<V3 />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </AnimatePresence>
         <Footer />
