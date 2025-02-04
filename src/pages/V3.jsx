@@ -232,6 +232,40 @@ function V3() {
             </p>
           </motion.div>
         </section>
+
+        <section className="mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl font-semibold mb-6 text-indigo-500"
+          >
+            Community Forum
+          </motion.h2>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <p className="text-lg mb-4">
+              Join our vibrant community forum to connect with fellow attendees, share your thoughts, and continue the
+              conversations beyond the event sessions.
+            </p>
+            <div className="bg-indigo-50 p-4 rounded-lg">
+              <h3 className="text-xl font-semibold mb-2 text-indigo-600">Forum Highlights</h3>
+              <ul className="list-disc list-inside text-gray-700">
+                <li>Discuss the latest tech trends with industry experts</li>
+                <li>Share your project ideas and get feedback from peers</li>
+                <li>Network with developers from around the world</li>
+                <li>Access exclusive resources and learning materials</li>
+              </ul>
+            </div>
+            <button className="mt-4 bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-300">
+              Access Forum
+            </button>
+          </motion.div>
+        </section>
       </div>
     </motion.div>
   )
