@@ -1,0 +1,241 @@
+import { motion } from "framer-motion"
+import { FaGithub, FaTwitter } from "react-icons/fa"
+import chapi from "../assets/chapi.jpg"
+import dagi from "../assets/dagi.jpeg"
+import luna from "../assets/luna.jpg"
+
+const speakers = [
+  {
+    name: "Dagmawi Babi",
+    photo: dagi,
+    role: "Developer",
+    github: "https://github.com",
+    twitter: "https://twitter.com",
+  },
+  {
+    name: "Chapi",
+    photo: chapi,
+    role: "Developer",
+    github: "https://github.com",
+    twitter: "https://twitter.com",
+  },
+  {
+    name: "Mulu Tsega (Luna)",
+    photo: luna,
+    role: "Software Product Manager",
+    github: "https://github.com",
+    twitter: "https://twitter.com",
+  },
+  {
+    name: "Michael Chen",
+    photo:
+      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    role: "DevOps Engineer",
+    github: "https://github.com",
+    twitter: "https://twitter.com",
+  },
+]
+
+const schedule = [
+  { time: "9:00 AM", event: "Opening Keynote: The Future of Tech", speaker: "Chapi" },
+  { time: "10:30 AM", event: "Workshop: Mastering React 18 Features", speaker: "Dagmawi babi" },
+  { time: "12:00 PM", event: "Lunch Break & Networking" },
+  { time: "1:30 PM", event: "Panel: Ethical AI Development", speaker: "Luna, Chapi" },
+  { time: "3:00 PM", event: "Workshop: Building Scalable Cloud Solutions", speaker: "Dagmawi Babi" },
+  { time: "4:30 PM", event: "Closing Remarks & Networking Session" },
+]
+
+function V3() {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-12"
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h1
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold mb-12 text-center text-indigo-600"
+        >
+          DevMeetup V3: The Future of Tech
+        </motion.h1>
+
+        <section className="mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl font-semibold mb-6 text-indigo-500"
+          >
+            Event Highlights
+          </motion.h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: "🌐", title: "Global Reach", description: "Connect with developers from over 50 countries" },
+              { icon: "🎓", title: "Expert-Led Sessions", description: "30+ workshops and talks by industry leaders" },
+              {
+                icon: "🤝",
+                title: "Networking Opportunities",
+                description: "AI-powered matchmaking for meaningful connections",
+              },
+              {
+                icon: "🏆",
+                title: "Tech Showcase",
+                description: "Explore the latest tools and technologies in our exhibition area",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl font-semibold mb-6 text-indigo-500"
+          >
+            Dynamic Schedule
+          </motion.h2>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+          >
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Time
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Event
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Speaker
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {schedule.map((item, index) => (
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                  >
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.time}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.event}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.speaker || "-"}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        </section>
+
+        <section className="mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl font-semibold mb-6 text-indigo-500"
+          >
+            Featured Speakers
+          </motion.h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {speakers.map((speaker, index) => (
+              <motion.div
+                key={speaker.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src={speaker.photo || "/placeholder.svg"}
+                  alt={speaker.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{speaker.name}</h3>
+                  <p className="text-gray-600 mb-4">{speaker.role}</p>
+                  <div className="flex space-x-4">
+                    <a
+                      href={speaker.github}
+                      className="text-gray-400 hover:text-gray-500 transition-colors duration-300"
+                    >
+                      <FaGithub className="h-6 w-6" />
+                    </a>
+                    <a
+                      href={speaker.twitter}
+                      className="text-gray-400 hover:text-gray-500 transition-colors duration-300"
+                    >
+                      <FaTwitter className="h-6 w-6" />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl font-semibold mb-6 text-indigo-500"
+          >
+            Live Updates
+          </motion.h2>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <p className="text-lg mb-4">
+              Stay connected with real-time event updates! Follow us on{" "}
+              <a
+                href="https://telegram.org"
+                className="text-indigo-600 hover:text-indigo-800 font-semibold transition-colors duration-300"
+              >
+                Telegram
+              </a>{" "}
+              for live coverage of keynotes, workshop highlights, and exclusive behind-the-scenes content.
+            </p>
+          </motion.div>
+        </section>
+      </div>
+    </motion.div>
+  )
+}
+
+export default V3
+
