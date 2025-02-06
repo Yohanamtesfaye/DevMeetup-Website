@@ -156,7 +156,7 @@ function V2() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-[#fefaff] pt-8 pb-16"
+      className="min-h-screen lg:px-16 bg-[#fefaff] pt-8 pb-16"
     >
       {/* Hero Section */}
       <motion.h1
@@ -169,7 +169,7 @@ function V2() {
       </motion.h1>
 
       {/* Event Details and Gallery Section */}
-      <div className="max-w-7xl lg:px-16 mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Event Details Column */}
           <div>
@@ -306,7 +306,7 @@ function V2() {
       </section>
 
       {/* Organizers Section */}
-      <section className="mb-16">
+      <section className="mb-16 lg:px-">
         <motion.h2
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -349,7 +349,7 @@ function V2() {
         >
           Our Volunteers
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto amx-md:px-4">
           {volunteers.map((team, index) => (
             <motion.div
               key={index}
