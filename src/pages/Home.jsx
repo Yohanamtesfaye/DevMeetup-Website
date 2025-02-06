@@ -13,7 +13,7 @@ import '../styles/swiper.css';
 import platinumBadge from "../assets/platinum-badge.svg"
 import goldBadge from "../assets/gold-badge.svg"
 import silverBadge from "../assets/silver-badge.svg"
-import horan from "../assets/horan.jpg"
+// import horan from "../assets/horan.jpg"
 import sand from "../assets/sand.jpg"
 import chapa from "../assets/chapa.jpg"
 import addis from "../assets/addis.jpg"
@@ -22,7 +22,7 @@ import gebetamaps from "../assets/gebetamaps.jpg"
 const sponsors = [
   { 
     name: "Horan", 
-    logo: horan,
+    logo: sand,
     description: "Leading tech education platform empowering the next generation of African tech talent.",
     website: "https://www.horan.com/",
     badge: platinumBadge
