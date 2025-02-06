@@ -4,40 +4,58 @@ import { motion, AnimatePresence } from "framer-motion"
 import { FaArrowRight } from "react-icons/fa"
 import Testimonials from "../components/Testimonials"
 import { useEffect } from "react"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import '../styles/swiper.css';
+import platinumBadge from "../assets/platinum-badge.svg"
+import goldBadge from "../assets/gold-badge.svg"
+import silverBadge from "../assets/silver-badge.svg"
+import horan from "../assets/horan.jpg"
+import sand from "../assets/sand.jpg"
+import chapa from "../assets/chapa.jpg"
+import addis from "../assets/addis.jpg"
+import gebetamaps from "../assets/gebetamaps.jpg"
 
 const sponsors = [
-  {
-    name: "Vercel",
-    logo: "https://assets.vercel.com/image/upload/v1607554385/repositories/vercel/logo.png",
-    tier: "platinum",
+  { 
+    name: "Horan", 
+    logo: horan,
+    description: "Leading tech education platform empowering the next generation of African tech talent.",
+    website: "https://www.horan.com/",
+    badge: platinumBadge
   },
-  {
-    name: "Vercel",
-    logo: "https://assets.vercel.com/image/upload/v1607554385/repositories/vercel/logo.png",
-    tier: "platinum",
+  { 
+    name: "SandTechnologies", 
+    logo: sand,
+    description: "Innovative software solutions provider specializing in enterprise applications.",
+    website: "https://www.sandtechnologies.com/",
+    badge: platinumBadge
   },
-  {
-    name: "GitHub",
-    logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-    tier: "gold",
+  { 
+    name: "Chapa", 
+    logo: chapa,
+    description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
+    website: "https://chapa.co/",
+    badge: platinumBadge
   },
-  {
-    name: "MongoDB",
-    logo: "https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png",
-    tier: "gold",
+  { 
+    name: "Addis Software", 
+    logo: addis,
+    description: "Leading software development company in Ethiopia",
+    website: "https://addissoftware.com/",
+    badge: silverBadge
   },
-  {
-    name: "Tailwind CSS",
-    logo: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg",
-    tier: "silver",
-  },
-]
-
-const tierStyles = {
-  platinum: "bg-gradient-to-r from-slate-300 to-slate-100 text-slate-800",
-  gold: "bg-gradient-to-r from-amber-300 to-amber-100 text-amber-800",
-  silver: "bg-gradient-to-r from-gray-300 to-gray-100 text-gray-800",
-}
+  { 
+    name: "Gebeta Maps", 
+    logo: gebetamaps,
+    description: "Ethiopia's digital mapping solution",
+    website: "https://gebeta.app/",
+    badge: silverBadge
+  }
+];
 
 const highlights = [
   { title: "Expert Speakers", description: "Learn from industry leaders and innovators", icon: "🎤" },
@@ -54,20 +72,8 @@ const highlights = [
   },
   { title: "Career Fair", description: "Meet top tech companies and explore job opportunities", icon: "💼" },
 ]
-const SLIDE_DURATION = 3000 // 3 seconds per slide
-const SPONSORS_PER_SLIDE = 4
 
 function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const totalSlides = Math.ceil(sponsors.length / SPONSORS_PER_SLIDE)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides)
-    }, SLIDE_DURATION)
-
-    return () => clearInterval(timer)
-  }, [totalSlides])
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-whit ">
       <main>
