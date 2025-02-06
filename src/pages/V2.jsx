@@ -73,6 +73,24 @@ const organizers = [
     description: "DevMeetup Lead Organizer"
   },
   {
+    name: "Chapi Menge",
+    role: "Lead Organizer",
+    avatar: chapi,
+    description: "DevMeetup Lead Organizer"
+  },
+  {
+    name: "Dagmawi Babi",
+    role: "Co-organizer",
+    avatar: dagi,
+    description: "Technical Lead"
+  },
+  {
+    name: "Dagmawi Babi",
+    role: "Co-organizer",
+    avatar: dagi,
+    description: "Technical Lead"
+  },
+  {
     name: "Dagmawi Babi",
     role: "Co-organizer",
     avatar: dagi,
@@ -248,8 +266,8 @@ function V2() {
       {/* Organizers Section */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold text-purple-600 mb-8 text-center">Meet Our Organizers</h2>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {organizers.map((organizer, index) => (
               <div key={index} className="bg-white rounded-xl shadow-md p-6">
                 <div className="flex items-center gap-5">

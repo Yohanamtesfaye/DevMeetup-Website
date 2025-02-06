@@ -1,17 +1,43 @@
+import {useState} from "react"
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { FaArrowRight } from "react-icons/fa"
 import Testimonials from "../components/Testimonials"
+import { useEffect } from "react"
 
 const sponsors = [
-  { name: "Vercel", logo: "https://assets.vercel.com/image/upload/v1607554385/repositories/vercel/logo.png" },
-  { name: "GitHub", logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" },
-  { name: "MongoDB", logo: "https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png" },
+  {
+    name: "Vercel",
+    logo: "https://assets.vercel.com/image/upload/v1607554385/repositories/vercel/logo.png",
+    tier: "platinum",
+  },
+  {
+    name: "Vercel",
+    logo: "https://assets.vercel.com/image/upload/v1607554385/repositories/vercel/logo.png",
+    tier: "platinum",
+  },
+  {
+    name: "GitHub",
+    logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    tier: "gold",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png",
+    tier: "gold",
+  },
   {
     name: "Tailwind CSS",
     logo: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg",
+    tier: "silver",
   },
 ]
+
+const tierStyles = {
+  platinum: "bg-gradient-to-r from-slate-300 to-slate-100 text-slate-800",
+  gold: "bg-gradient-to-r from-amber-300 to-amber-100 text-amber-800",
+  silver: "bg-gradient-to-r from-gray-300 to-gray-100 text-gray-800",
+}
 
 const highlights = [
   { title: "Expert Speakers", description: "Learn from industry leaders and innovators", icon: "🎤" },
@@ -28,8 +54,20 @@ const highlights = [
   },
   { title: "Career Fair", description: "Meet top tech companies and explore job opportunities", icon: "💼" },
 ]
+const SLIDE_DURATION = 3000 // 3 seconds per slide
+const SPONSORS_PER_SLIDE = 4
 
 function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const totalSlides = Math.ceil(sponsors.length / SPONSORS_PER_SLIDE)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides)
+    }, SLIDE_DURATION)
+
+    return () => clearInterval(timer)
+  }, [totalSlides])
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
       <main>
@@ -123,23 +161,69 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-extrabold text-indigo-600 text-center mb-12">Our Sponsors</h2>
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-              {sponsors.map((sponsor, index) => (
-                <motion.div
-                  key={sponsor.name}
-                  className="col-span-1 flex justify-center items-center bg-white p-6 rounded-lg shadow-md"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)" }}
-                >
-                  <img className="h-12 object-contain" src={sponsor.logo || "/placeholder.svg"} alt={sponsor.name} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
+
+    <section className="bg-indigo-50 py-16 sm:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-extrabold text-indigo-600 text-center mb-12">Our Sponsors</h2>
+
+        <div className="relative h-[200px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0"
+            >
+              <div className="grid grid-cols-2 gap-8">
+                {sponsors
+                  .slice(currentSlide * SPONSORS_PER_SLIDE, currentSlide * SPONSORS_PER_SLIDE + SPONSORS_PER_SLIDE)
+                  .map((sponsor) => (
+                    <div
+                      key={sponsor.name}
+                      className="flex flex-col justify-center items-center bg-white p-6 rounded-lg shadow-md relative hover:shadow-xl transition-shadow duration-300"
+                    >
+                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span
+                          className={`inline-block px-3 py-1 text-xs font-semibold rounded-full capitalize ${tierStyles[sponsor.tier]}`}
+                        >
+                          {sponsor.tier}
+                        </span>
+                      </div>
+                      <img
+                        className="h-12 object-contain mb-4"
+                        src={sponsor.logo || "/placeholder.svg"}
+                        alt={`${sponsor.name} - ${sponsor.tier} sponsor`}
+                      />
+                      <span className="text-sm text-gray-600 font-medium">{sponsor.name}</span>
+                    </div>
+                  ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="flex justify-center space-x-2 mt-8">
+          {[...Array(totalSlides)].map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                currentSlide === index ? "bg-indigo-600" : "bg-indigo-200"
+              }`}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+
+
+
         </motion.section>
 
         {/* Call to Action */}
