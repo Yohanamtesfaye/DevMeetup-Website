@@ -24,7 +24,7 @@ const sponsors = [
     name: "Horan", 
     logo: horan,
     description: "Leading tech education platform empowering the next generation of African tech talent.",
-    website: "https://www.horan.com/",
+    website: "https://www.horansoftware.com/",
     badge: platinumBadge
   },
   { 
