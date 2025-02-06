@@ -40,19 +40,39 @@ const platinumSponsors = [
   { 
     name: "ALX", 
     logo: alx, 
-    description: "Leading tech education platform empowering the next generation of African tech talent."
+    description: "Leading tech education platform empowering the next generation of African tech talent.",
+    website: "https://www.alxafrica.com/",
+    badge: platinumBadge
   },
   { 
     name: "SandTechnologies", 
     logo: sand, 
-    description: "Innovative software solutions provider specializing in enterprise applications."
+    description: "Innovative software solutions provider specializing in enterprise applications.",
+    website: "https://www.sandtechnologies.com/",
+    badge: platinumBadge
   },
   { 
     name: "Chapa", 
     logo: chapa, 
-    description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions."
+    description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
+    website: "https://chapa.co/",
+    badge: platinumBadge
+  },
+  { 
+    name: "Addis Software", 
+    logo: addis,
+    description: "Leading software development company in Ethiopia",
+    website: "https://addissoftware.com/",
+    badge: silverBadge
+  },
+  { 
+    name: "Gebeta Maps", 
+    logo: gebetamaps,
+    description: "Ethiopia's digital mapping solution",
+    website: "https://gebeta.app/",
+    badge: silverBadge
   }
-]
+];
 
 const goldSponsors = [
   { name: "Gold Sponsor 1", logo: "/placeholder-logo.png" },
@@ -202,66 +222,106 @@ function V2() {
         </div>
       </div>
 
-      {/* Sponsors Section */}
-      <div className="max-w-7xl mx-auto px-4 mb-16 pt-16">
-        <h2 className="text-2xl font-semibold text-purple-600 mb-16 text-center">Our Sponsors</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-          {/* Platinum Sponsors */}
-          <div className="lg:pr-6">
-            <h2 className="text-2xl font-semibold text-purple-600 mb-8">Platinum Sponsors</h2>
-            <div className="bg-white rounded-2xl shadow-md p-4 h-[200px] flex items-center">
-              <div className="grid grid-cols-2 gap-4 w-full">
-                {platinumSponsors.map((sponsor, index) => (
-                  <div key={index} className="flex items-center justify-center p-2">
-                    <img
-                      src={sponsor.logo}
-                      alt={`${sponsor.name} logo`}
-                      className="max-h-16 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
+      {/* Event Highlights Section */}
+      <div className="max-w-7xl mx-auto px-4 mb-16 pt-24">
+        <h2 className="text-2xl font-semibold text-purple-600 mb-12 text-center">Event Highlights</h2>
+        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+          {[
+            {
+              title: "Keynote Presentations",
+              description:
+                "Industry experts shared insights on emerging technologies, cloud architecture, and AI innovations.",
+            },
+            {
+              title: "Hands-on Workshops",
+              description:
+                "Practical sessions on modern development tools, frameworks, and best practices.",
+            },
+            {
+              title: "Hackathon",
+              description:
+                "Teams collaborated to build innovative solutions during our 24-hour coding challenge.",
+            },
+            {
+              title: "Networking Events",
+              description:
+                "Both in-person and virtual networking opportunities to connect with fellow developers.",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="p-6 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors duration-200"
+            >
+              <h3 className="text-lg font-medium text-purple-600 mb-2">{item.title}</h3>
+              <p className="text-gray-600">{item.description}</p>
             </div>
-          </div>
-
-          {/* Gold Sponsors */}
-          <div className="lg:pl-6">
-            <h2 className="text-2xl font-semibold text-purple-600 mb-8">Gold Sponsors</h2>
-            <div className="bg-white rounded-2xl shadow-md p-4 h-[200px] flex items-center">
-              <div className="grid grid-cols-2 gap-4 w-full">
-                {goldSponsors.map((sponsor, index) => (
-                  <div key={index} className="flex items-center justify-center p-2">
-                    <img
-                      src={sponsor.logo}
-                      alt={`${sponsor.name} logo`}
-                      className="max-h-14 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Silver Sponsors */}
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-semibold text-purple-600 mb-8 text-center">Silver Sponsors</h2>
-          <div className="bg-white rounded-2xl shadow-md p-4">
-            <div className="grid grid-cols-3 gap-4">
-              {silverSponsors.map((sponsor, index) => (
-                <div key={index} className="flex items-center justify-center p-2">
-                  <img
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
-                    className="max-h-12 w-auto object-contain hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      {/* Sponsors Section */}
+      <section className="max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-2xl font-semibold text-purple-600 mb-12 text-center">Our Sponsors</h2>
+        <div className="w-full">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            className="sponsors-swiper !pb-14"
+          >
+            {platinumSponsors.map((sponsor, index) => (
+              <SwiperSlide key={index}>
+                <a 
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
+                    <div className="relative">
+                      <img 
+                        src={sponsor.badge} 
+                        alt={`${sponsor.name} badge`}
+                        className="absolute -top-2 -right-2 w-8 h-8"
+                      />
+                    </div>
+                    <div className="flex items-center justify-center mb-4 h-24">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="max-h-full max-w-[80%] object-contain"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <h4 className="font-semibold text-gray-800 mb-2">{sponsor.name}</h4>
+                      <p className="text-gray-600 text-sm">{sponsor.description}</p>
+                    </div>
+                  </div>
+                </a>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
 
       {/* Organizers Section */}
       <section className="mb-16">
