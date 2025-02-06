@@ -1,0 +1,31 @@
+.testimonials-swiper .swiper-pagination-bullet {
+  background-color: #4B5563;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background-color: #1F2937;
+}
+
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: #4B5563;
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  color: #1F2937;
+}
+
+.testimonials-swiper .swiper-button-next::after,
+.testimonials-swiper .swiper-button-prev::after {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.testimonials-swiper {
+  padding-bottom: 40px !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
