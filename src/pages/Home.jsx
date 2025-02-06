@@ -75,7 +75,7 @@ const highlights = [
 
 function Home() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-whit ">
       <main>
         {/* Hero Section */}
         <div className="relative">
@@ -122,7 +122,7 @@ function Home() {
 
         {/* Event Highlights */}
         <motion.section
-          className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-24"
+          className="bg-gradient-to-b lg:px-16 from-gray-50 to-white py-16 sm:py-24"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -161,70 +161,76 @@ function Home() {
         <Testimonials />
 
         {/* Sponsors Section */}
-        <section className="bg-indigo-50 py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-extrabold text-indigo-600 text-center mb-12">Our Sponsors</h2>
-            <div className="w-full">
-              <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={30}
-                slidesPerView={1}
-                navigation
-                pagination={{
-                  clickable: true,
-                  dynamicBullets: true,
-                }}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-                breakpoints={{
-                  640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                }}
-                className="sponsors-swiper !pb-14"
-              >
-                {sponsors.map((sponsor, index) => (
-                  <SwiperSlide key={index}>
-                    <a 
-                      href={sponsor.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
+        <motion.section
+          className="bg-indigo-50 py-16 sm:py-24"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+
+    <section className="bg-indigo-50 lg:px-16  overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-extrabold text-indigo-600 text-center mb-12">Our Sponsors</h2>
+
+        <div className="relative h-[200px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0"
+            >
+              <div className="grid grid-cols-2 gap-8">
+                {sponsors
+                  .slice(currentSlide * SPONSORS_PER_SLIDE, currentSlide * SPONSORS_PER_SLIDE + SPONSORS_PER_SLIDE)
+                  .map((sponsor) => (
+                    <div
+                      key={sponsor.name}
+                      className="flex flex-col justify-center items-center bg-white p-6 rounded-lg shadow-md relative hover:shadow-xl transition-shadow duration-300"
                     >
-                      <div className="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
-                        <div className="relative">
-                          <img 
-                            src={sponsor.badge} 
-                            alt={`${sponsor.name} badge`}
-                            className="absolute -top-2 -right-2 w-8 h-8"
-                          />
-                        </div>
-                        <div className="flex items-center justify-center mb-4 h-24">
-                          <img
-                            src={sponsor.logo}
-                            alt={sponsor.name}
-                            className="max-h-full max-w-[80%] object-contain"
-                          />
-                        </div>
-                        <div className="text-center">
-                          <h4 className="font-semibold text-gray-800 mb-2">{sponsor.name}</h4>
-                          <p className="text-gray-600 text-sm">{sponsor.description}</p>
-                        </div>
+                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span
+                          className={`inline-block px-3 py-1 text-xs font-semibold rounded-full capitalize ${tierStyles[sponsor.tier]}`}
+                        >
+                          {sponsor.tier}
+                        </span>
                       </div>
-                    </a>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          </div>
-        </section>
+                      <img
+                        className="h-12 object-contain mb-4"
+                        src={sponsor.logo || "/placeholder.svg"}
+                        alt={`${sponsor.name} - ${sponsor.tier} sponsor`}
+                      />
+                      <span className="text-sm text-gray-600 font-medium">{sponsor.name}</span>
+                    </div>
+                  ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="flex justify-center space-x-2 mt-8">
+          {[...Array(totalSlides)].map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                currentSlide === index ? "bg-indigo-600" : "bg-indigo-200"
+              }`}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+        </motion.section>
 
         {/* Call to Action */}
         <motion.section

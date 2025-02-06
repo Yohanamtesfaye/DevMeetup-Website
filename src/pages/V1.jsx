@@ -95,7 +95,7 @@ function V1() {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-12"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto lg:px-14 px-4 sm:px-6 ">
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
