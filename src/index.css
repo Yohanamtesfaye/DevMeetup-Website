@@ -16,3 +16,20 @@
     @apply mt-2 text-sm text-gray-600;
   }
   
+  /* Swiper styles */
+  .testimonials-swiper {
+    padding: 20px 0 40px;
+  }
+
+  .testimonials-swiper .swiper-button-next,
+  .testimonials-swiper .swiper-button-prev {
+    color: #4F46E5;
+  }
+
+  .testimonials-swiper .swiper-pagination-bullet {
+    background: #4F46E5;
+  }
+
+  .testimonials-swiper .swiper-pagination-bullet-active {
+    background: #4338CA;
+  }

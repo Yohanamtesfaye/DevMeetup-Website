@@ -46,6 +46,44 @@ const schedule = [
   { time: "4:30 PM", event: "Closing Remarks & Networking Session" },
 ]
 
+const organizers = [
+  {
+    name: "Chapi Menge",
+    role: "Lead Organizer",
+    avatar: chapi,
+    description: "DevMeetup Lead Organizer"
+  },
+  {
+    name: "Dagmawi Babi",
+    role: "Co-organizer",
+    avatar: dagi,
+    description: "Technical Lead"
+  },
+  {
+    name: "Luna Solomon",
+    role: "Co-organizer",
+    avatar: luna,
+    description: "Community Manager"
+  }
+];
+
+const volunteers = [
+  {
+    team: "Technical Team",
+    members: [
+      { name: "John Doe", role: "Technical Support" },
+      { name: "Jane Smith", role: "Workshop Assistant" }
+    ]
+  },
+  {
+    team: "Event Management",
+    members: [
+      { name: "Alex Johnson", role: "Registration" },
+      { name: "Sarah Williams", role: "Venue Coordination" }
+    ]
+  }
+];
+
 function V3() {
   const [isMobile, setIsMobile] = useState(false)
 
@@ -65,7 +103,7 @@ function V3() {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-12"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container lg:px-16 mx-auto px-4 sm:px-6 ">
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -226,6 +264,74 @@ function V3() {
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl font-semibold mb-8 text-center text-indigo-600"
+          >
+            Meet Our Organizers
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {organizers.map((organizer, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="flex flex-col items-center">
+                  <img
+                    src={organizer.avatar}
+                    alt={organizer.name}
+                    className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-indigo-100"
+                  />
+                  <h3 className="text-xl font-semibold text-indigo-600 mb-1">{organizer.name}</h3>
+                  <p className="text-gray-600 font-medium mb-2">{organizer.role}</p>
+                  <p className="text-gray-500 text-center">{organizer.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-3xl font-semibold mb-8 text-center text-indigo-600"
+          >
+            Our Volunteers
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {volunteers.map((team, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl shadow-lg p-6"
+              >
+                <h3 className="text-xl font-semibold text-indigo-600 mb-4">{team.team}</h3>
+                <div className="space-y-4">
+                  {team.members.map((member, memberIndex) => (
+                    <div
+                      key={memberIndex}
+                      className="flex items-center justify-between p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors duration-200"
+                    >
+                      <span className="font-medium text-gray-800">{member.name}</span>
+                      <span className="text-indigo-600">{member.role}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl font-semibold mb-6 text-indigo-500"
           >
             Live Updates
@@ -319,4 +425,3 @@ function MobileSchedule({ schedule }) {
 }
 
 export default V3
-

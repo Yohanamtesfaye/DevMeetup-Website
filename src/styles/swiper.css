@@ -1,0 +1,70 @@
+.testimonials-swiper {
+  padding-bottom: 60px !important;
+  padding-top: 20px !important;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  background: #4f46e5;
+  opacity: 0.5;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: #4f46e5;
+  opacity: 1;
+}
+
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: #4f46e5;
+  top: 45%;
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  color: #4f46e5;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto;
+  padding: 4px;
+}
+
+/* Add shadow to active slide */
+.testimonials-swiper .swiper-slide-active {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.sponsors-swiper {
+  padding-bottom: 50px !important;
+}
+
+.sponsors-swiper .swiper-button-next,
+.sponsors-swiper .swiper-button-prev {
+  color: #4f46e5;
+  top: 45%;
+}
+
+.sponsors-swiper .swiper-pagination-bullet {
+  background: #4f46e5;
+  opacity: 0.5;
+}
+
+.sponsors-swiper .swiper-pagination-bullet-active {
+  background: #4f46e5;
+  opacity: 1;
+}
+
+.sponsors-swiper .swiper-slide {
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.sponsors-swiper .swiper-slide:hover {
+  transform: translateY(-5px);
+}
