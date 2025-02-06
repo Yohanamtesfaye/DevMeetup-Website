@@ -169,7 +169,7 @@ function V2() {
       </motion.h1>
 
       {/* Event Details and Gallery Section */}
-      <div className="max-w-7xl lg:px-14 mx-auto px-4">
+      <div className="max-w-7xl lg:px-16 mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Event Details Column */}
           <div>
