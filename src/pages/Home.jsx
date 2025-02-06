@@ -69,7 +69,7 @@ function Home() {
     return () => clearInterval(timer)
   }, [totalSlides])
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-whit ">
       <main>
         {/* Hero Section */}
         <div className="relative">
@@ -116,7 +116,7 @@ function Home() {
 
         {/* Event Highlights */}
         <motion.section
-          className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-24"
+          className="bg-gradient-to-b lg:px-16 from-gray-50 to-white py-16 sm:py-24"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -162,7 +162,7 @@ function Home() {
           transition={{ duration: 0.8 }}
         >
 
-    <section className="bg-indigo-50 py-16 sm:py-24 overflow-hidden">
+    <section className="bg-indigo-50 lg:px-16  overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-indigo-600 text-center mb-12">Our Sponsors</h2>
 
