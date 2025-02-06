@@ -93,24 +93,6 @@ const organizers = [
     description: "DevMeetup Lead Organizer"
   },
   {
-    name: "Chapi Menge",
-    role: "Lead Organizer",
-    avatar: chapi,
-    description: "DevMeetup Lead Organizer"
-  },
-  {
-    name: "Dagmawi Babi",
-    role: "Co-organizer",
-    avatar: dagi,
-    description: "Technical Lead"
-  },
-  {
-    name: "Dagmawi Babi",
-    role: "Co-organizer",
-    avatar: dagi,
-    description: "Technical Lead"
-  },
-  {
     name: "Dagmawi Babi",
     role: "Co-organizer",
     avatar: dagi,
@@ -325,52 +307,70 @@ function V2() {
 
       {/* Organizers Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold text-purple-600 mb-8 text-center">Meet Our Organizers</h2>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {organizers.map((organizer, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md p-6">
-                <div className="flex items-center gap-5">
-                  <img
-                    src={organizer.avatar}
-                    alt={organizer.name}
-                    className="w-20 h-20 rounded-full object-cover"
-                  />
-                  <div>
-                    <h3 className="text-lg font-medium text-gray-900">{organizer.name}</h3>
-                    <p className="text-gray-500">{organizer.role}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-gray-600">{organizer.description}</p>
+        <motion.h2
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-3xl font-semibold mb-8 text-center text-purple-600"
+        >
+          Meet Our Organizers
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {organizers.map((organizer, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="flex flex-col items-center">
+                <img
+                  src={organizer.avatar}
+                  alt={organizer.name}
+                  className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-purple-100"
+                />
+                <h3 className="text-xl font-semibold text-purple-600 mb-1">{organizer.name}</h3>
+                <p className="text-gray-600 font-medium mb-2">{organizer.role}</p>
+                <p className="text-gray-500 text-center">{organizer.description}</p>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* Volunteers Section */}
-      <section className="mb-8 sm:mb-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">Volunteers</h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <section className="mb-16">
+        <motion.h2
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-3xl font-semibold mb-8 text-center text-purple-600"
+        >
+          Our Volunteers
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
           {volunteers.map((team, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-lg font-semibold mb-3">{team.team}</h3>
-              <div className="grid gap-2">
-                {team.members.map((member, mIndex) => (
-                  <div key={mIndex} className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
-                      <span className="text-gray-600 font-medium text-sm">
-                        {member.name.charAt(0)}
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-medium">{member.name}</h4>
-                      <p className="text-xs text-gray-600">{member.role}</p>
-                    </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-lg p-8"
+            >
+              <h3 className="text-xl font-semibold text-purple-600 mb-6">{team.team}</h3>
+              <div className="space-y-4">
+                {team.members.map((member, memberIndex) => (
+                  <div
+                    key={memberIndex}
+                    className="flex items-center justify-between p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors duration-200"
+                  >
+                    <span className="font-medium text-gray-800">{member.name}</span>
+                    <span className="text-purple-600">{member.role}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
