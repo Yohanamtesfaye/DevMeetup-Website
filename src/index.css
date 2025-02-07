@@ -33,3 +33,18 @@
   .testimonials-swiper .swiper-pagination-bullet-active {
     background: #4338CA;
   }
+  /* below are styles for the v1 page */
+ 
+  @keyframes scrollSponsors {
+    0% {
+      transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+      transform: translateX(-100%); /* Move to the left */
+    }
+  }
+  
+  .animate-scroll-sponsors {
+    animation: scrollSponsors 30s linear infinite; /* Adjust 30s for speed */
+  }
+  
