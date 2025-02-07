@@ -50,10 +50,10 @@ const V1Meetup = () => {
     <>
       <div className="">
         <EventDetails data={eventData} />
-        {/* We'll add KeynoteSpeaker, Sponsors, etc., here later */}
+        
       </div>
 
-      <section id="schedule" className="mt-10 border-amber-200 border-2">
+      <section id="schedule" className="mt-10">
         <EventSchedule />
       </section>
       <br />

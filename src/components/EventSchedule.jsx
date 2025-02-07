@@ -50,37 +50,29 @@ const Schedule = () => {
   return (
     <div className="relative max-w-4xl mx-auto p-4">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Event Schedule</h2>
+{/* for the vertical line  */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 shadow-lg">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white border-2 border-blue-500 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white border-2 border-pink-500 rounded-full animate-pulse"></div>
+      </div>
 
-    
-    {/* the vertical line of the event timline */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 shadow-lg">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white border-2 border-blue-500 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white border-2 border-pink-500 rounded-full animate-pulse"></div>
-          </div>
-    
-          <div className="flex flex-col space-y-0 ml-[10rem]" >
-            {schedule.map((item, index) => (
-              <div
-              key={index}
-              className={`relative w-4/12 p-6 bg-white shadow-xl rounded-2xl border border-gray-200
-                ${index % 2 === 0 ? 'ml-[20rem]' : 'mr-0'} // Reduced margin
-              `}
-            >
-                
-                
-    
-                <div
-                  className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 w-5 h-5 bg-blue-500 rounded-full border-4 border-white shadow-xl animate-ping"
-                ></div>
-    
-                <h3 className="text-xl font-semibold text-gray-800 text-center">{item.time}</h3>
-                <p className="text-lg text-gray-700 mt-2 text-center">{item.title}</p>
-                <p className="text-gray-500 mt-1 text-center">{item.description}</p>
-              </div>
-            ))}
-          </div>
-</div>
+      <div className="flex flex-col space-y-4 mr-[10rem]">
+        {schedule.map((item, index) => (
+          <div
+            key={index}
+            className={`relative w-2/4 py-10 p-10 bg-white shadow-xl rounded-2xl border border-gray-200
+              ${index % 2 === 0 ? 'ml-[30rem]' : 'mr-0'}
+            `}
+          >
+            <div className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 w-5 h-5 bg-amber-100 rounded-full border-4 border-white shadow-xl animate-ping"></div>
 
+            <h3 className="text-2xl font-semibold text-gray-800 text-center">{item.time}</h3>
+            <p className="text-xl text-gray-700 mt-4 text-center font-bold">{item.title}</p>
+            <p className="text-gray-500 mt-2 text-center text-lg">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

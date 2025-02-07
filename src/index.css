@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 .mobile-schedule-item {
     @apply border-b border-gray-200 py-4;
   }
