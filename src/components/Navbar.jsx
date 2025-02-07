@@ -26,6 +26,10 @@ function Navbar() {
             <NavLink to="/v1">V1</NavLink>
             <NavLink to="/v2">V2</NavLink>
             <NavLink to="/v3">V3 Features</NavLink>
+            <NavLink to="/about-us">About US</NavLink>
+            <NavLink to="/contact-us">Contact Us</NavLink>
+            <NavLink to="/sponser-us">Sponser US</NavLink>
+            <NavLink to="/help-us">Help Us</NavLink>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
             <button
@@ -81,6 +85,18 @@ function Navbar() {
               </MobileNavLink>
               <MobileNavLink to="/v3" setIsOpen={setIsOpen}>
                 V3 Features
+              </MobileNavLink> 
+               <MobileNavLink to="about-us" setIsOpen={setIsOpen}>
+                About Us
+              </MobileNavLink>
+              <MobileNavLink to="/contact-us" setIsOpen={setIsOpen}>
+                Contact Us
+              </MobileNavLink>
+              <MobileNavLink to="sponser-us" setIsOpen={setIsOpen}>
+                Sponser Us
+              </MobileNavLink>
+              <MobileNavLink to="/help-us" setIsOpen={setIsOpen}>
+                Help Us
               </MobileNavLink>
             </div>
           </motion.div>
