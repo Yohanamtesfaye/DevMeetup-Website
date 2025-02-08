@@ -11,6 +11,7 @@ import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import SponserUs from "./pages/SponserUs"
 import HelpUs from "./pages/HelpUs"
+import Chat from "./pages/Chat"
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/sponser-us" element={<SponserUs />} />
             <Route path="/help-us" element={<HelpUs />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/chat" element={<Chat />} />
           </Routes>
         </AnimatePresence>
         <Footer />
@@ -37,4 +39,3 @@ function App() {
 }
 
 export default App
-
