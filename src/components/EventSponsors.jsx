@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Linkedin, Instagram } from 'lucide-react';
-
 const SponsorCard = ({ sponsor }) => (
   <div className="min-w-[300px] max-w-[300px] bg-white shadow-lg rounded-xl p-6 m-4 flex flex-col items-center 
     transition-transform duration-200 ease-in-out hover:scale-105 overflow-hidden">
@@ -18,6 +17,7 @@ const SponsorCard = ({ sponsor }) => (
       {sponsor.description}
     </p>
 
+
     <div className="flex space-x-4 mt-auto">
       <a href={sponsor.socials.linkedin} target="_blank" rel="noopener noreferrer">
         <Linkedin className="w-5 h-5 text-blue-600 hover:text-blue-800" />
@@ -28,6 +28,7 @@ const SponsorCard = ({ sponsor }) => (
     </div>
   </div>
 );
+
 
 const EventSponsors = () => {
   const sponsors = [
@@ -41,6 +42,8 @@ const EventSponsors = () => {
         instagram: "https://www.instagram.com/alx_ethiopia"
       }
     },
+
+    
     {
       name: "Horan Tech",
       logo: "src/assets/horan.jpg",

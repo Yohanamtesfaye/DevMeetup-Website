@@ -1,79 +1,130 @@
-import React from 'react';
-import { CalendarDays, Trophy, Users, Gamepad2, Mic2, Network, Utensils } from 'lucide-react';
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 
 const schedule = [
-  {
-    time: '8:30 AM',
-    title: 'Welcome Speech',
-    description: 'By the organizers, announcing the full-day schedule.',
-    icon: <Mic2 className="text-blue-500" />,
-  },
-  {
-    time: '9:00 AM',
-    title: 'Cool Games',
-    description: 'Tech trivia with sticker prizes, led by Joe the Game Dev.',
-    icon: <Gamepad2 className="text-green-500" />,
-  },
-  {
-    time: '10:00 AM - 12:00 PM',
-    title: 'Panel Discussions',
-    description: 'With senior devs and tech leaders of Ethiopia about freelancing, remote work, and more.',
-    icon: <Users className="text-purple-500" />,
-  },
-  {
-    time: '12:00 PM - 1:00 PM',
-    title: 'Lunch Break',
-    description: 'Delicious meals and cakes.',
-    icon: <Utensils className="text-red-500" />,
-  },
-  {
-    time: '1:30 PM - 3:00 PM',
-    title: 'Networking Session',
-    description: 'Vibrant networking with fellow tech enthusiasts.',
-    icon: <Network className="text-yellow-500" />,
-  },
-  {
-    time: '3:30 PM - 5:00 PM',
-    title: 'Hackathon',
-    description: 'For CodeNight developers to showcase their skills.',
-    icon: <CalendarDays className="text-indigo-500" />,
-  },
-  {
-    time: '5:30 PM',
-    title: 'Prize Ceremony & Sponsor Appreciation',
-    description: 'Prizes awarded and sponsors speaking about their companies.',
-    icon: <Trophy className="text-orange-500" />,
-  },
+  { time: '8:30 AM', event: 'Welcome Speech', speaker: 'Organizers' },
+  { time: '9:00 AM', event: 'Cool Games', speaker: 'Joe the Game Dev' },
+  { time: '10:00 AM - 12:00 PM', event: 'Panel Discussions', speaker: 'Senior Devs & Tech Leaders' },
+  { time: '12:00 PM - 1:00 PM', event: 'Lunch Break', speaker: '-' },
+  { time: '1:30 PM - 3:00 PM', event: 'Networking Session', speaker: 'Tech Enthusiasts' },
+  { time: '3:30 PM - 5:00 PM', event: 'Hackathon', speaker: 'CodeNight Developers' },
+  { time: '5:30 PM', event: 'Prize Ceremony & Sponsor Appreciation', speaker: 'Organizers & Sponsors' },
 ];
 
-const Schedule = () => {
+function Schedule() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   return (
-    <div className="relative max-w-4xl mx-auto p-4">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Event Schedule</h2>
-{/* for the vertical line  */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 shadow-lg">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white border-2 border-blue-500 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white border-2 border-pink-500 rounded-full animate-pulse"></div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-12"
+    >
+      <div className="container lg:px-16 mx-auto px-4 sm:px-6">
+        <motion.h2
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-semibold mb-6 text-center text-indigo-600"
+        >
+          Event Schedule
+        </motion.h2>
+
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-white shadow-lg rounded-lg overflow-hidden"
+        >
+          {isMobile ? (
+            <MobileSchedule schedule={schedule} />
+          ) : (
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Time
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Event
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Speaker
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {schedule.map((item, index) => (
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                  >
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.time}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.event}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.speaker || "-"}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </motion.div>
       </div>
+    </motion.div>
+  )
+}
 
-      <div className="flex flex-col space-y-4 mr-[10rem]">
-        {schedule.map((item, index) => (
-          <div
-            key={index}
-            className={`relative w-2/4 py-10 p-10 bg-white shadow-xl rounded-2xl border border-gray-200
-              ${index % 2 === 0 ? 'ml-[30rem]' : 'mr-0'}
-            `}
-          >
-            <div className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 w-5 h-5 bg-amber-100 rounded-full border-4 border-white shadow-xl animate-ping"></div>
+function MobileSchedule({ schedule }) {
+  const [expandedIndex, setExpandedIndex] = useState(null)
 
-            <h3 className="text-2xl font-semibold text-gray-800 text-center">{item.time}</h3>
-            <p className="text-xl text-gray-700 mt-4 text-center font-bold">{item.title}</p>
-            <p className="text-gray-500 mt-2 text-center text-lg">{item.description}</p>
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index)
+  }
+
+  return (
+    <div className="divide-y divide-gray-200">
+      {schedule.map((item, index) => (
+        <div key={index} className="py-4 px-4">
+          <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleExpand(index)}>
+            <span className="font-medium text-gray-900">{item.time}</span>
+            {expandedIndex === index ? (
+              <FaChevronUp className="text-gray-500" />
+            ) : (
+              <FaChevronDown className="text-gray-500" />
+            )}
           </div>
-        ))}
-      </div>
+          {expandedIndex === index && (
+            <div className="mt-2">
+              <p className="text-sm text-gray-600">{item.event}</p>
+              <p className="text-sm text-gray-500 mt-1">{item.speaker || "No speaker"}</p>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
-  );
-};
+  )
+}
 
-export default Schedule;
+export default Schedule
