@@ -258,7 +258,7 @@ const V3 = () => {
       </section>
 
       {/* Organizers Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12 px-4 bg-white">
         <div className=" mx-auto">
           <h2 className="text-2xl font-bold text-center mb-3">Event Organizers</h2>
           <p className="text-gray-600 text-center text-sm mb-8 max-w-3xl mx-auto">
@@ -353,7 +353,7 @@ const V3 = () => {
       </section>
 
       {/* Volunteers Section */}
-      <section className="py-8 px-28 bg-gray-50">
+      <section className="py-8 lg:px-28 max-md:px-10 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-3">Our Volunteers</h2>
           <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
