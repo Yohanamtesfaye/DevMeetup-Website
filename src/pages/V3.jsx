@@ -258,13 +258,13 @@ const V3 = () => {
 
       {/* Organizers Section */}
       <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
+        <div className=" mx-auto">
           <h2 className="text-2xl font-bold text-center mb-3">Event Organizers</h2>
-          <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 text-center text-sm mb-8 max-w-3xl mx-auto">
             Meet the dedicated team behind DevMeetup V3
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="text-center shadow-lg rounded-xl p-4">
               <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
                 <img
                   src="https://example.com/organizer1.jpg"
@@ -287,7 +287,7 @@ const V3 = () => {
                 </a>
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-center shadow-lg rounded-xl p-4">
               <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
                 <img
                   src="https://example.com/organizer2.jpg"
@@ -307,7 +307,7 @@ const V3 = () => {
                 </a>
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-center shadow-lg rounded-xl p-4">
               <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
                 <img
                   src="https://example.com/organizer3.jpg"
@@ -327,7 +327,7 @@ const V3 = () => {
                 </a>
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-center shadow-lg rounded-xl p-4">
               <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
                 <img
                   src="https://example.com/organizer4.jpg"
@@ -352,13 +352,13 @@ const V3 = () => {
       </section>
 
       {/* Volunteers Section */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-8 px-28 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-3">Our Volunteers</h2>
           <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
             Meet our amazing volunteers helping to make this event possible
           </p>
-          <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {volunteers.map((volunteer, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 mx-auto mb-2 overflow-hidden rounded-full">
@@ -395,7 +395,7 @@ const V3 = () => {
       </section>
 
       {/* Sponsors Section */}
-      <section ref={sponsorsRef} className="py-16 bg-white">
+      <section ref={sponsorsRef} className="py-16 px-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Sponsors</h2>
@@ -453,7 +453,7 @@ const V3 = () => {
       </section>
 
       {/* Become a Sponsor Section */}
-      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      {/* <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Become a Sponsor</h2>
           <p className="mb-8 max-w-2xl mx-auto">Support the Ethiopian developer community and showcase your brand to hundreds of passionate developers.</p>
@@ -475,7 +475,7 @@ const V3 = () => {
             View Packages
           </Link>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -236,6 +236,7 @@ function Home() {
                   />
                 ))}
               </div>
+              <Link to='/sponser-us' className="block mt-8 text-center text-indigo-600 font-semibold hover:underline">Become a sponsor</Link>
             </div>
           </section>
         </motion.section>
