@@ -23,16 +23,16 @@ const V3 = () => {
   };
 
   const allSponsors = [...sponsors.platinum, ...sponsors.gold, ...sponsors.silver];
-  const [currentSponsor, setCurrentSponsor] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const autoSlideInterval = useRef(null);
 
   // Auto-slide functionality
   useEffect(() => {
     const startAutoSlide = () => {
       autoSlideInterval.current = setInterval(() => {
-        setCurrentSponsor(prev => {
-          const nextSlide = prev + 3;
-          return nextSlide >= allSponsors.length ? 0 : nextSlide;
+        setCurrentIndex(prev => {
+          const nextSlide = prev + 1;
+          return nextSlide >= Object.keys(sponsors).length ? 0 : nextSlide;
         });
       }, 3000); // Change slides every 3 seconds
     };
@@ -45,7 +45,7 @@ const V3 = () => {
         clearInterval(autoSlideInterval.current);
       }
     };
-  }, [allSponsors.length]);
+  }, [sponsors]);
 
   // Pause auto-slide on hover
   const handleMouseEnter = () => {
@@ -56,11 +56,19 @@ const V3 = () => {
 
   const handleMouseLeave = () => {
     autoSlideInterval.current = setInterval(() => {
-      setCurrentSponsor(prev => {
-        const nextSlide = prev + 3;
-        return nextSlide >= allSponsors.length ? 0 : nextSlide;
+      setCurrentIndex(prev => {
+        const nextSlide = prev + 1;
+        return nextSlide >= Object.keys(sponsors).length ? 0 : nextSlide;
       });
     }, 3000);
+  };
+
+  const handlePrevClick = () => {
+    setCurrentIndex(prev => prev === 0 ? Object.keys(sponsors).length - 1 : prev - 1);
+  };
+
+  const handleNextClick = () => {
+    setCurrentIndex(prev => prev + 1 >= Object.keys(sponsors).length ? 0 : prev + 1);
   };
 
   return (
@@ -133,11 +141,11 @@ const V3 = () => {
         </div>
       </section>
 
-      {/* Schedule Section */}
+      {/* Event Details Section */}
       <section ref={scheduleRef} className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Event Schedule</h2>
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-6xl mx-auto">
             {Array.isArray(scheduleItems) && scheduleItems.map((item, index) => (
               <div
                 key={index}
@@ -249,43 +257,96 @@ const V3 = () => {
       </section>
 
       {/* Organizers Section */}
-      <section className="py-8 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-3">Event Organizers</h2>
           <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
             Meet the dedicated team behind DevMeetup V3
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {organizers.map((organizer, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 mx-auto mb-2 overflow-hidden rounded-full">
-                  <img
-                    src={organizer.image}
-                    alt={organizer.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-sm font-semibold text-gray-800">{organizer.name}</h3>
-                <p className="text-xs text-gray-500">{organizer.role}</p>
-                <div className="flex justify-center gap-2 mt-2">
-                  {organizer.github && (
-                    <a href={organizer.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600">
-                      <FaGithub className="w-3 h-3" />
-                    </a>
-                  )}
-                  {organizer.twitter && (
-                    <a href={organizer.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600">
-                      <FaTwitter className="w-3 h-3" />
-                    </a>
-                  )}
-                  {organizer.linkedin && (
-                    <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600">
-                      <FaLinkedin className="w-3 h-3" />
-                    </a>
-                  )}
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                <img
+                  src="https://example.com/organizer1.jpg"
+                  alt="Yohannes Tesfaye"
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
+              <h3 className="text-lg font-semibold">Yohannes Tesfaye</h3>
+              <p className="text-sm text-gray-600 mb-2">Lead Organizer</p>
+              <p className="text-sm text-gray-500 mb-3">Full-stack developer passionate about community</p>
+              <div className="flex justify-center gap-3">
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaTwitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaGithub className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                <img
+                  src="https://example.com/organizer2.jpg"
+                  alt="Sara Mohammed"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-semibold">Sara Mohammed</h3>
+              <p className="text-sm text-gray-600 mb-2">Technical Lead</p>
+              <p className="text-sm text-gray-500 mb-3">AI/ML engineer focused on tech education</p>
+              <div className="flex justify-center gap-3">
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaTwitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                <img
+                  src="https://example.com/organizer3.jpg"
+                  alt="Dawit Alemu"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-semibold">Dawit Alemu</h3>
+              <p className="text-sm text-gray-600 mb-2">Community Manager</p>
+              <p className="text-sm text-gray-500 mb-3">Developer advocate & community builder</p>
+              <div className="flex justify-center gap-3">
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaTwitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                <img
+                  src="https://example.com/organizer4.jpg"
+                  alt="Helen Tadesse"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-semibold">Helen Tadesse</h3>
+              <p className="text-sm text-gray-600 mb-2">Operations Lead</p>
+              <p className="text-sm text-gray-500 mb-3">Event coordinator & logistics expert</p>
+              <div className="flex justify-center gap-3">
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaTwitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-gray-600">
+                  <FaLinkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -295,7 +356,7 @@ const V3 = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-3">Our Volunteers</h2>
           <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
-            The amazing people helping to make this event possible
+            Meet our amazing volunteers helping to make this event possible
           </p>
           <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4">
             {volunteers.map((volunteer, index) => (
@@ -309,6 +370,7 @@ const V3 = () => {
                 </div>
                 <h3 className="text-xs font-semibold text-gray-800">{volunteer.name}</h3>
                 <p className="text-xs text-gray-500 mb-1">{volunteer.role}</p>
+                <p className="text-xs text-gray-500 mb-2">{volunteer.description}</p>
                 <div className="flex justify-center gap-2">
                   {volunteer.github && (
                     <a href={volunteer.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-600">
@@ -338,54 +400,41 @@ const V3 = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Sponsors</h2>
             <p className="text-gray-600 mb-6">Meet the companies making DevMeetup V3 possible</p>
-            <Link 
-              to="/sponser-us" 
-              className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium"
-            >
-              View Sponsorship Packages
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
           </div>
+          
           <div className="relative max-w-7xl mx-auto">
             {/* Previous Button */}
-            <button 
-              onClick={() => setCurrentSponsor(prev => prev === 0 ? Math.max(0, allSponsors.length - 3) : Math.max(0, prev - 3))}
-              className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center"
+            <button
+              onClick={handlePrevClick}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100"
             >
-              <span className="text-2xl text-gray-400">&lt;</span>
+              <FaChevronLeft className="h-6 w-6 text-gray-600" />
             </button>
 
-            {/* Sponsors Carousel */}
-            <div 
-              className="overflow-hidden"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSponsor * (100/3)}%)` }}
+            {/* Sponsors Grid */}
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
-                {allSponsors.map((sponsor, index) => (
-                  <div key={index} className="w-1/3 flex-shrink-0 px-4">
-                    <div className="bg-transparent border border-gray-200 rounded-3xl p-8 mx-auto relative hover:border-gray-300 transition-colors">
-                      <div className="absolute top-4 right-4 w-8 h-8 border border-gray-200 rounded-full flex items-center justify-center">
-                        <span className="text-gray-400">↗</span>
-                      </div>
-                      <div className="flex justify-center mb-6">
-                        <img 
-                          src={sponsor.logo} 
-                          alt={sponsor.name}
-                          className="h-12 object-contain"
-                        />
-                      </div>
-                      <h3 className="text-xl font-semibold text-center text-gray-800 mb-3">
-                        {sponsor.name}
-                      </h3>
-                      <p className="text-gray-500 text-center text-sm">
-                        {sponsor.description}
-                      </p>
+                {Object.entries(sponsors).map(([tier, sponsorList]) => (
+                  <div key={tier} className="w-full flex-shrink-0">
+                    <h3 className="text-xl font-semibold text-center mb-8 capitalize">{tier} Sponsors</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {sponsorList.map((sponsor, index) => (
+                        <div
+                          key={index}
+                          className="p-6 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
+                        >
+                          <img
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                            className="h-12 object-contain mx-auto mb-4"
+                          />
+                          <h4 className="text-lg font-semibold text-center mb-2">{sponsor.name}</h4>
+                          <p className="text-gray-600 text-center text-sm">{sponsor.description}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
@@ -393,74 +442,38 @@ const V3 = () => {
             </div>
 
             {/* Next Button */}
-            <button 
-              onClick={() => setCurrentSponsor(prev => prev + 3 >= allSponsors.length ? 0 : prev + 3)}
-              className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center"
+            <button
+              onClick={handleNextClick}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100"
             >
-              <span className="text-2xl text-gray-400">&gt;</span>
+              <FaChevronRight className="h-6 w-6 text-gray-600" />
             </button>
-
-            {/* Dots Navigation */}
-            <div className="flex justify-center gap-4 mt-8">
-              {[...Array(Math.ceil(allSponsors.length / 3))].map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSponsor(index * 3)}
-                  className={`w-2 h-2 rounded-full ${
-                    Math.floor(currentSponsor / 3) === index 
-                      ? 'bg-purple-600' 
-                      : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Call for Sponsors */}
-      <section className="py-16 bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Become a Sponsor</h2>
-            <p className="text-lg mb-8">
-              Support the Ethiopian developer community and showcase your brand to hundreds of passionate developers.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Brand Visibility</h3>
-                <p className="text-white/80">
-                  Get your brand in front of hundreds of developers, tech enthusiasts, and industry leaders.
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Talent Access</h3>
-                <p className="text-white/80">
-                  Connect with top developers and tech talent in Ethiopia for recruitment opportunities.
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Community Impact</h3>
-                <p className="text-white/80">
-                  Support the growth of Ethiopia's tech ecosystem and make a lasting impact.
-                </p>
-              </div>
+      {/* Become a Sponsor Section */}
+      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Become a Sponsor</h2>
+          <p className="mb-8 max-w-2xl mx-auto">Support the Ethiopian developer community and showcase your brand to hundreds of passionate developers.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+            <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-xl font-semibold mb-3">Brand Visibility</h3>
+              <p className="text-sm">Get your brand in front of hundreds of developers and tech enthusiasts.</p>
             </div>
-            <div className="space-x-4">
-              <a
-                href="#sponsorship-packages"
-                className="inline-block px-8 py-3 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-opacity-90 transition-all duration-300"
-              >
-                View Packages
-              </a>
-              <a
-                href="mailto:sponsor@devmeetup.com"
-                className="inline-block px-8 py-3 bg-transparent border-2 border-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300"
-              >
-                Contact Us
-              </a>
+            <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-xl font-semibold mb-3">Talent Access</h3>
+              <p className="text-sm">Connect with top tech talent for recruitment opportunities.</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-xl font-semibold mb-3">Community Impact</h3>
+              <p className="text-sm">Support Ethiopia's growing tech ecosystem.</p>
             </div>
           </div>
+          <Link to="/sponsor-us" className="inline-block px-8 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            View Packages
+          </Link>
         </div>
       </section>
     </div>
