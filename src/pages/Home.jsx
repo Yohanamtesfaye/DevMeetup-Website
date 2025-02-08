@@ -94,7 +94,7 @@ function Home() {
         {/* Hero Section */}
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
-          <div className="max-w-7xl mx-auto sm:px-6 lg:px-16">
+          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
               <div className="absolute inset-0">
                 <img
@@ -236,6 +236,7 @@ function Home() {
                   />
                 ))}
               </div>
+              <Link to='/sponser-us' className="block mt-8 text-center text-indigo-600 font-semibold hover:underline">Become a sponsor</Link>
             </div>
           </section>
         </motion.section>
