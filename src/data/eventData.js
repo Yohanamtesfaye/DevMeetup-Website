@@ -282,116 +282,36 @@ export const volunteers = [
   }
 ];
 
-export const sponsorshipTiers = [
+// eventData.js
+export const sponsors = [
   {
-    tier: "Platinum",
-    benefits: [
-      "Premium booth location",
-      "20-minute speaking slot",
-      "Logo on main stage",
-      "6 VIP passes",
-      "Social media promotion",
-      "Company banner display"
-    ]
+    name: "ALX-Ethiopia",
+    logo: "/src/assets/alx.jpg",
+    level: "Gold",
+    description: "Leading IT training in Ethiopia.",
+    socials: {
+      linkedin: "https://www.linkedin.com/company/alx-ethiopia",
+      instagram: "https://www.instagram.com/alx_ethiopia"
+    }
   },
   {
-    tier: "Gold",
-    benefits: [
-      "Booth space",
-      "Logo on event materials",
-      "4 VIP passes",
-      "Social media mention",
-      "Company banner display"
-    ]
+    name: "Horan Tech",
+    logo: "/src/assets/horan.jpg",
+    level: "Silver",
+    description: "Innovative tech solutions for modern businesses.",
+    socials: {
+      linkedin: "https://www.linkedin.com/company/horan-tech",
+      instagram: "https://www.instagram.com/horan_tech"
+    }
   },
   {
-    tier: "Silver",
-    benefits: [
-      "Small booth space",
-      "Logo on website",
-      "2 VIP passes",
-      "Social media mention"
-    ]
+    name: "SAND Technologies",
+    logo: "/src/assets/sand.jpg",
+    level: "Bronze",
+    description: "Pioneering technology solutions for sustainable development.",
+    socials: {
+      linkedin: "https://www.linkedin.com/company/sand-technologies",
+      instagram: "https://www.instagram.com/sand_technologies"
+    }
   }
 ];
-
-export const sponsors = {
-  platinum: [
-    {
-      name: "iCog Labs",
-      description: "Leading AI research and development company in Ethiopia",
-      logo: "https://icog-labs.com/wp-content/uploads/2019/02/icog-labs-white.png",
-      website: "https://icog-labs.com"
-    },
-    {
-      name: "Google",
-      description: "Technology company specializing in internet-related services",
-      logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-      website: "https://google.com"
-    },
-    {
-      name: "Microsoft",
-      description: "Leading global technology corporation",
-      logo: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31",
-      website: "https://microsoft.com"
-    }
-  ],
-  gold: [
-    {
-      name: "GitHub",
-      description: "The world's leading software development platform",
-      logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png",
-      website: "https://github.com"
-    },
-    {
-      name: "AWS",
-      description: "Cloud computing and platform services",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
-      website: "https://aws.amazon.com"
-    },
-    {
-      name: "Meta",
-      description: "Social technology company",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
-      website: "https://meta.com"
-    },
-    {
-      name: "Digital Ocean",
-      description: "Cloud infrastructure provider",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg",
-      website: "https://digitalocean.com"
-    }
-  ],
-  silver: [
-    {
-      name: "MongoDB",
-      logo: "https://webimages.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png",
-      website: "https://mongodb.com"
-    },
-    {
-      name: "Vercel",
-      logo: "https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png",
-      website: "https://vercel.com"
-    },
-    {
-      name: "Netlify",
-      logo: "https://www.netlify.com/img/press/logos/full-logo-light.svg",
-      website: "https://netlify.com"
-    },
-    {
-      name: "Auth0",
-      logo: "https://cdn.auth0.com/website/bob/press/logo-light.png",
-      website: "https://auth0.com"
-    },
-    {
-      name: "Stripe",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
-      website: "https://stripe.com"
-    },
-    {
-      name: "Twilio",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Twilio-logo-red.svg",
-      website: "https://twilio.com"
-    }
-  ]
-};

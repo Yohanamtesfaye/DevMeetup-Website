@@ -35,17 +35,16 @@
     background: #4338CA;
   }
   /* below are styles for the v1 page */
- 
-  @keyframes scrollSponsors {
+  @keyframes scroll {
     0% {
-      transform: translateX(100%); /* Start from the right */
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%); /* Move to the left */
+      transform: translateX(-100%);
     }
   }
   
-  .animate-scroll-sponsors {
-    animation: scrollSponsors 30s linear infinite; /* Adjust 30s for speed */
+  .animate-scroll {
+    animation: scroll 15s linear infinite; /* Speed up to 15s */
   }
   

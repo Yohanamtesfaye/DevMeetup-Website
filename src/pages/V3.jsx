@@ -4,6 +4,7 @@ import { FaGithub, FaTwitter, FaLinkedin, FaComments, FaCalendarAlt, FaStar, FaC
 import { motion } from 'framer-motion';
 import { organizers, volunteers, sponsors, scheduleItems } from '../data/eventData';
 import '../styles/sponsors.css';
+import EventSponsors from '../components/EventSponsors';
 
 const V3 = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const V3 = () => {
     navigate('/register');
   };
 
-  const allSponsors = [...sponsors.platinum, ...sponsors.gold, ...sponsors.silver];
+  // const allSponsors = [...sponsors.platinum, ...sponsors.gold, ...sponsors.silver];
   const [currentIndex, setCurrentIndex] = useState(0);
   const autoSlideInterval = useRef(null);
 
@@ -394,64 +395,17 @@ const V3 = () => {
         </div>
       </section>
 
-      {/* Sponsors Section */}
-      <section ref={sponsorsRef} className="py-16 px-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Sponsors</h2>
-            <p className="text-gray-600 mb-6">Meet the companies making DevMeetup V3 possible</p>
-          </div>
-          
-          <div className="relative max-w-7xl mx-auto">
-            {/* Previous Button */}
-            <button
-              onClick={handlePrevClick}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100"
-            >
-              <FaChevronLeft className="h-6 w-6 text-gray-600" />
-            </button>
 
-            {/* Sponsors Grid */}
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-300 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-              >
-                {Object.entries(sponsors).map(([tier, sponsorList]) => (
-                  <div key={tier} className="w-full flex-shrink-0">
-                    <h3 className="text-xl font-semibold text-center mb-8 capitalize">{tier} Sponsors</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                      {sponsorList.map((sponsor, index) => (
-                        <div
-                          key={index}
-                          className="p-6 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
-                        >
-                          <img
-                            src={sponsor.logo}
-                            alt={sponsor.name}
-                            className="h-12 object-contain mx-auto mb-4"
-                          />
-                          <h4 className="text-lg font-semibold text-center mb-2">{sponsor.name}</h4>
-                          <p className="text-gray-600 text-center text-sm">{sponsor.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+<section>
 
-            {/* Next Button */}
-            <button
-              onClick={handleNextClick}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg z-10 hover:bg-gray-100"
-            >
-              <FaChevronRight className="h-6 w-6 text-gray-600" />
-            </button>
-          </div>
-        </div>
-      </section>
+  <EventSponsors/>
+</section>
 
+
+
+
+
+           
       {/* Become a Sponsor Section */}
       {/* <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">

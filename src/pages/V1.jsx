@@ -11,9 +11,9 @@ import gebetamaps from "../assets/gebetamaps.jpg"
 import avatar1 from "../assets/avatar1.jpg"
 import avatar2 from "../assets/avatar2.jpg"
 import avatar3 from "../assets/avatar3.jpg"
-import platinumBadge from "../assets/platinum-badge.svg"
-import goldBadge from "../assets/gold-badge.svg"
-import silverBadge from "../assets/silver-badge.svg"
+// import platinumBadge from "../assets/platinum-badge.svg"
+// import goldBadge from "../assets/gold-badge.svg"
+// import silverBadge from "../assets/silver-badge.svg"
 import chapi from "../assets/chapi.jpg"
 import dagi from "../assets/dagi.jpeg"
 import luna from "../assets/luna.jpg"
@@ -23,10 +23,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../styles/swiper.css';
+import EventSponsors from "../components/EventSponsors"
 
 const eventDetails = [
   { label: "Organizers", value: "CodeNight" },
-  { label: "Sponsors", value: "Vercel, GitHub" },
+  // { label: "Sponsors", value: "Vercel, GitHub" },
   { label: "Venue", value: "Online" },
   { label: "Date", value: "May 15-16, 2022" },
   { label: "Participants", value: "500+" },
@@ -35,43 +36,43 @@ const eventDetails = [
 
 const galleryImages = [disscusion, ppl, food, guest]
 
-const platinumSponsors = [
-  { 
-    name: "ALX", 
-    logo: alx,
-    description: "Leading tech education platform empowering the next generation of African tech talent.",
-    website: "https://www.alxafrica.com/",
-    badge: platinumBadge
-  },
-  { 
-    name: "SandTechnologies", 
-    logo: sand,
-    description: "Innovative software solutions provider specializing in enterprise applications.",
-    website: "https://www.sandtechnologies.com/",
-    badge: platinumBadge
-  },
-  { 
-    name: "Chapa", 
-    logo: chapa,
-    description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
-    website: "https://chapa.co/",
-    badge: platinumBadge
-  },
-  { 
-    name: "Addis Software", 
-    logo: addis,
-    description: "Leading software development company in Ethiopia",
-    website: "https://addissoftware.com/",
-    badge: silverBadge
-  },
-  { 
-    name: "Gebeta Maps", 
-    logo: gebetamaps,
-    description: "Ethiopia's digital mapping solution",
-    website: "https://gebeta.app/",
-    badge: silverBadge
-  }
-];
+// const platinumSponsors = [
+//   { 
+//     name: "ALX", 
+//     logo: alx,
+//     description: "Leading tech education platform empowering the next generation of African tech talent.",
+//     website: "https://www.alxafrica.com/",
+//     badge: platinumBadge
+//   },
+//   { 
+//     name: "SandTechnologies", 
+//     logo: sand,
+//     description: "Innovative software solutions provider specializing in enterprise applications.",
+//     website: "https://www.sandtechnologies.com/",
+//     badge: platinumBadge
+//   },
+//   { 
+//     name: "Chapa", 
+//     logo: chapa,
+//     description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
+//     website: "https://chapa.co/",
+//     badge: platinumBadge
+//   },
+//   { 
+//     name: "Addis Software", 
+//     logo: addis,
+//     description: "Leading software development company in Ethiopia",
+//     website: "https://addissoftware.com/",
+//     badge: silverBadge
+//   },
+//   { 
+//     name: "Gebeta Maps", 
+//     logo: gebetamaps,
+//     description: "Ethiopia's digital mapping solution",
+//     website: "https://gebeta.app/",
+//     badge: silverBadge
+//   }
+// ];
 
 const organizers = [
   {
@@ -218,7 +219,7 @@ function V1() {
           </div>
         </motion.div>
 
-        {/* Sponsors Section */}
+        {/* Sponsors Section
         <section className="max-w-7xl mx-auto px-4 py-16">
           <h2 className="text-2xl font-semibold text-indigo-600 mb-12 text-center">Our Sponsors</h2>
           <div className="w-full">
@@ -280,6 +281,12 @@ function V1() {
               ))}
             </Swiper>
           </div>
+        </section> */}
+
+        <section>
+       <EventSponsors/>
+
+
         </section>
 
         {/* Organizers Section */}

@@ -21,13 +21,13 @@ import gebetamaps from "../assets/gebetamaps.jpg"
 import avatar1 from "../assets/avatar1.jpg"
 import avatar2 from "../assets/avatar2.jpg"
 import avatar3 from "../assets/avatar3.jpg"
-import platinumBadge from "../assets/platinum-badge.svg"
-import goldBadge from "../assets/gold-badge.svg"
-import silverBadge from "../assets/silver-badge.svg"
+// import platinumBadge from "../assets/platinum-badge.svg"
+// import goldBadge from "../assets/gold-badge.svg"
+// import silverBadge from "../assets/silver-badge.svg"
+import EventSponsors from "../components/EventSponsors";
 
 const eventDetails = [
   { label: "Organizers:", value: "CodeNight & TechHub" },
-  { label: "Sponsors:", value: "Vercel, GitHub, MongoDB" },
   { label: "Venue:", value: "Hybrid (Online & In-person)" },
   { label: "Date:", value: "February 24, 2024" },
   { label: "Participants:", value: "200+" },
@@ -36,54 +36,54 @@ const eventDetails = [
 
 const galleryImages = [disscusion, ppl, food, guest]
 
-const platinumSponsors = [
-  { 
-    name: "ALX", 
-    logo: alx, 
-    description: "Leading tech education platform empowering the next generation of African tech talent.",
-    website: "https://www.alxafrica.com/",
-    badge: platinumBadge
-  },
-  { 
-    name: "SandTechnologies", 
-    logo: sand, 
-    description: "Innovative software solutions provider specializing in enterprise applications.",
-    website: "https://www.sandtechnologies.com/",
-    badge: platinumBadge
-  },
-  { 
-    name: "Chapa", 
-    logo: chapa, 
-    description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
-    website: "https://chapa.co/",
-    badge: platinumBadge
-  },
-  { 
-    name: "Addis Software", 
-    logo: addis,
-    description: "Leading software development company in Ethiopia",
-    website: "https://addissoftware.com/",
-    badge: silverBadge
-  },
-  { 
-    name: "Gebeta Maps", 
-    logo: gebetamaps,
-    description: "Ethiopia's digital mapping solution",
-    website: "https://gebeta.app/",
-    badge: silverBadge
-  }
-];
+// const platinumSponsors = [
+//   { 
+//     name: "ALX", 
+//     logo: alx, 
+//     description: "Leading tech education platform empowering the next generation of African tech talent.",
+//     website: "https://www.alxafrica.com/",
+//     badge: platinumBadge
+//   },
+//   { 
+//     name: "SandTechnologies", 
+//     logo: sand, 
+//     description: "Innovative software solutions provider specializing in enterprise applications.",
+//     website: "https://www.sandtechnologies.com/",
+//     badge: platinumBadge
+//   },
+//   { 
+//     name: "Chapa", 
+//     logo: chapa, 
+//     description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
+//     website: "https://chapa.co/",
+//     badge: platinumBadge
+//   },
+//   { 
+//     name: "Addis Software", 
+//     logo: addis,
+//     description: "Leading software development company in Ethiopia",
+//     website: "https://addissoftware.com/",
+//     badge: silverBadge
+//   },
+//   { 
+//     name: "Gebeta Maps", 
+//     logo: gebetamaps,
+//     description: "Ethiopia's digital mapping solution",
+//     website: "https://gebeta.app/",
+//     badge: silverBadge
+//   }
+// ];
 
-const goldSponsors = [
-  { name: "Gold Sponsor 1", logo: "/placeholder-logo.png" },
-  { name: "Gold Sponsor 2", logo: "/placeholder-logo.png" },
-  { name: "Gold Sponsor 3", logo: "/placeholder-logo.png" }
-]
+// const goldSponsors = [
+//   { name: "Gold Sponsor 1", logo: "/placeholder-logo.png" },
+//   { name: "Gold Sponsor 2", logo: "/placeholder-logo.png" },
+//   { name: "Gold Sponsor 3", logo: "/placeholder-logo.png" }
+// ]
 
-const silverSponsors = [
-  { name: "Addis Software", logo: addis },
-  { name: "Gebeta Maps", logo: gebetamaps }
-]
+// const silverSponsors = [
+//   { name: "Addis Software", logo: addis },
+//   { name: "Gebeta Maps", logo: gebetamaps }
+// ]
 
 const organizers = [
   {
@@ -240,70 +240,12 @@ function V2() {
           ))}
         </div>
       </div>
-
-      {/* Sponsors Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-2xl font-semibold text-purple-600 mb-12 text-center">Our Sponsors</h2>
-        <div className="w-full">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-            className="sponsors-swiper !pb-14"
-          >
-            {platinumSponsors.map((sponsor, index) => (
-              <SwiperSlide key={index}>
-                <a 
-                  href={sponsor.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
-                    <div className="relative">
-                      <img 
-                        src={sponsor.badge} 
-                        alt={`${sponsor.name} badge`}
-                        className="absolute -top-2 -right-2 w-8 h-8"
-                      />
-                    </div>
-                    <div className="flex items-center justify-center mb-4 h-24">
-                      <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="max-h-full max-w-[80%] object-contain"
-                      />
-                    </div>
-                    <div className="text-center">
-                      <h4 className="font-semibold text-gray-800 mb-2">{sponsor.name}</h4>
-                      <p className="text-gray-600 text-sm">{sponsor.description}</p>
-                    </div>
-                  </div>
-                </a>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+      
+      <section>
+        <EventSponsors/>
       </section>
+
+     
 
       {/* Organizers Section */}
       <section className="mb-16 lg:px-">

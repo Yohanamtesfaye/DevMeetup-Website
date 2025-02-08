@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Instagram } from 'lucide-react';
+
 const SponsorCard = ({ sponsor }) => (
   <div className="min-w-[300px] max-w-[300px] bg-white shadow-lg rounded-xl p-6 m-4 flex flex-col items-center 
     transition-transform duration-200 ease-in-out hover:scale-105 overflow-hidden">
@@ -19,7 +20,6 @@ const SponsorCard = ({ sponsor }) => (
       {sponsor.description}
     </p>
 
-
     <div className="flex space-x-4 mt-auto">
       {sponsor.socials?.linkedin && (
         <a href={sponsor.socials.linkedin} target="_blank" rel="noopener noreferrer">
@@ -35,7 +35,6 @@ const SponsorCard = ({ sponsor }) => (
   </div>
 );
 
-
 const EventSponsors = () => {
   const sponsors = [
     {
@@ -49,7 +48,6 @@ const EventSponsors = () => {
       }
     },
 
-    
     {
       name: "Horan Tech",
       logo: "/src/assets/horan.jpg",
@@ -76,10 +74,14 @@ const EventSponsors = () => {
     <div className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">Our Sponsors</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {sponsors.map((sponsor, index) => (
-            <SponsorCard key={index} sponsor={sponsor} />
-          ))}
+
+        {/* Horizontal Scrolling Container */}
+        <div className="overflow-hidden relative">
+          <div className="flex animate-scroll space-x-6 pb-6">
+            {sponsors.concat(sponsors).map((sponsor, index) => (
+              <SponsorCard key={index} sponsor={sponsor} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
