@@ -1,10 +1,49 @@
-import { motion } from "framer-motion"
-import Button from "../components/ui/button"
-import Input from "../components/ui/input"
-import Textarea from "../components/ui/textarea"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { motion } from "framer-motion";
+import Button from "../components/ui/button";
+import Input from "../components/ui/input";
+import Textarea from "../components/ui/textarea";
+import { Mail, Phone, MapPin } from "lucide-react";
+import emailjs from 'emailjs-com';
+import { useState } from 'react';
 
 function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      'service_l28jg5a', // Replace with your EmailJS service ID
+      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+      formData,
+      'YOUR_USER_ID' // Replace with your EmailJS user ID
+    )
+    .then((response) => {
+      console.log('Email sent successfully!', response.status, response.text);
+      alert('Message sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    }, (error) => {
+      console.error('Failed to send email:', error);
+      alert('Failed to send message. Please try again.');
+    });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,18 +69,36 @@ function ContactUs() {
           >
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h2 className="text-2xl font-semibold mb-6 text-indigo-500">Get in Touch</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                  <Input type="text" placeholder="Your name" />
+                  <Input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Your name" 
+                    value={formData.name} 
+                    onChange={handleChange} 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                  <Input type="email" placeholder="your@email.com" />
+                  <Input 
+                    type="email" 
+                    name="email" 
+                    placeholder="your@email.com" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <Textarea placeholder="Your message" className="min-h-[150px]" />
+                  <Textarea 
+                    name="message" 
+                    placeholder="Your message" 
+                    className="min-h-[150px]" 
+                    value={formData.message} 
+                    onChange={handleChange} 
+                  />
                 </div>
                 <Button type="submit" className="w-full">
                   Send Message
@@ -105,8 +162,7 @@ function ContactUs() {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
-export default ContactUs
-
+export default ContactUs;
