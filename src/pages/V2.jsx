@@ -21,69 +21,29 @@ import gebetamaps from "../assets/gebetamaps.jpg"
 import avatar1 from "../assets/avatar1.jpg"
 import avatar2 from "../assets/avatar2.jpg"
 import avatar3 from "../assets/avatar3.jpg"
-import platinumBadge from "../assets/platinum-badge.svg"
-import goldBadge from "../assets/gold-badge.svg"
-import silverBadge from "../assets/silver-badge.svg"
+import organizer from "../assets/organizers.png"
+import lunch from "../assets/lunch.png"
+import QA from "../assets/Q&A.png"
+import EventSponsors from "../components/EventSponsors";
+import KeynoteSpeakers from "../components/KeynoteSpeakers";
+import EventDetails from "../components/EventDetails";
+import { eventData2, keynoteSpeakers, scheduleItems, volunteers } from "../data/eventData";
+import Gallery from "../components/Gallary";
+import EventSchedule from "../components/EventSchedule";
+import VolunteersSection from "../components/VolunteersSection";
+import EventHighlights from "../components/EventHighlights";
+import EventOrganizers from "../components/EventOrganizers";
 
 const eventDetails = [
   { label: "Organizers:", value: "CodeNight & TechHub" },
-  { label: "Sponsors:", value: "Vercel, GitHub, MongoDB" },
   { label: "Venue:", value: "Hybrid (Online & In-person)" },
   { label: "Date:", value: "February 24, 2024" },
   { label: "Participants:", value: "200+" },
   { label: "Highlights:", value: "Keynotes, Workshops, Networking" }
 ]
 
-const galleryImages = [disscusion, ppl, food, guest]
-
-const platinumSponsors = [
-  { 
-    name: "ALX", 
-    logo: alx, 
-    description: "Leading tech education platform empowering the next generation of African tech talent.",
-    website: "https://www.alxafrica.com/",
-    badge: platinumBadge
-  },
-  { 
-    name: "SandTechnologies", 
-    logo: sand, 
-    description: "Innovative software solutions provider specializing in enterprise applications.",
-    website: "https://www.sandtechnologies.com/",
-    badge: platinumBadge
-  },
-  { 
-    name: "Chapa", 
-    logo: chapa, 
-    description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
-    website: "https://chapa.co/",
-    badge: platinumBadge
-  },
-  { 
-    name: "Addis Software", 
-    logo: addis,
-    description: "Leading software development company in Ethiopia",
-    website: "https://addissoftware.com/",
-    badge: silverBadge
-  },
-  { 
-    name: "Gebeta Maps", 
-    logo: gebetamaps,
-    description: "Ethiopia's digital mapping solution",
-    website: "https://gebeta.app/",
-    badge: silverBadge
-  }
-];
-
-const goldSponsors = [
-  { name: "Gold Sponsor 1", logo: "/placeholder-logo.png" },
-  { name: "Gold Sponsor 2", logo: "/placeholder-logo.png" },
-  { name: "Gold Sponsor 3", logo: "/placeholder-logo.png" }
-]
-
-const silverSponsors = [
-  { name: "Addis Software", logo: addis },
-  { name: "Gebeta Maps", logo: gebetamaps }
-]
+const galleryImages= [food, disscusion, 
+  ppl,guest, organizer, QA];
 
 const organizers = [
   {
@@ -106,22 +66,6 @@ const organizers = [
   }
 ];
 
-const volunteers = [
-  {
-    team: "Technical Team",
-    members: [
-      { name: "John Doe", role: "Technical Support" },
-      { name: "Jane Smith", role: "Workshop Assistant" }
-    ]
-  },
-  {
-    team: "Event Management",
-    members: [
-      { name: "Alex Johnson", role: "Registration" },
-      { name: "Sarah Williams", role: "Venue Coordination" }
-    ]
-  }
-];
 
 const testimonials = [
   {
@@ -151,229 +95,50 @@ const testimonials = [
 ];
 
 function V2() {
-  return (
+  return (<>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen lg:px-16 bg-[#fefaff] pt-8 pb-16"
+      className="min-h-screen "
     >
       {/* Hero Section */}
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-3xl md:text-4xl font-bold text-center text-purple-600 mb-16"
-      >
-        DevMeetup V2: Expanding Horizons
-      </motion.h1>
-
+     
       {/* Event Details and Gallery Section */}
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className=" ">
+        <div className="flex flex-col">
+       
           {/* Event Details Column */}
-          <div>
-            <h2 className="text-2xl font-semibold text-purple-600 mb-8">Event Details</h2>
-            <div className="bg-white rounded-2xl shadow-md p-8">
-              <div className="space-y-6">
-                {eventDetails.map((detail, index) => (
-                  <div key={index} className="flex border-b border-gray-100 pb-4">
-                    <span className="text-purple-600 font-medium w-32">{detail.label}</span>
-                    <span className="text-gray-600">{detail.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Gallery Column */}
-          <div>
-            <h2 className="text-2xl font-semibold text-purple-600 mb-8">Gallery</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {galleryImages.slice(0, 4).map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-xl">
-                  <img
-                    src={image}
-                    alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <section>
+            <EventDetails  data = {eventData2}/>
+          </section>
+ 
         </div>
       </div>
-
-      {/* Event Highlights Section */}
-      <div className="max-w-7xl mx-auto px-4 mb-16 pt-24">
-        <h2 className="text-2xl font-semibold text-purple-600 mb-12 text-center">Event Highlights</h2>
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-          {[
-            {
-              title: "Keynote Presentations",
-              description:
-                "Industry experts shared insights on emerging technologies, cloud architecture, and AI innovations.",
-            },
-            {
-              title: "Hands-on Workshops",
-              description:
-                "Practical sessions on modern development tools, frameworks, and best practices.",
-            },
-            {
-              title: "Hackathon",
-              description:
-                "Teams collaborated to build innovative solutions during our 24-hour coding challenge.",
-            },
-            {
-              title: "Networking Events",
-              description:
-                "Both in-person and virtual networking opportunities to connect with fellow developers.",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="p-6 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors duration-200"
-            >
-              <h3 className="text-lg font-medium text-purple-600 mb-2">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Sponsors Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-2xl font-semibold text-purple-600 mb-12 text-center">Our Sponsors</h2>
-        <div className="w-full">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-            className="sponsors-swiper !pb-14"
-          >
-            {platinumSponsors.map((sponsor, index) => (
-              <SwiperSlide key={index}>
-                <a 
-                  href={sponsor.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
-                    <div className="relative">
-                      <img 
-                        src={sponsor.badge} 
-                        alt={`${sponsor.name} badge`}
-                        className="absolute -top-2 -right-2 w-8 h-8"
-                      />
-                    </div>
-                    <div className="flex items-center justify-center mb-4 h-24">
-                      <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="max-h-full max-w-[80%] object-contain"
-                      />
-                    </div>
-                    <div className="text-center">
-                      <h4 className="font-semibold text-gray-800 mb-2">{sponsor.name}</h4>
-                      <p className="text-gray-600 text-sm">{sponsor.description}</p>
-                    </div>
-                  </div>
-                </a>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+      <section>
+       <EventSchedule scheduleItems={scheduleItems}/>
+      </section>
+      
+      <section>
+        <EventHighlights/>
       </section>
 
-      {/* Organizers Section */}
-      <section className="mb-16 lg:px-">
-        <motion.h2
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl font-semibold mb-8 text-center text-purple-600"
-        >
-          Meet Our Organizers
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {organizers.map((organizer, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="flex flex-col items-center">
-                <img
-                  src={organizer.avatar}
-                  alt={organizer.name}
-                  className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-purple-100"
-                />
-                <h3 className="text-xl font-semibold text-purple-600 mb-1">{organizer.name}</h3>
-                <p className="text-gray-600 font-medium mb-2">{organizer.role}</p>
-                <p className="text-gray-500 text-center">{organizer.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+     
+      <KeynoteSpeakers speakers={keynoteSpeakers}/>
+      
+      <section className="w-full overflow-hidden">  
+        <EventSponsors/>
       </section>
 
-      {/* Volunteers Section */}
-      <section className="mb-16">
-        <motion.h2
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl font-semibold mb-8 text-center text-purple-600"
-        >
-          Our Volunteers
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto amx-md:px-4">
-          {volunteers.map((team, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg p-8"
-            >
-              <h3 className="text-xl font-semibold text-purple-600 mb-6">{team.team}</h3>
-              <div className="space-y-4">
-                {team.members.map((member, memberIndex) => (
-                  <div
-                    key={memberIndex}
-                    className="flex items-center justify-between p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors duration-200"
-                  >
-                    <span className="font-medium text-gray-800">{member.name}</span>
-                    <span className="text-purple-600">{member.role}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+     <section>
+      <EventOrganizers/>
+     </section>
+
+      
+
+     <section>
+      <VolunteersSection volunteers={volunteers}/>
+     </section>
 
       {/* Testimonials Section */}
       <section className="mb-8 sm:mb-12">
@@ -409,7 +174,7 @@ function V2() {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
+                <div className="bg-white rounded-xl   p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <img
                       src={testimonial.image}
@@ -433,7 +198,12 @@ function V2() {
         </div>
       </section>
     </motion.div>
-  )
+    <section className="m-10">
+            <Gallery galleryImages={galleryImages}/>
+    </section>
+
+    
+ </> )
 }
 
 export default V2

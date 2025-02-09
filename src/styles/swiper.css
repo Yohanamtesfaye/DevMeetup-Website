@@ -34,7 +34,7 @@
   padding: 4px;
 }
 
-/* Add shadow to active slide */
+/* Add    to active slide */
 .testimonials-swiper .swiper-slide-active {
   transform: translateY(-5px);
   transition: transform 0.3s ease;

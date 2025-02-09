@@ -16,49 +16,10 @@ import sand from "../assets/sand.jpg";
 import chapa from "../assets/chapa.jpg";
 import addis from "../assets/addis.jpg";
 import gebetamaps from "../assets/gebetamaps.jpg";
+import EventSponsors from "../components/EventSponsors";
 
-const sponsors = [
-  {
-    name: "Horan",
-    logo: sand,
-    description: "Leading tech education platform empowering the next generation of African tech talent.",
-    website: "https://www.horansoftware.com/",
-    badge: platinumBadge,
-    tier: "platinum",
-  },
-  {
-    name: "SandTechnologies",
-    logo: sand,
-    description: "Innovative software solutions provider specializing in enterprise applications.",
-    website: "https://www.sandtechnologies.com/",
-    badge: platinumBadge,
-    tier: "platinum",
-  },
-  {
-    name: "Chapa",
-    logo: chapa,
-    description: "Ethiopia's premier digital payment gateway revolutionizing financial transactions.",
-    website: "https://chapa.co/",
-    badge: platinumBadge,
-    tier: "platinum",
-  },
-  {
-    name: "Addis Software",
-    logo: addis,
-    description: "Leading software development company in Ethiopia",
-    website: "https://addissoftware.com/",
-    badge: silverBadge,
-    tier: "silver",
-  },
-  {
-    name: "Gebeta Maps",
-    logo: gebetamaps,
-    description: "Ethiopia's digital mapping solution",
-    website: "https://gebeta.app/",
-    badge: silverBadge,
-    tier: "silver",
-  },
-];
+
+  
 
 const highlights = [
   { title: "Expert Speakers", description: "Learn from industry leaders and innovators", icon: "🎤" },
@@ -76,17 +37,9 @@ const highlights = [
   { title: "Career Fair", description: "Meet top tech companies and explore job opportunities", icon: "💼" },
 ];
 
-// Define styles for sponsor tiers
-const tierStyles = {
-  platinum: "bg-gradient-to-r from-purple-600 to-indigo-600 text-white",
-  gold: "bg-gradient-to-r from-yellow-500 to-orange-500 text-white",
-  silver: "bg-gradient-to-r from-gray-400 to-gray-600 text-white",
-};
+
 
 function Home() {
-  const SPONSORS_PER_SLIDE = 4; // Number of sponsors to show per slide
-  const totalSlides = Math.ceil(sponsors.length / SPONSORS_PER_SLIDE); // Calculate total slides
-  const [currentSlide, setCurrentSlide] = useState(0); // Initialize currentSlide state
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
@@ -94,8 +47,8 @@ function Home() {
         {/* Hero Section */}
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
-          <div className="max-w-7xl mx-auto sm:px-6 lg:px-16">
-            <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
+          <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div className="relative   -xl sm:rounded-2xl sm:overflow-hidden">
               <div className="absolute inset-0">
                 <img
                   className="h-full w-full object-cover"
@@ -117,13 +70,13 @@ function Home() {
                   <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                     <Link
                       to="/register"
-                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8 transition duration-300 ease-in-out"
+                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md   -sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8 transition duration-300 ease-in-out"
                     >
                       Register for V3
                     </Link>
                     <Link
                       to="/v3"
-                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8 transition duration-300 ease-in-out"
+                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md   -sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8 transition duration-300 ease-in-out"
                     >
                       Learn More
                     </Link>
@@ -155,7 +108,7 @@ function Home() {
               {highlights.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-white    rounded-lg hover:  -xl transition-all duration-300 transform hover:-translate-y-1"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -175,70 +128,10 @@ function Home() {
         {/* <Testimonials /> */}
 
         {/* Sponsors Section */}
-        <motion.section
-          className="bg-indigo-50 py-16 sm:py-24"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <section className="bg-indigo-50 lg:px-16 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-extrabold text-indigo-600 text-center mb-12">Our Sponsors</h2>
+        <section className="w-full overflow-hidden">
+        <EventSponsors/>
 
-              <div className="relative h-[290px]">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0"
-                  >
-                    <div className="grid grid-cols-2 gap-8">
-                      {sponsors
-                        .slice(currentSlide * SPONSORS_PER_SLIDE, currentSlide * SPONSORS_PER_SLIDE + SPONSORS_PER_SLIDE)
-                        .map((sponsor) => (
-                          <div
-                            key={sponsor.name}
-                            className="flex flex-col justify-center items-center bg-white p-6 rounded-lg shadow-md relative hover:shadow-xl transition-shadow duration-300"
-                          >
-                            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                              <span
-                                className={`inline-block px-3 py-1 text-xs font-semibold rounded-full capitalize ${tierStyles[sponsor.tier]}`}
-                              >
-                                {sponsor.tier}
-                              </span>
-                            </div>
-                            <img
-                              className="h-12 object-contain mb-4"
-                              src={sponsor.logo || "/placeholder.svg"}
-                              alt={`${sponsor.name} - ${sponsor.tier} sponsor`}
-                            />
-                            <span className="text-sm text-gray-600 font-medium">{sponsor.name}</span>
-                          </div>
-                        ))}
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Slide indicators */}
-              <div className="flex justify-center space-x-2 mt-8">
-                {[...Array(totalSlides)].map((_, index) => (
-                  <button
-                    key={index}
-                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                      currentSlide === index ? "bg-indigo-600" : "bg-indigo-200"
-                    }`}
-                    onClick={() => setCurrentSlide(index)}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
-        </motion.section>
+        </section>
 
         {/* Call to Action */}
         <motion.section
