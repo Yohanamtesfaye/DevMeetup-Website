@@ -99,7 +99,7 @@ function SponsorUs() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl   p-8">
             <h2 className="text-2xl font-semibold mb-6 text-indigo-500 text-center">Custom Sponsorship</h2>
             <p className="text-gray-600 text-center mb-6">
               Looking for a different sponsorship package? We're happy to create a custom solution that meets your

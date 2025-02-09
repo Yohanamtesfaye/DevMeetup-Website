@@ -63,7 +63,7 @@ const Chat = () => {
 
       {/* Chat Container */}
       <div className="container mx-auto max-w-4xl px-4 py-6">
-        <div className="bg-white rounded-lg shadow-lg">
+        <div className="bg-white rounded-lg  ">
           {/* Messages */}
           <div className="h-[600px] overflow-y-auto p-6">
             {messages.map((msg) => (

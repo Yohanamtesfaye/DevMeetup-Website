@@ -5,17 +5,18 @@ import food from "../assets/food.jpg"
 import guest from "../assets/guest.jpg"
 import alx from "../assets/alx.jpg"
 import sand from "../assets/sand.jpg"
+
 import chapa from "../assets/chapa.jpg"
 import addis from "../assets/addis.jpg"
 import gebetamaps from "../assets/gebetamaps.jpg"
 import avatar1 from "../assets/avatar1.jpg"
 import avatar2 from "../assets/avatar2.jpg"
 import avatar3 from "../assets/avatar3.jpg"
-// import platinumBadge from "../assets/platinum-badge.svg"
-// import goldBadge from "../assets/gold-badge.svg"
-// import silverBadge from "../assets/silver-badge.svg"
-import chapi from "../assets/chapi.jpg"
+import organizer from "../assets/organizers.png"
+
+import QA from "../assets/Q&A.png"
 import dagi from "../assets/dagi.jpeg"
+import chapi from "../assets/chapi.jpg"
 import luna from "../assets/luna.jpg"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -24,6 +25,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '../styles/swiper.css';
 import EventSponsors from "../components/EventSponsors"
+import KeynoteSpeakers from "../components/KeynoteSpeakers"
+import EventDetails from "../components/EventDetails";
+import { eventData, keynoteSpeakers, scheduleItems, volunteerItems } from "../data/eventData"
+import EventSchedule from "../components/EventSchedule"
+import Volunteers from "../components/Volunteers"
+import Gallery from "../components/Gallary"
 
 const eventDetails = [
   { label: "Organizers", value: "CodeNight" },
@@ -34,7 +41,7 @@ const eventDetails = [
   { label: "Highlights", value: "Talks, Workshops, Networking" },
 ]
 
-const galleryImages = [disscusion, ppl, food, guest]
+// const galleryImages = [disscusion, ppl, food, guest]
 
 // const platinumSponsors = [
 //   { 
@@ -94,6 +101,8 @@ const organizers = [
     description: "Community Manager"
   }
 ];
+const galleryImages= [food, disscusion, 
+  ppl,guest, organizer, QA];
 
 const volunteers = [
   {
@@ -113,7 +122,7 @@ const volunteers = [
 ]
 
 function V1() {
-  return (
+  return (<>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -130,14 +139,20 @@ function V1() {
           DevMeetup V1: The Beginning
         </motion.h1>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <motion.div
+        <div className="flex flex-col">
+        <section>
+            <EventDetails  data = {eventData}/>
+          </section>
+          <section>
+            <EventSchedule scheduleItems={scheduleItems}/>
+          </section>
+          {/* <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl font-semibold mb-6 text-indigo-500">Event Details</h2>
-            <ul className="space-y-4 bg-white shadow-lg rounded-lg overflow-hidden">
+            <ul className="space-y-4 bg-white   rounded-lg overflow-hidden">
               {eventDetails.map((detail, index) => (
                 <motion.li
                   key={index}
@@ -166,7 +181,7 @@ function V1() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                  className="relative overflow-hidden rounded-lg   -md hover:  transition-   duration-300"
                 >
                   <img
                     src={image || "/placeholder.svg"}
@@ -176,7 +191,7 @@ function V1() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Event Highlights Section */}
@@ -187,7 +202,7 @@ function V1() {
           className="max-w-7xl mx-auto mb-16 pt-24"
         >
           <h2 className="text-2xl font-semibold mb-12 text-center text-indigo-500">Event Highlights</h2>
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="bg-white   rounded-lg overflow-hidden">
             {[
               {
                 title: "Keynote Speakers",
@@ -218,6 +233,9 @@ function V1() {
             ))}
           </div>
         </motion.div>
+        <br />
+        <br />
+        <KeynoteSpeakers speakers={keynoteSpeakers}/>
 
         {/* Sponsors Section
         <section className="max-w-7xl mx-auto px-4 py-16">
@@ -256,7 +274,7 @@ function V1() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <div className="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
+                    <div className="bg-white rounded-xl   p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
                       <div className="relative">
                         <img 
                           src={sponsor.badge} 
@@ -306,7 +324,7 @@ function V1() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="bg-white rounded-xl   p-6 transform transition-all duration-300 hover:-translate-y-1 hover:  -xl"
               >
                 <div className="flex flex-col items-center">
                   <img
@@ -324,41 +342,10 @@ function V1() {
         </section>
 
         {/* Volunteers Section */}
-        <section className="mb-16">
-          <motion.h2
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-3xl font-semibold mb-8 text-center text-indigo-600"
-          >
-            Our Volunteers
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {volunteers.map((team, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg p-6"
-              >
-                <h3 className="text-xl font-semibold text-indigo-600 mb-4">{team.team}</h3>
-                <div className="space-y-4">
-                  {team.members.map((member, memberIndex) => (
-                    <div
-                      key={memberIndex}
-                      className="flex items-center justify-between p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors duration-200"
-                    >
-                      <span className="font-medium text-gray-800">{member.name}</span>
-                      <span className="text-indigo-600">{member.role}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
+       
+       <section>
+        <Volunteers volunteers={volunteerItems}/>
+       </section>
         {/* Testimonials Section */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -414,7 +401,7 @@ function V1() {
                 },
               ].map((testimonial, index) => (
                 <SwiperSlide key={index}>
-                  <div className="bg-white rounded-2xl shadow-lg p-8 min-h-[280px] relative">
+                  <div className="bg-white rounded-2xl   p-8 min-h-[280px] relative">
                     <div className="flex items-center gap-4 mb-6">
                       <img
                         src={testimonial.image}
@@ -435,7 +422,10 @@ function V1() {
         </motion.div>
       </div>
     </motion.div>
-  )
+    <section>
+      <Gallery galleryImages={galleryImages}/>
+    </section>
+ </> )
 }
 
 export default V1
