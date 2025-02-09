@@ -3,7 +3,7 @@ import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const VolunteersSection = ({ volunteers }) => (
   <section className="py-8 lg:px-28 max-md:px-5 bg-gray-50">
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto ">
       <h2 className="text-2xl font-bold text-center mb-3">Our Volunteers</h2>
       <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
         Meet our amazing volunteers helping to make this event possible
