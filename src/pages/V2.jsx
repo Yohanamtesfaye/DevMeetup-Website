@@ -21,10 +21,18 @@ import gebetamaps from "../assets/gebetamaps.jpg"
 import avatar1 from "../assets/avatar1.jpg"
 import avatar2 from "../assets/avatar2.jpg"
 import avatar3 from "../assets/avatar3.jpg"
+import organizer from "../assets/organizers.png"
+import lunch from "../assets/lunch.png"
+import QA from "../assets/Q&A.png"
 // import platinumBadge from "../assets/platinum-badge.svg"
 // import goldBadge from "../assets/gold-badge.svg"
 // import silverBadge from "../assets/silver-badge.svg"
 import EventSponsors from "../components/EventSponsors";
+import KeynoteSpeakers from "../components/KeynoteSpeakers";
+import EventDetails from "../components/EventDetails";
+import { eventData, keynoteSpeakers, scheduleItems } from "../data/eventData";
+import Gallery from "../components/Gallary";
+import EventSchedule from "../components/EventSchedule";
 
 const eventDetails = [
   { label: "Organizers:", value: "CodeNight & TechHub" },
@@ -34,7 +42,10 @@ const eventDetails = [
   { label: "Highlights:", value: "Keynotes, Workshops, Networking" }
 ]
 
-const galleryImages = [disscusion, ppl, food, guest]
+const galleryImages= [food, disscusion, 
+  ppl,guest, organizer, QA];
+
+
 
 // const platinumSponsors = [
 //   { 
@@ -151,12 +162,12 @@ const testimonials = [
 ];
 
 function V2() {
-  return (
+  return (<>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen lg:px-16 bg-[#fefaff] pt-8 pb-16"
+      className="min-h-screen lg:px-16 pt-8 pb-16"
     >
       {/* Hero Section */}
       <motion.h1
@@ -169,12 +180,16 @@ function V2() {
       </motion.h1>
 
       {/* Event Details and Gallery Section */}
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl  mx-auto  px-4">
+        <div className="flex flex-col">
+       
           {/* Event Details Column */}
-          <div>
+          <section>
+            <EventDetails  data = {eventData}/>
+          </section>
+          {/* <div>
             <h2 className="text-2xl font-semibold text-purple-600 mb-8">Event Details</h2>
-            <div className="bg-white rounded-2xl shadow-md p-8">
+            <div className="bg-white rounded-2xl   -md p-8">
               <div className="space-y-6">
                 {eventDetails.map((detail, index) => (
                   <div key={index} className="flex border-b border-gray-100 pb-4">
@@ -184,9 +199,13 @@ function V2() {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
+       
 
           {/* Gallery Column */}
+        
+
+{/*         
           <div>
             <h2 className="text-2xl font-semibold text-purple-600 mb-8">Gallery</h2>
             <div className="grid grid-cols-2 gap-4">
@@ -200,14 +219,17 @@ function V2() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
+      <section>
+       <EventSchedule scheduleItems={scheduleItems}/>
+      </section>
 
       {/* Event Highlights Section */}
-      <div className="max-w-7xl mx-auto px-4 mb-16 pt-24">
+      <div className="max-w-7xl mx-auto ml-20 px-4 mb-16 pt-24">
         <h2 className="text-2xl font-semibold text-purple-600 mb-12 text-center">Event Highlights</h2>
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+        <div className="bg-white rounded-2xl overflow-hidden">
           {[
             {
               title: "Keynote Presentations",
@@ -240,6 +262,9 @@ function V2() {
           ))}
         </div>
       </div>
+      <br />
+      <br />
+      <KeynoteSpeakers speakers={keynoteSpeakers}/>
       
       <section>
         <EventSponsors/>
@@ -264,7 +289,7 @@ function V2() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="bg-white rounded-xl  p-6 transform transition-all duration-300 hover:-translate-y-1 hover:  -xl"
             >
               <div className="flex flex-col items-center">
                 <img
@@ -298,7 +323,7 @@ function V2() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg p-8"
+              className="bg-white rounded-xl   p-8"
             >
               <h3 className="text-xl font-semibold text-purple-600 mb-6">{team.team}</h3>
               <div className="space-y-4">
@@ -351,7 +376,7 @@ function V2() {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
+                <div className="bg-white rounded-xl   p-6 h-full flex flex-col transform transition-transform duration-300 hover:-translate-y-1">
                   <div className="flex items-center mb-4">
                     <img
                       src={testimonial.image}
@@ -375,7 +400,12 @@ function V2() {
         </div>
       </section>
     </motion.div>
-  )
+    <section className="m-10">
+            <Gallery galleryImages={galleryImages}/>
+    </section>
+
+    
+ </> )
 }
 
 export default V2

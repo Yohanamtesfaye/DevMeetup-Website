@@ -77,7 +77,7 @@ function AboutUs() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white rounded-xl   p-8">
               <h2 className="text-2xl font-semibold mb-4 text-indigo-500">Our Mission</h2>
               <p className="text-gray-600 leading-relaxed">
                 DevMeetup is dedicated to fostering a vibrant tech community in Ethiopia. We bring together developers,
@@ -85,7 +85,7 @@ function AboutUs() {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white rounded-xl   p-8">
               <h2 className="text-2xl font-semibold mb-4 text-indigo-500">Our Vision</h2>
               <p className="text-gray-600 leading-relaxed">
                 To become the premier tech community platform in Africa, empowering the next generation of tech leaders
@@ -99,7 +99,7 @@ function AboutUs() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="bg-white rounded-xl shadow-lg p-8 space-y-6">
+            <div className="bg-white rounded-xl   p-8 space-y-6">
               <h2 className="text-2xl font-semibold mb-6 text-indigo-500">What We Do</h2>
               {[
                 {
@@ -150,7 +150,7 @@ function AboutUs() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-xl shadow-lg"
+                className="group relative overflow-hidden rounded-xl  "
               >
                 <img
                   src={image.src || "/placeholder.svg"}
@@ -183,7 +183,7 @@ function AboutUs() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="bg-white rounded-xl   p-6 transform transition-all duration-300 hover:-translate-y-1 hover:  -xl"
               >
                 <div className="flex flex-col items-center">
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-indigo-100">
@@ -209,7 +209,7 @@ function AboutUs() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="mb-16"
         >
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl   p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { number: "5000+", label: "Community Members" },

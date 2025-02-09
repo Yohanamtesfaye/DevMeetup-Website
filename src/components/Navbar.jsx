@@ -6,7 +6,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-50 via-white to-indigo-50 shadow-lg border-b border-indigo-100">
+    <nav className="bg-gradient-to-r from-indigo-50 via-white to-indigo-50   border-b border-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -40,9 +40,9 @@ function Navbar() {
               animate={{
                 y: [0, -5, 0],
                 filter: [
-                  "drop-shadow(0 0 0px rgba(99, 102, 241, 0))",
-                  "drop-shadow(0 0 10px rgba(99, 102, 241, 0.5))",
-                  "drop-shadow(0 0 0px rgba(99, 102, 241, 0))"
+                  "drop-  (0 0 0px rgba(99, 102, 241, 0))",
+                  "drop-  (0 0 10px rgba(99, 102, 241, 0.5))",
+                  "drop-  (0 0 0px rgba(99, 102, 241, 0))"
                 ]
               }}
               transition={{

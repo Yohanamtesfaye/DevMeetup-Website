@@ -1,9 +1,20 @@
-export const eventDetails = {
-  name: "DevMeetup V3",
-  date: "March 15, 2025",
-  time: "9:00 AM - 6:00 PM",
-  location: "Tech Hub Conference Center, Addis Ababa"
+// eventData.js
+import avatar1 from "../assets/avatar1.jpg"
+import avatar3 from "../assets/avatar3.jpg"
+import avatar2 from "../assets/avatar2.jpg"
+import chapi from "../assets/chapi.jpg"
+import luna from "../assets/luna.jpg"
+import dagi from "../assets/dagi.jpeg"
+export const eventData = {
+  name: 'Meet The Futures of Ethiopia',
+  date: '2025-03-15',
+  time: '9:00 AM',
+  eventVenue: 'ALX Hub, Addis Ababa',
+  organizers: 'Codenight Community Admins',
+  participant: '150+ developers and tech professionals',
+  description: 'Join us for an exciting day of tech talks, workshops, and networking opportunities!'
 };
+
 
 export const scheduleItems = [
   {
@@ -313,5 +324,70 @@ export const sponsors = [
       linkedin: "https://www.linkedin.com/company/sand-technologies",
       instagram: "https://www.instagram.com/sand_technologies"
     }
+  }
+];
+
+
+export const volunteerItems = [
+  {
+    name: "John Doe",
+    image: avatar2,
+    role: "Technical Support",
+    description: "Provides technical assistance and support during the event.",
+    github: "https://github.com/johndoe",
+    twitter: "https://twitter.com/johndoe",
+    linkedin: "https://linkedin.com/in/johndoe"
+  },
+  {
+    name: "Jane Smith",
+    image: avatar2,
+    role: "Workshop Assistant",
+    description: "Assists in organizing and managing workshops.",
+    twitter: "https://twitter.com/janesmith",
+    linkedin: "https://linkedin.com/in/janesmith"
+  },
+  {
+    name: "Michael Brown",
+    image: avatar2,
+    role: "Registration Coordinator",
+    description: "Manages the registration process and attendee check-ins.",
+    twitter: "https://twitter.com/michaelbrown",
+    linkedin: "https://linkedin.com/in/michaelbrown"
+  },
+  {
+    name: "Emily Davis",
+    image: avatar2,
+    role: "Logistics Manager",
+    description: "Oversees logistics and ensures smooth operations.",
+    github: "https://github.com/emilydavis",
+    twitter: "https://twitter.com/emilydavis",
+    linkedin: "https://linkedin.com/in/emilydavis"
+  }
+];
+
+export const keynoteSpeakers = [
+  {
+    name: "Getnet Aseffa",
+    image: dagi,
+    title: "CEO & Founder at iCog Labs",
+    description: "Leading expert in AI and robotics, pioneering technological advancement in Ethiopia and Africa.",
+    linkedin: "https://www.linkedin.com/in/getnet-aseffa",
+    twitter: "https://twitter.com/getnetaseffa"
+  },
+  {
+    name: "Betelhem Dessie",
+    image: luna,
+    title: "CEO at Anyone Can Code",
+    description: "Tech prodigy and advocate for youth education in technology, inspiring the next generation of developers.",
+    linkedin: "https://www.linkedin.com/in/betelhem-dessie",
+    twitter: "https://twitter.com/betelhemdessiee"
+  },
+  {
+    name: "Chapi",
+    image: chapi,
+    title: "CTO at Qene Games",
+    description: "Gaming industry pioneer, leading the development of African-inspired games and fostering local talent.",
+    linkedin: "https://www.linkedin.com/in/nael-hailemariam",
+    github: "https://github.com/naelh"
   }
 ];

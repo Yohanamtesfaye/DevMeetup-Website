@@ -86,7 +86,7 @@ function HelpUs() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+          <div className="bg-white rounded-xl   p-8 text-center">
             <h2 className="text-2xl font-semibold mb-6 text-indigo-500">Have Other Ideas?</h2>
             <p className="text-gray-600 mb-6">
               We're always open to new ideas and ways to improve our community. If you have suggestions or want to

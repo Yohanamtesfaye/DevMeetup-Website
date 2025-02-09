@@ -67,7 +67,7 @@ function ContactUs() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white rounded-xl   p-8">
               <h2 className="text-2xl font-semibold mb-6 text-indigo-500">Get in Touch</h2>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
@@ -113,7 +113,7 @@ function ContactUs() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white rounded-xl   p-8">
               <h2 className="text-2xl font-semibold mb-6 text-indigo-500">Contact Information</h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -140,7 +140,7 @@ function ContactUs() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white rounded-xl   p-8">
               <h2 className="text-2xl font-semibold mb-6 text-indigo-500">Follow Us</h2>
               <div className="flex gap-4">
                 {[
