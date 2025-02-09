@@ -32,6 +32,7 @@ import Gallery from "../components/Gallary";
 import EventSchedule from "../components/EventSchedule";
 import VolunteersSection from "../components/VolunteersSection";
 import EventHighlights from "../components/EventHighlights";
+import EventOrganizers from "../components/EventOrganizers";
 
 const eventDetails = [
   { label: "Organizers:", value: "CodeNight & TechHub" },
@@ -129,41 +130,11 @@ function V2() {
         <EventSponsors/>
       </section>
 
-     
+     <section>
+      <EventOrganizers/>
+     </section>
 
-      {/* Organizers Section */}
-      <section className="mb-16 lg:px-">
-        <motion.h2
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl font-semibold mb-8 text-center text-purple-600"
-        >
-          Meet Our Organizers
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {organizers.map((organizer, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl  p-6 transform transition-all duration-300 hover:-translate-y-1 hover:  -xl"
-            >
-              <div className="flex flex-col items-center">
-                <img
-                  src={organizer.avatar}
-                  alt={organizer.name}
-                  className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-purple-100"
-                />
-                <h3 className="text-xl font-semibold text-purple-600 mb-1">{organizer.name}</h3>
-                <p className="text-gray-600 font-medium mb-2">{organizer.role}</p>
-                <p className="text-gray-500 text-center">{organizer.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      
 
      <section>
       <VolunteersSection volunteers={volunteers}/>
