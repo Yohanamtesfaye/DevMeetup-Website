@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const schedule = [
   { time: "9:00 AM", event: "Opening Keynote: The Future of Tech", speaker: "Jane Doe" },
@@ -7,7 +7,7 @@ const schedule = [
   { time: "1:30 PM", event: "Panel: Ethical AI Development", speaker: "Emily Johnson, Michael Chen" },
   { time: "3:00 PM", event: "Workshop: Building Scalable Cloud Solutions", speaker: "Michael Chen" },
   { time: "4:30 PM", event: "Closing Remarks & Networking Session" },
-]
+];
 
 function EventSchedule() {
   return (
@@ -19,7 +19,7 @@ function EventSchedule() {
     >
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-6 text-indigo-500">Schedule</h2>
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="bg-white shadow-lg rounded-lg">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
@@ -55,11 +55,8 @@ function EventSchedule() {
           </table>
         </div>
       </section>
-
-    
     </motion.div>
-  )
+  );
 }
 
-export default EventSchedule
-
+export default EventSchedule;

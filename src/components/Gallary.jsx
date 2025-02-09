@@ -6,7 +6,7 @@ const Gallery = ({ galleryImages }) => {
       <h2 className="text-4xl font-semibold flex justify-center text-purple-600 mb-8">Memories</h2>
       <div className="grid grid-cols-3 grid-rows-2 gap-6">
         {galleryImages.slice(0, 9).map((image, index) => (
-          <div key={index} className="overflow-hidden  h-80">
+          <div key={index} className=" h-80">
             <img
               src={image}
               alt={`Gallery image ${index + 1}`}

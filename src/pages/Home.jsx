@@ -155,7 +155,7 @@ function Home() {
               {highlights.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white overflow-hidden   rounded-lg hover:  -xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-white    rounded-lg hover:  -xl transition-all duration-300 transform hover:-translate-y-1"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
