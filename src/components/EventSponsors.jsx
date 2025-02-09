@@ -2,8 +2,8 @@ import React from 'react';
 import { Linkedin, Instagram } from 'lucide-react';
 
 const SponsorCard = ({ sponsor }) => (
-  <div className="min-w-[300px] max-w-[300px] bg-white   rounded-xl p-6 m-4 flex flex-col items-center 
-    transition-transform duration-200 ease-in-out hover:scale-105 ">
+  <div className="min-w-[300px] max-w-[300px] bg-white rounded-xl p-6 m-4 flex flex-col items-center 
+    transition-transform duration-200 ease-in-out hover:scale-105">
     <img src={sponsor.logo} alt={sponsor.name} className="w-32 h-32 object-contain mb-4" />
 
     <span className={`px-3 py-1 rounded-full text-white text-sm mb-1 ${
@@ -47,7 +47,6 @@ const EventSponsors = () => {
         instagram: "https://www.instagram.com/alx_ethiopia"
       }
     },
-
     {
       name: "Horan Tech",
       logo: "/src/assets/horan.jpg",
@@ -77,7 +76,7 @@ const EventSponsors = () => {
 
         {/* Horizontal Scrolling Container */}
         <div className="relative">
-          <div className="flex animate-scroll space-x-6 pb-6">
+          <div className="flex space-x-6 pb-6 overflow-x-auto scrollbar-hide">
             {sponsors.concat(sponsors).map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} />
             ))}
