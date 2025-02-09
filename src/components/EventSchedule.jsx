@@ -1,62 +1,120 @@
-import { motion } from "framer-motion";
+// "use client"
+
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const schedule = [
-  { time: "9:00 AM", event: "Opening Keynote: The Future of Tech", speaker: "Jane Doe" },
-  { time: "10:30 AM", event: "Workshop: Mastering React 18 Features", speaker: "John Smith" },
-  { time: "12:00 PM", event: "Lunch Break & Networking" },
-  { time: "1:30 PM", event: "Panel: Ethical AI Development", speaker: "Emily Johnson, Michael Chen" },
-  { time: "3:00 PM", event: "Workshop: Building Scalable Cloud Solutions", speaker: "Michael Chen" },
-  { time: "4:30 PM", event: "Closing Remarks & Networking Session" },
-];
+  {
+    time: "9:00 AM",
+    event: "Opening Keynote: The Future of Tech",
+    speaker: "Jane Doe",
+    description: "Explore cutting-edge technologies shaping our future.",
+  },
+  {
+    time: "10:30 AM",
+    event: "Workshop: Mastering React 18 Features",
+    speaker: "John Smith",
+    description: "Hands-on session covering the latest React 18 features and best practices.",
+  },
+  {
+    time: "12:00 PM",
+    event: "Lunch Break & Networking",
+    description: "Connect with fellow developers and industry professionals.",
+  },
+  {
+    time: "1:30 PM",
+    event: "Panel: Ethical AI Development",
+    speaker: "Emily Johnson, Michael Chen",
+    description: "Discuss ethical considerations in AI development and implementation.",
+  },
+  {
+    time: "3:00 PM",
+    event: "Workshop: Building Scalable Cloud Solutions",
+    speaker: "Michael Chen",
+    description: "Learn to design and implement scalable solutions using cloud technologies.",
+  },
+  {
+    time: "4:30 PM",
+    event: "Closing Remarks & Networking Session",
+    description: "Wrap up the event and continue building valuable connections.",
+  },
+]
 
 function EventSchedule() {
+  const [expandedItem, setExpandedItem] = useState(null)
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
       className="container mx-auto px-4 py-8"
     >
       <section className="mb-16">
-        <h2 className="text-3xl font-semibold mb-6 text-indigo-500">Schedule</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-indigo-600 text-center">Event Schedule</h2>
         <div className="bg-white shadow-lg rounded-lg">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Time
-                </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Event
-                </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Speaker
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {schedule.map((item, index) => (
-                <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.time}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.event}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.speaker || "-"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {schedule.map((item, index) => (
+            <motion.div
+              key={index}
+              className={`border-b border-gray-200 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+              initial={false}
+              animate={{ backgroundColor: expandedItem === index ? "#EEF2FF" : "inherit" }}
+              transition={{ duration: 0.3 }}
+            >
+              <div
+                className="px-6 py-4 sm:flex sm:justify-between sm:items-center cursor-pointer hover:bg-indigo-50 transition-colors duration-150 ease-in-out"
+                onClick={() => setExpandedItem(expandedItem === index ? null : index)}
+              >
+                <div className="mb-2 sm:mb-0">
+                  <p className="text-sm font-medium text-gray-600">{item.time}</p>
+                  <h3 className="text-lg font-semibold text-indigo-600">{item.event}</h3>
+                </div>
+                <div className="flex items-center">
+                  {item.speaker && <p className="text-sm text-gray-600 mr-4">{item.speaker}</p>}
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-indigo-500"
+                    animate={{ rotate: expandedItem === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </motion.svg>
+                </div>
+              </div>
+              <AnimatePresence>
+                {expandedItem === index && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 py-4 bg-indigo-50"
+                  >
+                    <p className="text-gray-700 mb-2">{item.description}</p>
+                    {item.speaker && (
+                      <p className="text-sm text-gray-600">
+                        <span className="font-semibold">Speaker(s):</span> {item.speaker}
+                      </p>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
         </div>
       </section>
     </motion.div>
-  );
+  )
 }
 
-export default EventSchedule;
+export default EventSchedule
+
