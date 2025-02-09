@@ -89,13 +89,13 @@ function EventSchedule() {
       transition={{ duration: 0.5 }}
       className="container mx-auto lg:px-20 py-8"
     >
-      <section className="mb-16">
+      <section className="mb-16 ">
         <h2 className="text-3xl font-semibold mb-6 text-indigo-600 text-center">Event Schedule</h2>
-        <div className="bg-white shadow-lg rounded-lg">
+        <div className="bg-white max-md:mx-5  shadow-lg rounded-lg">
           {schedule.map((item, index) => (
             <motion.div
               key={index}
-              className={`border-b border-gray-200 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+              className={`border-b  border-gray-200 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
               initial={false}
               animate={{ backgroundColor: expandedItem === index ? "#EEF2FF" : "inherit" }}
               transition={{ duration: 0.3 }}
