@@ -3,7 +3,7 @@ import { Linkedin, Instagram } from 'lucide-react';
 
 const SponsorCard = ({ sponsor }) => (
   <div className="min-w-[300px] max-w-[300px] bg-white   rounded-xl p-6 m-4 flex flex-col items-center 
-    transition-transform duration-200 ease-in-out hover:scale-105 overflow-hidden">
+    transition-transform duration-200 ease-in-out hover:scale-105 ">
     <img src={sponsor.logo} alt={sponsor.name} className="w-32 h-32 object-contain mb-4" />
 
     <span className={`px-3 py-1 rounded-full text-white text-sm mb-1 ${
@@ -76,7 +76,7 @@ const EventSponsors = () => {
         <h2 className="text-3xl font-bold text-center mb-8">Our Sponsors</h2>
 
         {/* Horizontal Scrolling Container */}
-        <div className="overflow-hidden relative">
+        <div className="relative">
           <div className="flex animate-scroll space-x-6 pb-6">
             {sponsors.concat(sponsors).map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} />
