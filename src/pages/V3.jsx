@@ -78,9 +78,9 @@ const V3 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-12">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white pb-12">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-16">
+      <section className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-8">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">

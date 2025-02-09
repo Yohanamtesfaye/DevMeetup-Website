@@ -202,7 +202,7 @@ function V1() {
           className="max-w-7xl mx-auto mb-16 pt-24"
         >
           <h2 className="text-2xl font-semibold mb-12 text-center text-indigo-500">Event Highlights</h2>
-          <div className="bg-white   rounded-lg overflow-hidden">
+          <div className="bg-white   rounded-lg">
             {[
               {
                 title: "Keynote Speakers",
