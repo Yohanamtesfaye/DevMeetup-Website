@@ -34,8 +34,10 @@
   .testimonials-swiper .swiper-pagination-bullet-active {
     background: #4338CA;
   }
-  /* below are styles for the v1 page */
-  @keyframes scroll {
+  
+
+  /* below are  */
+    @keyframes scroll {
     0% {
       transform: translateX(0);
     }
@@ -47,8 +49,8 @@
   .animate-scroll {
     animation: scroll 15s linear infinite; /* Speed up to 15s */
   }
-
-    .scrollbar-hide::-webkit-scrollbar {
+  
+  .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
   
@@ -57,3 +59,10 @@
     scrollbar-width: none;  /* Firefox */
   }
   
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .snap-center {
+    scroll-snap-align: center;
+  }

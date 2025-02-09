@@ -2,9 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const EventDetails = ({ data }) => {
-  if (!data) {
-    return <div>Loading...</div>; // Handle loading state if no data is passed
-  }
+
 
   return (
     <motion.div 
@@ -14,9 +12,8 @@ const EventDetails = ({ data }) => {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <div className="w-full max-w-4xl space-y-6 text-white">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{data.name}</h1>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Everything started here</h2>
-        
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-4">{data.name}</h1>
+        <h1 className='text-2xl md:text-3xl font-extrabold mb-4'>{data.title}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-indigo-500 text-white shadow-lg p-6 md:p-10">
             <p className="text-lg md:text-xl mb-2">{data.date} | {data.time}</p>

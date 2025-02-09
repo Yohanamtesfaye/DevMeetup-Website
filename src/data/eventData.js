@@ -5,13 +5,24 @@ import avatar2 from "../assets/avatar2.jpg"
 import chapi from "../assets/chapi.jpg"
 import luna from "../assets/luna.jpg"
 import dagi from "../assets/dagi.jpeg"
-export const eventData = {
-  name: 'Meet The Futures of Ethiopia',
-  date: '2025-03-15',
+export const eventData1 = {
+  name: 'DevMeetup-V1',
+  title: 'Everything started here',
+  date: '2023-03-15',
   time: '9:00 AM',
   eventVenue: 'ALX Hub, Addis Ababa',
   organizers: 'Codenight Community Admins',
-  participant: '150+ developers and tech professionals',
+  participant: '90+ developers and tech professionals',
+  description: 'Join us for an exciting day of tech talks, workshops, and networking opportunities!'
+};
+export const eventData2 = {
+  name: 'DevMeetup-V2',
+  title: 'We are Back with Bigger Blast',
+  date: '2024-03-15',
+  time: '9:00 AM',
+  eventVenue: 'ALX Hub, Addis Ababa',
+  organizers: 'Codenight Community Admins',
+  participant: '200+ developers and tech professionals',
   description: 'Join us for an exciting day of tech talks, workshops, and networking opportunities!'
 };
 

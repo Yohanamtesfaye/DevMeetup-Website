@@ -16,7 +16,9 @@ const Gallery = ({ galleryImages }) => {
             <img
               src={image}
               alt={`Gallery image ${index + 1}`}
-              className={`w-full h-full object-cover ${clickedIndex === index ? 'grayscale-0' : 'grayscale'} cursor-pointer`}
+              className={`w-full h-full object-cover cursor-pointer ${
+                clickedIndex === index ? 'grayscale-0' : 'grayscale'
+              } md:hover:grayscale-0`}
               onClick={() => handleImageClick(index)}
             />
           </div>
