@@ -6,12 +6,12 @@ const EventDetails = ({ data }) => {
 
   return (
     <motion.div 
-      className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-center shadow-2xl p-4"
+      className="w-full py-4 flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-center shadow-2xl p-4"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="w-full max-w-4xl space-y-6 text-white">
+      <div className="w-full max-w-5xl space-y-6 text-white">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-4">{data.name}</h1>
         <h1 className='text-2xl md:text-3xl font-extrabold mb-4'>{data.title}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

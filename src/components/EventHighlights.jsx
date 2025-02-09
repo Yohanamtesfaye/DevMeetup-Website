@@ -25,9 +25,9 @@ const EventHighlights = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 mb-16 pt-24">
+    <div className="max-w-6xl mx-auto px-4 mb-16">
       <h2 className="text-3xl font-semibold text-purple-600 mb-12 text-center">Event Highlights</h2>
-      <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+      <div className="bg-white rounded-2xl shadow-lg">
         {highlights.map((item, index) => (
           <div
             key={index}

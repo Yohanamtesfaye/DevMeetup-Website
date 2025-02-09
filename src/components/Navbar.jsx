@@ -36,25 +36,10 @@ function Navbar() {
             <NavLink to="/v3">V3 Features</NavLink>
             <NavLink to="/about-us">About Us</NavLink>
             <NavLink to="/contact-us">Contact Us</NavLink>
-            <motion.div
-              animate={{
-                y: [0, -5, 0],
-                filter: [
-                  "drop-  (0 0 0px rgba(99, 102, 241, 0))",
-                  "drop-  (0 0 10px rgba(99, 102, 241, 0.5))",
-                  "drop-  (0 0 0px rgba(99, 102, 241, 0))"
-                ]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
               <NavLink to="/sponser-us" className="text-indigo-600 font-semibold">
                 Sponsor Us
               </NavLink>
-            </motion.div>
+           
             <NavLink to="/help-us">Help Us</NavLink>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">

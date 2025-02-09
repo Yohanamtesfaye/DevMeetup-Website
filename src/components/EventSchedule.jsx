@@ -87,7 +87,7 @@ function EventSchedule() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-4 py-8"
+      className="container mx-auto lg:px-20 py-8"
     >
       <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-6 text-indigo-600 text-center">Event Schedule</h2>

@@ -55,7 +55,7 @@ const EventOrganizers = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {organizers.map((organizer, index) => (
-            <div key={index} className="text-center rounded-xl p-4">
+            <div key={index} className="text-center shadow-lg rounded-xl p-4">
               <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
                 <img
                   src={organizer.image}

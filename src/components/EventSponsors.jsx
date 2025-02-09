@@ -2,7 +2,7 @@ import React from 'react';
 import { Linkedin, Instagram } from 'lucide-react';
 
 const SponsorCard = ({ sponsor }) => (
-  <div className="min-w-[300px] max-w-[300px] bg-white   rounded-xl p-6 m-4 flex flex-col items-center 
+  <div className="min-w-[300px]  max-w-[300px] bg-white   rounded-xl p-6 m-4 flex flex-col items-center 
     transition-transform duration-200 ease-in-out hover:scale-105 ">
     <img src={sponsor.logo} alt={sponsor.name} className="w-32 h-32 object-contain mb-4" />
 
