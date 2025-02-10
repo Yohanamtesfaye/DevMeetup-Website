@@ -31,21 +31,62 @@
   animation-play-state: paused;
 }
 
+/* Sponsor card styles */
+.sponsor-card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+}
+
+.sponsor-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.sponsor-card h3 {
+  margin: 0.5rem 0;
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.sponsor-card .social-links {
+  margin-top: auto;
+}
+
+.sponsor-card:hover .social-links {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Sponsor slideshow styles */
 .sponsor-swiper {
   padding: 20px 40px !important;
 }
 
-.sponsor-swiper .swiper-button-next,
-.sponsor-swiper .swiper-button-prev {
-  color: white;
+.swiper-button-next,
+.swiper-button-prev {
+  color: #4B5563 !important;
 }
 
-.sponsor-swiper .swiper-pagination-bullet {
-  background: white;
+.swiper-pagination-bullet {
+  background: #4B5563;
 }
 
-.sponsor-swiper .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   background: white;
 }
 

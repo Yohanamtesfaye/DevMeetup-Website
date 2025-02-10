@@ -79,83 +79,63 @@ const V3 = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="min-h-screen bg-gradient-to-br from-white to-gray-50"
-    >
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white pb-12">
       {/* Hero Section */}
-      <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        {/* Animated background elements */}
-        <motion.div
-          className="absolute w-64 h-64 bg-blue-50/50 rounded-full"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-            x: [-100, 100, -100],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div
-          className="absolute w-48 h-48 bg-gray-50/50 rounded-full"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-            x: [100, -100, 100],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        
-        {/* Main content */}
-        <div className="relative z-10 text-center px-4">
-          <motion.h1 
-            className="text-6xl md:text-8xl font-bold text-gray-800 mb-8"
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            DevMeetup V3
-          </motion.h1>
-          
-          <motion.p 
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto"
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Join us for the biggest developer event in Ethiopia
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button
+      <section className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-8">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              DevMeetup V3
+            </h1>
+            <p className="text-lg text-white/90 mb-4">
+              March 15, 2025 at Tech Hub Conference Center, Addis Ababa
+            </p>
+            <button 
               onClick={handleRegisterClick}
-              className="px-8 py-4 bg-gray-800 text-white rounded-full font-semibold hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all mb-6"
             >
               Register Now
             </button>
-            <button
-              onClick={handleChatClick}
-              className="px-8 py-4 bg-white text-gray-800 border-2 border-gray-200 rounded-full font-semibold hover:bg-gray-50 transition-colors duration-300 shadow-lg hover:shadow-xl"
+            <p className="text-sm text-white/80">Limited spots available!</p>
+          </div>
+          <div className="space-y-6 text-center">
+                <h3 className="text-lg font-semibold text-white text-center mb-2">Community Chat</h3>
+                <p className="text-sm text-white/80 text-center">Join the conversation in our V3 chat room</p>
+              </div>
+            </div>
+
+            <div 
+              onClick={() => scrollToSection(scheduleRef)}
+              className="group cursor-pointer"
             >
-              Join Chat
-            </button>
-          </motion.div>
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg hover:bg-white/20 transition-all">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <FaCalendarAlt className="text-white text-xl" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-white text-center mb-2">Event Details</h3>
+                <p className="text-sm text-white/80 text-center">View schedule and venue information</p>
+              </div>
+            </div>
+
+            <div 
+              onClick={() => scrollToSection(sponsorsRef)}
+              className="group cursor-pointer"
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg hover:bg-white/20 transition-all">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <FaStar className="text-white text-xl" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-white text-center mb-2">Event Sponsors</h3>
+                <p className="text-sm text-white/80 text-center">Meet the companies supporting our event</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Event Details Section */}
       
@@ -205,7 +185,7 @@ const V3 = () => {
  
 
  
-    </motion.div>
+    </div>
   );
 };
 

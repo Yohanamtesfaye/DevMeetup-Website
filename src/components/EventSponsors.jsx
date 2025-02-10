@@ -67,41 +67,71 @@ const EventSponsors = () => {
         linkedin: "https://www.linkedin.com/company/sand-technologies",
         instagram: "https://www.instagram.com/sand_technologies"
       }
+    },
+    {
+      name: "Gebeya Inc",
+      logo: "/src/assets/gebeya.jpg",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/gebeya",
+        instagram: "https://www.instagram.com/gebeyainc"
+      }
+    },
+    {
+      name: "10 Academy",
+      logo: "/src/assets/10academy.jpg",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/10academy",
+        instagram: "https://www.instagram.com/10academy"
+      }
     }
   ];
 
   return (
-    <div className="py-12 bg-gradient-to-br from-purple-600 to-purple-500">
+    <div className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 text-white">Our Sponsors</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Sponsors</h2>
         
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
-          slidesPerView="auto"
+          slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
-          loop={true}
-          className="sponsor-swiper"
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
+              slidesPerView: 2,
             },
             768: {
-              slidesPerView: 2,
-              spaceBetween: 30,
+              slidesPerView: 3,
             },
             1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
+              slidesPerView: 4,
             },
           }}
+          className="sponsor-swiper"
         >
           {sponsors.map((sponsor, index) => (
             <SwiperSlide key={index}>
-              <SponsorCard sponsor={sponsor} />
+              <div className="sponsor-card">
+                <img src={sponsor.logo} alt={sponsor.name} className="w-24 h-24 object-contain mb-4" />
+                <h3 className="text-lg font-semibold mb-2 text-gray-800">{sponsor.name}</h3>
+                <div className="flex justify-center space-x-4">
+                  {sponsor.socials?.linkedin && (
+                    <a href={sponsor.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-500">
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  )}
+                  {sponsor.socials?.instagram && (
+                    <a href={sponsor.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-500">
+                      <Instagram className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

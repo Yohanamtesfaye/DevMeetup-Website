@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const EventDetails = ({ data }) => {
-
-
   return (
     <motion.div 
       className="w-full py-4 flex items-center justify-center bg-gradient-to-br from-gray-50 to-white text-center shadow-lg p-4"
