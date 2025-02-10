@@ -99,6 +99,35 @@ const V3 = () => {
             <p className="text-sm text-white/80">Limited spots available!</p>
           </div>
           <div className="space-y-6 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+              DevMeetup V3
+            </h1>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button
+                onClick={() => scrollToSection(scheduleRef)}
+                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-full hover:opacity-90 transition-opacity"
+              >
+                Event Details
+              </button>
+              <button
+                onClick={() => scrollToSection(sponsorsRef)}
+                className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-full hover:opacity-90 transition-opacity"
+              >
+                Event Sponsors
+              </button>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div 
+              onClick={handleChatClick}
+              className="group cursor-pointer"
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg hover:bg-white/20 transition-all">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <FaComments className="text-white text-xl" />
+                  </div>
+                </div>
                 <h3 className="text-lg font-semibold text-white text-center mb-2">Community Chat</h3>
                 <p className="text-sm text-white/80 text-center">Join the conversation in our V3 chat room</p>
               </div>
