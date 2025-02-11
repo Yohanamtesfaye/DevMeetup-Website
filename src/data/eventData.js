@@ -5,6 +5,8 @@ import avatar2 from "../assets/avatar2.jpg"
 import chapi from "../assets/chapi.jpg"
 import luna from "../assets/luna.jpg"
 import dagi from "../assets/dagi.jpeg"
+import mirafe from "../assets/mirafe.jpg"
+import beek from "../assets/beek.jpg"
 export const eventData1 = {
   name: 'DevMeetup-V1',
   title: 'Everything started here',
@@ -36,7 +38,7 @@ export const scheduleItems = [
     type: "break"
   },
   {
-    time: "9:00 AM - 9:15 AM",
+    time: "10:00 AM - 10:15 AM",
     title: "Welcome & Opening Vibe",
     speaker: {
       name: "Mirafe Gebriel Marcos",
@@ -47,7 +49,7 @@ export const scheduleItems = [
     type: "keynote"
   },
   {
-    time: "9:15 AM - 9:45 AM",
+    time: "10:15 AM - 10:45 AM",
     title: "Digital Business Solutions & The Business Side",
     speaker: {
       name: "Meried Bekele",
@@ -58,7 +60,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "9:45 AM - 10:15 AM",
+    time: "10:45 AM - 11:15 AM",
     title: "Business Side of Development",
     speaker: {
       name: "Israel Goytom",
@@ -69,7 +71,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "10:15 AM - 10:45 AM",
+    time: "11:15 AM - 11:45 AM",
     title: "Turning Passion into Enterprise",
     speaker: {
       name: "Kidus Asfaw",
@@ -80,7 +82,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "10:45 AM - 11:15 AM",
+    time: "11:45 AM - 12:15 AM",
     title: "Mindset for Developers to Succeed",
     speaker: {
       name: "Beek Kefyalew",
@@ -91,7 +93,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "11:15 AM - 11:45 AM",
+    time: "12:15 AM - 12:45 AM",
     title: "Entrepreneurial Journey & Strategic Insights",
     speaker: {
       name: "Nebiyu Zekeriyas",
@@ -102,7 +104,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "11:45 AM - 12:15 PM",
+    time: "12:45 AM - 1:15 PM",
     title: "Panel Discussion: How to grow",
     speakers: [
       {
@@ -127,11 +129,6 @@ export const scheduleItems = [
         name: "Abdulrahman Omar",
         role: "Machine Learning Engineer",
         company: "SingularityNet"
-      },
-      {
-        name: "Solomon Kassa",
-        role: "CEO",
-        company: "1888EC"
       },
       {
         name: "Temkin Mengistu",
@@ -378,25 +375,25 @@ export const volunteerItems = [
 
 export const keynoteSpeakers = [
   {
-    name: "Getnet Aseffa",
-    image: dagi,
-    title: "CEO & Founder at iCog Labs",
-    description: "Leading expert in AI and robotics, pioneering technological advancement in Ethiopia and Africa.",
-    linkedin: "https://www.linkedin.com/in/getnet-aseffa",
-    twitter: "https://twitter.com/getnetaseffa"
+    name: "mirafe gebriel marcos ",
+    image: mirafe,
+    title: "Regional Director, African Leadership Group (ALG) / ALX",
+    description: "a leading technology skills provider offering programs in digital transformation, business intelligence, and entrepreneurship.",
+    linkedin: "https://www.linkedin.com/in/mirafegmarcos/",
+    twitter: "https://x.com/GMirafe"
   },
   {
-    name: "Betelhem Dessie",
-    image: luna,
-    title: "CEO at Anyone Can Code",
-    description: "Tech prodigy and advocate for youth education in technology, inspiring the next generation of developers.",
-    linkedin: "https://www.linkedin.com/in/betelhem-dessie",
-    twitter: "https://twitter.com/betelhemdessiee"
+    name: "Beek Kefyalew",
+    image: beek,
+    title: "CEO of OPENFLOW",
+    description: "Leading innovation in grant management solutions, driving OpenFlow's success with a commitment to excellence and efficiency.",
+    linkedin: "https://www.linkedin.com/in/beek-kefyalew/",
+    twitter: "https://twitter.com/"
   },
   {
-    name: "Chapi",
+    name: "someone",
     image: chapi,
-    title: "CTO at Qene Games",
+    title: "someone from safaricom",
     description: "Gaming industry pioneer, leading the development of African-inspired games and fostering local talent.",
     linkedin: "https://www.linkedin.com/in/nael-hailemariam",
     github: "https://github.com/naelh"
