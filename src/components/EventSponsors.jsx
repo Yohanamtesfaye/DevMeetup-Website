@@ -11,9 +11,10 @@ const SponsorCard = ({ sponsor }) => (
     transition-transform duration-200 ease-in-out hover:scale-105">
     <img src={sponsor.logo} alt={sponsor.name} className="w-32 h-32 object-contain mb-4" />
     <span className={`px-3 py-1 rounded-full text-white text-sm mb-1 ${
-      sponsor.level === 'Gold' ? 'bg-yellow-500' : 
+      sponsor.level === 'Platinum' ? 'bg-indigo-600' : 
       sponsor.level === 'Silver' ? 'bg-gray-400' : 
-      'bg-purple-500'
+      sponsor.level === 'Individual' ? 'bg-green-500' :
+      'bg-yellow-500'
     }`}>
       {sponsor.level}
     </span>
@@ -41,11 +42,51 @@ const EventSponsors = () => {
     {
       name: "ALX-Ethiopia",
       logo: "/src/assets/alx.jpg",
-      level: "Gold",
+      level: "Platinum",
       description: "Leading IT training in Ethiopia.",
       socials: {
         linkedin: "https://www.linkedin.com/company/alx-ethiopia",
         instagram: "https://www.instagram.com/alx_ethiopia"
+      }
+    },
+    {
+      name: "SAND Technologies",
+      logo: "/src/assets/sand.jpg",
+      level: "Platinum",
+      description: "Pioneering technology solutions for sustainable development.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/sand-technologies",
+        instagram: "https://www.instagram.com/sand_technologies"
+      }
+    },
+    {
+      name: "ICE Addis",
+      logo: "/src/assets/iceaddis.jpg-removebg-preview.png",
+      level: "Platinum",
+      description: "Innovation hub fostering tech entrepreneurship.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/iceaddis",
+        instagram: "https://www.instagram.com/iceaddis"
+      }
+    },
+    {
+      name: "Chapa",
+      logo: "/src/assets/chapa.jpg",
+      level: "Platinum",
+      description: "Leading payment solutions provider in Ethiopia.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/chapa",
+        instagram: "https://www.instagram.com/chapa"
+      }
+    },
+    {
+      name: "Convex",
+      logo: "/src/assets/convex-logo.png",
+      level: "Platinum",
+      description: "Innovative tech solutions provider.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/convex",
+        instagram: "https://www.instagram.com/convex"
       }
     },
     {
@@ -59,29 +100,13 @@ const EventSponsors = () => {
       }
     },
     {
-      name: "SAND Technologies",
-      logo: "/src/assets/sand.jpg",
-      level: "Bronze",
-      description: "Pioneering technology solutions for sustainable development.",
+      name: "Dagmawi Babi",
+      logo: "/src/assets/dagi.jpg",
+      level: "Individual",
+      description: "Individual Sponsor",
       socials: {
-        linkedin: "https://www.linkedin.com/company/sand-technologies",
-        instagram: "https://www.instagram.com/sand_technologies"
-      }
-    },
-    {
-      name: "Gebeya Inc",
-      logo: "/src/assets/gebeya.jpg",
-      socials: {
-        linkedin: "https://www.linkedin.com/company/gebeya",
-        instagram: "https://www.instagram.com/gebeyainc"
-      }
-    },
-    {
-      name: "10 Academy",
-      logo: "/src/assets/10academy.jpg",
-      socials: {
-        linkedin: "https://www.linkedin.com/company/10academy",
-        instagram: "https://www.instagram.com/10academy"
+        linkedin: "https://www.linkedin.com/in/dagmawi-babi",
+        instagram: "https://www.instagram.com/dagmawi.babi"
       }
     }
   ];
@@ -118,6 +143,16 @@ const EventSponsors = () => {
             <SwiperSlide key={index}>
               <div className="sponsor-card">
                 <img src={sponsor.logo} alt={sponsor.name} className="w-24 h-24 object-contain mb-4" />
+                {sponsor.level && (
+                  <span className={`px-3 py-1 rounded-full text-white text-sm mb-2 ${
+                    sponsor.level === 'Platinum' ? 'bg-indigo-600' : 
+                    sponsor.level === 'Silver' ? 'bg-gray-400' : 
+                    sponsor.level === 'Individual' ? 'bg-green-500' :
+                    'bg-yellow-500'
+                  }`}>
+                    {sponsor.level}
+                  </span>
+                )}
                 <h3 className="text-lg font-semibold mb-2 text-gray-800">{sponsor.name}</h3>
                 <div className="flex justify-center space-x-4">
                   {sponsor.socials?.linkedin && (

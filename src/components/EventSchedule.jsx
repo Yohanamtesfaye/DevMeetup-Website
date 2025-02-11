@@ -5,57 +5,51 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const schedule = [
   {
-    time: "9:00-9:15 AM",
+    time: "10:00-10:15 AM",
     event: "Welcome and Opening vibe",
     speaker: "Mirafe Gebriel Marcos",
     description: "Introduces ALX Ethiopia and its offerings, sets an energetic tone, and creates a vibrant morning vibe for the day.",
   },
   {
-    time: "9:15-9:45 AM",
+    time: "10:15-10:45 AM",
     event: "Digital Business Solutions & The Business Side",
     speaker: "Meried Bekele",
     description: "Discusses transforming business through digital solutions and shares strategic insights on how developers can thrive in today’s competitive market.",
   },
   {
-    time: "9:45-10:15 AM",
+    time: "10:45-11:15 AM",
     event: "Business Side of Development",
     speaker: "Israel Goytom",
     description: "Explores how Chapa evolved from a startup to a leading fintech in Ethiopia, highlighting the essential blend of technical expertise and business acumen.",
   },
   {
-    time: "10:15-10:45 AM",
+    time: "11:15-11:45 AM",   
     event: "Turning Passion into Enterprise",
     speaker: "Kidus Asfaw",
     description: "Explains how personal passion for technology can be transformed into a profitable business venture through innovative and sustainable solutions.",
   },
   {
-    time: "10:45-11:15 AM",
+    time: "11:45-12:15 PM",
     event: "Mindset for Developers to Succeed",
     speaker: "Addis Alemayew",
     description: "Outlines the essential mental frameworks and strategies that developers must adopt to excel both technically and in the business realm.",
   },
   {
-    time: "11:15-11:45 AM",
+    time: "12:15-12:45 PM",
     event: "Entrepreneurial Journey & Strategic Insights",
     speaker: "Nebiyu Zekeriyas",
     description: "Shares insights from his entrepreneurial journey, discussing challenges, successes, and strategic advice for emerging tech innovators in Ethiopia.",
   },
   {
-    time: "11:45-12:15 PM",
+    time: "12:45-1:15 PM",
     event: "Panel Discussion on: How to grow your company from 0 to Hero",
     speaker: "Leul Mekonnen, Abenezer Seifu",
     description: "Topic: Two tech giants in Ethiopia Hulugram and Gebeta Maps explain how they managed to scale up their business with a small team and how other companies can learn from the as well. ",
   },
   {
-    time: "12:15-1:15 PM",
-    event: "Lunch Break",
-    speaker: "Attendees and speakers",
-    description: "A full hour for lunch and informal networking.",
-  },
-  {
     time: "1:15-2:15 PM",
     event: "Panel Discussion on Artificial Intelligence",
-    speaker: "Hiruy, Abdurahman Omar, Solomon Kassa, Temkin Mengistu",
+    speaker: "Hiruy, Abdurahman Omar,Temkin Mengistu",
     description: "The Future of AI in Tech. Content: Focused discussion on emerging AI trends, practical applications, and the transformative impact of AI on technical development and business strategies. Each panelist provides their unique perspective on how AI is shaping the future of tech.",
   },
   {
