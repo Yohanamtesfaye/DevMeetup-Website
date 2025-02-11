@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
-const VolunteersSection = ({ volunteers }) => (
+constVolunteersSection = ({ volunteers }) => (
   <section className="py-8 px-28 bg-gray-50">
     <div className="container mx-auto px-4">
       <h2 className="text-2xl font-bold text-center mb-3">Our Volunteers</h2>

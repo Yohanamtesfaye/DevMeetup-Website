@@ -1,68 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
-
 .mobile-schedule-item {
-    @apply border-b border-gray-200 py-4;
-  }
-  
-  .mobile-schedule-item:last-child {
-    @apply border-b-0;
-  }
-  
-  .mobile-schedule-header {
-    @apply flex justify-between items-center cursor-pointer;
-  }
-  
-  .mobile-schedule-content {
-    @apply mt-2 text-sm text-gray-600;
-  }
-  
-  /* Swiper styles */
-  .testimonials-swiper {
-    padding: 20px 0 40px;
-  }
+  @apply border-b border-gray-200 py-4;    
+}
 
-  .testimonials-swiper .swiper-button-next,
-  .testimonials-swiper .swiper-button-prev {
-    color: #4F46E5;
-  }
+.mobile-schedule-item:last-child {             
+  @apply border-b-0;
+}
 
-  .testimonials-swiper .swiper-pagination-bullet {
-    background: #4F46E5;
-  }
+.mobile-schedule-header {
+  @apply flex justify-between items-center cursor-pointer;
+}
 
-  .testimonials-swiper .swiper-pagination-bullet-active {
-    background: #4338CA;
-  }
-  
+.mobile-schedule-content {
+  @apply mt-2 text-sm text-gray-600;  
+}
 
-  /* below are  */
-    @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+/* Swiper styles */
+.testimonials-swiper {
+  padding: 20px 0 40px;
+}
+
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: #4F46E5;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  background: #4F46E5;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: #4338CA;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .animate-scroll {
-    animation: scroll 15s linear infinite; /* Speed up to 15s */
+  100% {
+    transform: translateX(-100%);
   }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  
-  .snap-x {
-    scroll-snap-type: x mandatory;
-  }
-  
-  .snap-center {
-    scroll-snap-align: center;
-  }
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite; /* Speed up to 15s */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+/* Existing styles... */
+/* Existing styles... *//* Existing styles... */
+/* Existi
+/* Existing styles... */
+/* Existing styles... */.right-trapezoid {
+  position: relative;
+  width: 100%;
+  height: 120%; /* Make it even taller */
+  overflow: hidden;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%); /* Right trapezoid shape with hypotenuse pointing upwards */
+}
+
+
+.right-trapezoid {
+  position: relative;
+  width: 100%;
+  height: 120%; /* Make it even taller */
+  overflow: hidden;
+  clip-path: polygon(0% 100%, 25% 0%, 100% 0%, 100% 100%);
+
+
+
+
+  /* Adjusted right trapezoid shape */
+}.right-trapezoid {
+  position: relative;
+  width: 100%;
+  height: 120%; /* Make it even taller */
+  overflow: hidden;
+  clip-path: polygon(0% 100%, 30% 0%, 100% 0%, 100% 100%); /* Adjusted right trapezoid shape */
+}
+.right-trapezoid {
+  position: relative;
+  width: 100%;
+  height: 120%; /* Make it even taller */
+  overflow: hidden;
+  clip-path: polygon(0% 100%, 25% 0%, 100% 0%, 100% 100%); /* Adjusted right trapezoid shape */
+}
+
+.right-trapezoid-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: 2s ease-in-out, transform 2s ease-in-out; /* Smooth transition */
+  filter: grayscale(80%); /* Apply grayscale filter */
+  opacity: 0;
+}
+
+.right-trapezoid-inner.active {
+  opacity: 1;
+  transform: scale(1.05); /* Slight zoom effect */
+}

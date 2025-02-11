@@ -148,7 +148,7 @@ function NavLink({ to, children, className = "" }) {
       to={to}
       className={`group relative border-transparent hover:border-indigo-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-300 ${className}`}
     >
-      <span className="relative z-10 text-gray-600 group-hover:text-indigo-600 transition-colors duration-300">
+      <span className="relative z-10 text-gray-950 group-hover:text-indigo-600 transition-colors duration-300">
         {children}
       </span>
       <motion.span
