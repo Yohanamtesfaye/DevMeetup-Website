@@ -47,7 +47,7 @@ const V3 = () => {
   };
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
- 
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -56,34 +56,39 @@ const V3 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white pb-12">
+    <div className="min-h-screen bg-white pb-12 relative overflow-hidden">
 
       {/* Hero Section */}
       <section className="relative h-screen grid grid-cols-2 py-4">
         <div className="container mx-auto px-4 flex flex-col justify-between" style={{ height: '70%' }}>
           <div>
             <div className="text-center mt-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 italic" style={{ fontFamily: "'Shadows Into Light', cursive" }}>
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 italic" style={{ fontFamily: "'Shadows Into Light', cursive", background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
                 ET-Developers Meetup V3
               </h1>
-              <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 text-gray-700 mb-4" style={{ fontFamily: "'Caveat', cursive" }}>
+              <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 mb-4" style={{ fontFamily: "'Caveat', cursive", background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
                 The Epicenter Where Talent Meets Industry <br /> Leaders
               </p>
               <div className="flex flex-row gap-6 justify-center">
-              <button
+                <motion.button
                   onClick={handleRegisterClick}
-                  className="bg-gray-800 text-white mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-all mb-6"
+                  className="mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all mb-6"
+                  style={{ background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', color: 'white' }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   Register Now
-                </button>
+                </motion.button>
 
-                <button
+                <motion.button
                   onClick={handleSponser}
-                  className="bg-gray-800 text-white mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-all mb-6"
+                  className="mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all mb-6"
+                  style={{ background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', color: 'white' }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   Support US
-                </button>
-                
+                </motion.button>
               </div>
             </div>
             <div className="space-y-6 text-center pt-16">
