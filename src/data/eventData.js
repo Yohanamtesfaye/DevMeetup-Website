@@ -334,8 +334,7 @@ export const sponsors = [
     }
   }
 ];
-
-
+// this is the volunteer section of V1, v2 and v3
 export const volunteerItems = [
   {
     name: "John Doe",
@@ -371,6 +370,65 @@ export const volunteerItems = [
     twitter: "https://twitter.com/emilydavis",
     linkedin: "https://linkedin.com/in/emilydavis"
   }
+];
+
+
+export const volunteersV3 = [
+  {
+    name: "Yohana Mekuria",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQF7CHAL2dhCbg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730964323171?e=1744848000&v=beta&t=xgqMVBFSdxf-HoiZammA7keiA2QeJiAeESppkxjTDwE",
+    role: "Website Developement",
+    description: "building the website for the DevMeetup-v3 campaign",
+    github: "https://github.com/Yohanamtesfaye",
+    linkedin: "https://www.linkedin.com/in/yohana-mekuria-90607a2ab/",
+    twitter: "https://x.com/Yohanamtesfaye"
+  },
+  {
+    name: "Abrham Tilksew",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQEjqIlIZKasfQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1684688080290?e=1744848000&v=beta&t=GsGdr9XeYCrizrWF1FNg-mdGewpXvkJikKYmD-Wq-4A",
+    role: "Web Developement|Sponsership",
+    description: "building a wesbite for the DevMeetup-v3 campaign. Also volunteer in the sponsership team",
+    github: "https://github.com/Abrish-21",
+    linkedin: "https://www.linkedin.com/in/abrham28/",
+    twitter: "https://x.com/AbrhamTaye98",
+  },
+  {
+    name: "Sumeya Akmel",
+    image: "https://avatars.githubusercontent.com/u/155248042?v=4",
+    role: "Website Developement",
+    description: "building the website for the DevMeetup-v3 campaign",
+    github: "https://github.com/sumeya-ak",
+    linkedin: "https://www.linkedin.com/in/sumeya-akmel-2a3b9b270/",
+    twitter: "https://twitter.com/"
+  },
+  {
+    name: "Ruth Abiti",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEWVzj-vh9lDw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718301431897?e=1744848000&v=beta&t=GjzNhYhgLH_vQpPoLxjHnxhrAqkjC5x7AqNJznnVWLY",
+    role: "Sponsership Team",
+    description: "Reasearching potential sponsers and reaching out with proposals",
+    github: "https://github.com/dot-ruth",
+    twitter: "https://twitter.com/",
+    linkedin: "https://www.linkedin.com/in/ruth-abiti-b8b737313/"
+  },
+  {
+    name: "Medina Nesro",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQGylRCjI0FgoQ/profile-displayphoto-shrink_200_200/B4EZTN3.ifGgAY-/0/1738620792522?e=1744848000&v=beta&t=Onvs0bSEQJcq0ktYJx7sG30W5LfhqDFnXc07wPjgGrE",
+    role: "Logistics Manager",
+    description: "Oversees logistics and ensures smooth operations.",
+    github: "https://github.com/",
+    twitter: "https://twitter.com/",
+    linkedin: "https://www.linkedin.com/in/medina-nesro-297a44233/",
+  },
+  {
+    name: "Eyob Tilahun",
+    image: "https://avatars.githubusercontent.com/u/22914424?v=4",
+    role: "Graphics Designer",
+    description: "create different Graphics about devmeet-up v3 to be shared on across social medias",
+    github: "https://github.com/eyobtilahun",
+    twitter: "https://x.com/itseyobworld",
+    linkedin: "https://www.linkedin.com/in/eyobtilahun/"
+  }
+
 ];
 
 export const keynoteSpeakers = [

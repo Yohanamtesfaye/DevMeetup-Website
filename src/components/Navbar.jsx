@@ -6,7 +6,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-50 via-white to-indigo-50   border-b border-indigo-100">
+    <nav className="b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -33,7 +33,7 @@ function Navbar() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/v1">V1</NavLink>
             <NavLink to="/v2">V2</NavLink>
-            {/* <NavLink to="/v3">V3 Features</NavLink> */}
+            <NavLink to="/v3">V3 Features</NavLink>
             <NavLink to="/about-us">About Us</NavLink>
             <NavLink to="/contact-us">Contact Us</NavLink>
               <NavLink to="/sponser-us" className="text-indigo-600 font-semibold">
@@ -98,7 +98,7 @@ function Navbar() {
               }
             }}
           >
-            <div className="pt-2 pb-3 space-y-1 bg-white/80 backdrop-blur-sm">
+            <div className="">
               <MobileNavLink to="/" setIsOpen={setIsOpen}>
                 Home
               </MobileNavLink>
@@ -108,9 +108,9 @@ function Navbar() {
               <MobileNavLink to="/v2" setIsOpen={setIsOpen}>
                 V2
               </MobileNavLink>
-              {/* <MobileNavLink to="/v3" setIsOpen={setIsOpen}>
+              <MobileNavLink to="/v3" setIsOpen={setIsOpen}>
                 V3 Features
-              </MobileNavLink> */}
+              </MobileNavLink>
               <MobileNavLink to="/about-us" setIsOpen={setIsOpen}>
                 About Us
               </MobileNavLink>
@@ -152,7 +152,7 @@ function NavLink({ to, children, className = "" }) {
         {children}
       </span>
       <motion.span
-        className="absolute inset-0 bg-indigo-50 rounded-lg -z-0"
+        className="absolute inset-0rounded-lg -z-0"
         initial={{ scale: 0.8, opacity: 0 }}
         whileHover={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.2 }}
