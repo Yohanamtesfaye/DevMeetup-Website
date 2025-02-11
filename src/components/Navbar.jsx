@@ -33,7 +33,7 @@ function Navbar() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/v1">V1</NavLink>
             <NavLink to="/v2">V2</NavLink>
-            <NavLink to="/v3">V3 Features</NavLink>
+            {/* <NavLink to="/v3">V3 Features</NavLink> */}
             <NavLink to="/about-us">About Us</NavLink>
             <NavLink to="/contact-us">Contact Us</NavLink>
               <NavLink to="/sponser-us" className="text-indigo-600 font-semibold">
@@ -108,9 +108,9 @@ function Navbar() {
               <MobileNavLink to="/v2" setIsOpen={setIsOpen}>
                 V2
               </MobileNavLink>
-              <MobileNavLink to="/v3" setIsOpen={setIsOpen}>
+              {/* <MobileNavLink to="/v3" setIsOpen={setIsOpen}>
                 V3 Features
-              </MobileNavLink>
+              </MobileNavLink> */}
               <MobileNavLink to="/about-us" setIsOpen={setIsOpen}>
                 About Us
               </MobileNavLink>
