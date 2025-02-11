@@ -47,7 +47,7 @@ const V3 = () => {
   };
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -56,39 +56,34 @@ const V3 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white pb-12 relative overflow-hidden">
+    <div className="min-h-screen bg-white pb-12">
 
       {/* Hero Section */}
       <section className="relative h-screen grid grid-cols-2 py-4">
         <div className="container mx-auto px-4 flex flex-col justify-between" style={{ height: '70%' }}>
           <div>
             <div className="text-center mt-6">
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 italic" style={{ fontFamily: "'Shadows Into Light', cursive", background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 italic" style={{ fontFamily: "'Shadows Into Light', cursive" }}>
                 ET-Developers Meetup V3
               </h1>
-              <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 mb-4" style={{ fontFamily: "'Caveat', cursive", background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+              <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 text-gray-700 mb-4" style={{ fontFamily: "'Caveat', cursive" }}>
                 The Epicenter Where Talent Meets Industry <br /> Leaders
               </p>
               <div className="flex flex-row gap-6 justify-center">
-                <motion.button
+              <button
                   onClick={handleRegisterClick}
-                  className="mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all mb-6"
-                  style={{ background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', color: 'white' }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="bg-gray-800 text-white mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-all mb-6"
                 >
                   Register Now
-                </motion.button>
+                </button>
 
-                <motion.button
+                <button
                   onClick={handleSponser}
-                  className="mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all mb-6"
-                  style={{ background: 'linear-gradient(to right, #4f46e5, #8b5cf6)', color: 'white' }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="bg-gray-800 text-white mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-all mb-6"
                 >
                   Support US
-                </motion.button>
+                </button>
+                
               </div>
             </div>
             <div className="space-y-6 text-center pt-16">
@@ -97,7 +92,7 @@ const V3 = () => {
           </div>
         </div>
         <div className="relative flex flex-col h-full" style={{ height: '70%' }}>
-          <div className="first-row flex-grow bg-white flex items-center overflow-hidden justify-center">
+          <div className="first-row flex-grow bg-white flex items-center  justify-center">
             <div className="right-trapezoid">
               {images.map((image, index) => (
                 <div 
@@ -110,7 +105,7 @@ const V3 = () => {
           </div>
         </div>
          {/* Sponsors Section */}
-      <section className="w-full ml-15 top-95 absolute " style={{ height: '20%' }}>
+      <section className="w-full top-95 absolute " style={{ height: '20%' }}>
         <h2 className="text-2xl  font-bold text-gray-800 ml-52 mb-4">Powered by</h2>
         <div className="flex flex-wrap justify-start gap-4 w-full">
           {sponsorLogos.map((logo, index) => (
@@ -140,7 +135,7 @@ const V3 = () => {
       </section>
 
       {/* Sponsors Section */}
-      <section className='w-full overflow-hidden'>
+      <section className='w-full'>
         <div ref={sponsorsRef}>
           <EventSponsors />
         </div>

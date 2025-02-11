@@ -126,7 +126,7 @@ function V2() {
      
       <KeynoteSpeakers speakers={keynoteSpeakers}/>
       
-      <section className="w-full overflow-hidden">  
+      <section className="w-full  ">  
         <EventSponsors/>
       </section>
 
