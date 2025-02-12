@@ -141,20 +141,20 @@ const V3 = () => {
     <div className="min-h-screen  bg-white pb-12">
 
       {/* Hero Section */}
-      <section className="relative h-screen grid grid-cols-2 py-4">
-        <div className=" mx-auto px-4 flex flex-col z-10 ml-12 justify-between" style={{ height: '70%' }}>
+      <section className="relative flex flex-col md:h-screen md:grid md:grid-cols-2 border-y-2 shadow-lg border-white py-4">
+        <div className=" mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
           <div>
             <div className="text-center mt-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 " style={{ fontFamily: "'Shadows Into Light', cursive" }}>
-                ET-Developers Meetup V3
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-4 " >
+                Dev Meetup V3
               </h1>
               <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 text-gray-700 mb-4" style={{ fontFamily: "'Caveat', cursive" }}>
-              Meet those Codenighters you have been <br /> seeking out for long
+              Time to meet Codenighters you have been <br /> seeking out for long
               </p>
               <div className="flex flex-row gap-6 justify-center">
               <button
                   onClick={handleRegisterClick}
-                  className="bg-gray-800 text-white mt-28 px-4 py-2 font-semibold hover:bg-gray-700 transition-all mb-6"
+                  className="bg-gray-800 text-white mt-20 md:mt-28 px-4 py-2 font-semibold hover:bg-gray-700 transition-all mb-6"
                 >
                   Register Now
                 </button>
@@ -168,12 +168,10 @@ const V3 = () => {
                 
               </div>
             </div>
-            <div className="space-y-6 text-center pt-16">
-              
-            </div>
+            
           </div>
         </div>
-        <div className="relative flex flex-col h-full" style={{ height: '70%' }}>
+        <div className="relative hidden md:flex flex-col h-full" style={{ height: '70%' }}>
           <div className="first-row flex-grow flex items-center  justify-center">
             <div className="right-trapezoid">
               {images.map((image, index) => (
@@ -187,15 +185,15 @@ const V3 = () => {
           </div>
         </div>
          {/* Sponsors Section */}
-      <section className="w-full ml-20 mt-10 top-95 absolute " style={{ height: '20%' }}>
-        <h2 className="text-2xl  font-bold lg:ml-72 text-gray-800 ml-10 mb-4">POWERED BY</h2>
-        <div className="flex flex-wrap justify-start gap-4 w-full">
+      <section className="w-full mt-9 md:mt-6 md:top-95 md:absolute " >
+        <h2 className="text-xl  font-bold md:ml-10 text-gray-800 ml-5 mb-4">POWERED BY</h2>
+        <div className="grid grid-cols-3 px-4 md:flex md:flex-wrap justify-center md:justify-start gap-4 w-full">
           {sponsorLogos.map((logo, index) => (
             <img 
               key={index} 
               src={logo} 
               alt={`Sponsor ${index + 1}`} 
-              className={`h-16 md:h-20 w-32 md:w-40 object-contain ${index === 5 ? 'ml-8' : ''}`} 
+              className={`h-10 md:h-20 w-20 md:w-40 object-contain ${index === 5 ? 'ml-8' : ''}`} 
             />
           ))}
         </div>
