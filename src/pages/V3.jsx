@@ -145,7 +145,7 @@ const V3 = () => {
         <div className=" mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
           <div>
             <div className="text-center mt-6">
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-4 " >
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-700 mb-4 " >
                 Dev Meetup V3
               </h1>
               <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 text-gray-700 mb-4" style={{ fontFamily: "'Caveat', cursive" }}>
@@ -203,7 +203,7 @@ const V3 = () => {
      
 
       {/* Event Details Section */}
-      <section>
+      <section className='mt-16'>
         <div ref={scheduleRef}>
           <EventSchedule scheduleItems={scheduleItems} />
         </div>
