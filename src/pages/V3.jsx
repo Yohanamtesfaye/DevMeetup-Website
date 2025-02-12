@@ -145,31 +145,38 @@ const V3 = () => {
         <div className=" mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
           <div>
             <div className="text-center mt-6">
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-700 mb-4 " >
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-4 " >
                 Dev Meetup V3
-              </h1>
-              <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 text-gray-700 mb-4" style={{ fontFamily: "'Caveat', cursive" }}>
-              Time to meet Codenighters you have been <br /> seeking out for long
-              </p>
-              <div className="flex flex-row gap-6 justify-center">
-              <button
-                  onClick={handleRegisterClick}
-                  className="bg-gray-800 text-white mt-20 md:mt-28 px-4 py-2 font-semibold hover:bg-gray-700 transition-all mb-6"
-                >
-                  Register Now
-                </button>
-
-                {/* <button
-                  onClick={handleSponser}
-                  className="bg-gray-800 text-white mt-28 px-8 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-all mb-6"
-                >
-                  Support US
-                </button> */}
-                
-              </div>
+              </motion.h1>
+              <motion.p
+                className="text-xl text-gray-600 md:text-2xl text-center mb-12"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                style={{ fontFamily: "'Roboto Mono', monospace" }}
+              >
+                Time to meet Codenighters you have been seeking out for long
+              </motion.p>
+              <motion.div
+                className="flex justify-center space-x-4"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <Link to="/register">
+                  <motion.button
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Register Now
+                  </motion.button>
+                </Link>
+              </motion.div>
             </div>
-            
-          </div>
+          </motion.div>
+        </div>
+
         </div>
         <div className="relative hidden md:flex flex-col h-full" style={{ height: '70%' }}>
           <div className="first-row flex-grow flex items-center  justify-center">
@@ -185,7 +192,7 @@ const V3 = () => {
           </div>
         </div>
          {/* Sponsors Section */}
-      <section className="w-full mt-9 md:mt-6 md:top-95 md:absolute " >
+      <section className="w-full  mt-9 md:mt-6 md:top-95 md:absolute " >
         <h2 className="text-xl  font-bold md:ml-10 text-gray-800 ml-5 mb-4">POWERED BY</h2>
         <div className="grid grid-cols-3 px-4 md:flex md:flex-wrap justify-center md:justify-start gap-4 w-full">
           {sponsorLogos.map((logo, index) => (
@@ -193,7 +200,7 @@ const V3 = () => {
               key={index} 
               src={logo} 
               alt={`Sponsor ${index + 1}`} 
-              className={`h-10 md:h-20 w-20 md:w-40 object-contain ${index === 5 ? 'ml-8' : ''}`} 
+              className={`h-10 md:h-20 w-20 md:w-40 object-contain ${index === 5 ? 'lg:ml-8' : ''}`} 
             />
           ))}
         </div>
