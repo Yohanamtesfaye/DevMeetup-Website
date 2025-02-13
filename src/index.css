@@ -124,7 +124,7 @@
 
 .right-trapezoid-inner.active {
   opacity: 1;
-  transform: scale(1.05); /* Slight zoom effect */
+
 }
 /* Add these styles to your CSS file */
 .right-trapezoid {
@@ -143,7 +143,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }
 
 .right-trapezoid-inner.active {
