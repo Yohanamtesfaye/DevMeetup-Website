@@ -4,50 +4,75 @@ import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 const EventOrganizers = () => {
   const organizers = [
     {
-      name: "Yohannes Tesfaye",
+      name: "Temkin mengistu",
       role: "Lead Organizer",
-      description: "Full-stack developer passionate about community",
-      image: "https://example.com/organizer1.jpg",
+      description: "DevMeetup Lead Organizer",
+      image: "/src/assets/chapi.jpg",
       socials: {
-        twitter: "#",
-        linkedin: "#",
-        github: "#"
+        twitter: "https://x.com/chapimenge3",
+        linkedin: "https://www.linkedin.com/in/chapimenge/",
+        github: "https://github.com/chapimenge3"
       }
     },
     {
-      name: "Sara Mohammed",
-      role: "Technical Lead",
-      description: "AI/ML engineer focused on tech education",
-      image: "https://example.com/organizer2.jpg",
+      name: "Meron Abate",
+      role: "Lead Organizer",
+      description: "DevMeetup Lead Organizer",
+      image: "/src/assets/meron.jpg",
       socials: {
-        twitter: "#",
-        linkedin: "#"
+        twitter: "https://twitter.com/",
+        linkedin: "https://www.linkedin.com/in/meronabate/",
+        github: "https://github.com/"
       }
     },
     {
-      name: "Dawit Alemu",
-      role: "Community Manager",
-      description: "Developer advocate & community builder",
-      image: "https://example.com/organizer3.jpg",
+      name: "Mulu Tsega",
+      role: "Guest Coordinator",
+      description: "Coordinating guest speakers and attendees",
+      image: "/src/assets/luna.jpg",
       socials: {
-        twitter: "#",
-        linkedin: "#"
+        twitter: "https://twitter.com/",
+        linkedin: "https://www.linkedin.com/in/mulu-tsega943/",
+        github: "https://github.com/"
       }
     },
     {
-      name: "Helen Tadesse",
-      role: "Operations Lead",
-      description: "Event coordinator & logistics expert",
-      image: "https://example.com/organizer4.jpg",
+      name: "Simon Asaye",
+      role: "Agenda Coordinator",
+      description: "Managing event schedule and activities",
+      image: "/src/assets/simon.jpg",
       socials: {
-        twitter: "#",
-        linkedin: "#"
+        twitter: "https://twitter.com/",
+        linkedin: "https://www.linkedin.com/in/simon-asnake/",
+        github: "https://github.com/justsima/"
+      }
+    },
+    {
+      name: "Mohammed Ibrahim",
+      role: "Guest Coordinator",
+      description: "Coordinating guest speakers and attendees",
+      image: "/src/assets/muhammed.jpg",
+      socials: {
+        twitter: "https://twitter.com/",
+        linkedin: "https://www.linkedin.com/in/mohammed-ibrahim-45a1b9247/",
+        github: "https://github.com/MohammedIbrahim8887"
+      }
+    },
+    {
+      name: "Lydia A Firew",
+      role: "Logistics Coordinator",
+      description: "Managing event logistics and operations",
+      image: "/src/assets/lydia.jpg",
+      socials: {
+        twitter: "https://twitter.com/",
+        linkedin: "https://www.linkedin.com/in/lydiaabrahamfirew/",
+        github: "https://github.com/LydiaAbrahamF"
       }
     }
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 max-md:px-10 bg-white">
       <div className="mx-auto">
         <h2 className="text-2xl font-bold text-center mb-3">Event Organizers</h2>
         <p className="text-gray-600  text-center text-sm mb-8 max-w-3xl mx-auto">

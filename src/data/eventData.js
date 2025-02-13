@@ -5,6 +5,8 @@ import avatar2 from "../assets/avatar2.jpg"
 import chapi from "../assets/chapi.jpg"
 import luna from "../assets/luna.jpg"
 import dagi from "../assets/dagi.jpeg"
+import mirafe from "../assets/mirafe.jpg"
+import beek from "../assets/beek.jpg"
 export const eventData1 = {
   name: 'DevMeetup-V1',
   title: 'Everything started here',
@@ -36,7 +38,7 @@ export const scheduleItems = [
     type: "break"
   },
   {
-    time: "9:00 AM - 9:15 AM",
+    time: "10:00 AM - 10:15 AM",
     title: "Welcome & Opening Vibe",
     speaker: {
       name: "Mirafe Gebriel Marcos",
@@ -47,7 +49,7 @@ export const scheduleItems = [
     type: "keynote"
   },
   {
-    time: "9:15 AM - 9:45 AM",
+    time: "10:15 AM - 10:45 AM",
     title: "Digital Business Solutions & The Business Side",
     speaker: {
       name: "Meried Bekele",
@@ -58,7 +60,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "9:45 AM - 10:15 AM",
+    time: "10:45 AM - 11:15 AM",
     title: "Business Side of Development",
     speaker: {
       name: "Israel Goytom",
@@ -69,7 +71,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "10:15 AM - 10:45 AM",
+    time: "11:15 AM - 11:45 AM",
     title: "Turning Passion into Enterprise",
     speaker: {
       name: "Kidus Asfaw",
@@ -80,7 +82,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "10:45 AM - 11:15 AM",
+    time: "11:45 AM - 12:15 AM",
     title: "Mindset for Developers to Succeed",
     speaker: {
       name: "Beek Kefyalew",
@@ -91,7 +93,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "11:15 AM - 11:45 AM",
+    time: "12:15 AM - 12:45 AM",
     title: "Entrepreneurial Journey & Strategic Insights",
     speaker: {
       name: "Nebiyu Zekeriyas",
@@ -102,7 +104,7 @@ export const scheduleItems = [
     type: "talk"
   },
   {
-    time: "11:45 AM - 12:15 PM",
+    time: "12:45 AM - 1:15 PM",
     title: "Panel Discussion: How to grow",
     speakers: [
       {
@@ -127,11 +129,6 @@ export const scheduleItems = [
         name: "Abdulrahman Omar",
         role: "Machine Learning Engineer",
         company: "SingularityNet"
-      },
-      {
-        name: "Solomon Kassa",
-        role: "CEO",
-        company: "1888EC"
       },
       {
         name: "Temkin Mengistu",
@@ -337,8 +334,7 @@ export const sponsors = [
     }
   }
 ];
-
-
+// this is the volunteer section of V1, v2 and v3
 export const volunteerItems = [
   {
     name: "John Doe",
@@ -376,27 +372,86 @@ export const volunteerItems = [
   }
 ];
 
+
+export const volunteersV3 = [
+  {
+    name: "Yohana Mekuria",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQF7CHAL2dhCbg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730964323171?e=1744848000&v=beta&t=xgqMVBFSdxf-HoiZammA7keiA2QeJiAeESppkxjTDwE",
+    role: "Website Developement",
+    description: "building the website for the DevMeetup-v3 campaign",
+    github: "https://github.com/Yohanamtesfaye",
+    linkedin: "https://www.linkedin.com/in/yohana-mekuria-90607a2ab/",
+    twitter: "https://x.com/Yohanamtesfaye"
+  },
+  {
+    name: "Abrham Tilksew",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQEjqIlIZKasfQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1684688080290?e=1744848000&v=beta&t=GsGdr9XeYCrizrWF1FNg-mdGewpXvkJikKYmD-Wq-4A",
+    role: "Web Developement|Sponsership",
+    description: "building a wesbite for the DevMeetup-v3 campaign. Also volunteer in the sponsership team",
+    github: "https://github.com/Abrish-21",
+    linkedin: "https://www.linkedin.com/in/abrham28/",
+    twitter: "https://x.com/AbrhamTaye98",
+  },
+  {
+    name: "Sumeya Akmel",
+    image: "https://avatars.githubusercontent.com/u/155248042?v=4",
+    role: "Website Developement",
+    description: "building the website for the DevMeetup-v3 campaign",
+    github: "https://github.com/sumeya-ak",
+    linkedin: "https://www.linkedin.com/in/sumeya-akmel-2a3b9b270/",
+    twitter: "https://twitter.com/"
+  },
+  {
+    name: "Ruth Abiti",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEWVzj-vh9lDw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718301431897?e=1744848000&v=beta&t=GjzNhYhgLH_vQpPoLxjHnxhrAqkjC5x7AqNJznnVWLY",
+    role: "Sponsership Team",
+    description: "Reasearching potential sponsers and reaching out with proposals",
+    github: "https://github.com/dot-ruth",
+    twitter: "https://twitter.com/",
+    linkedin: "https://www.linkedin.com/in/ruth-abiti-b8b737313/"
+  },
+  {
+    name: "Medina Nesro",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQGylRCjI0FgoQ/profile-displayphoto-shrink_200_200/B4EZTN3.ifGgAY-/0/1738620792522?e=1744848000&v=beta&t=Onvs0bSEQJcq0ktYJx7sG30W5LfhqDFnXc07wPjgGrE",
+    role: "Logistics Manager",
+    description: "Oversees logistics and ensures smooth operations.",
+    github: "https://github.com/",
+    twitter: "https://twitter.com/",
+    linkedin: "https://www.linkedin.com/in/medina-nesro-297a44233/",
+  },
+  {
+    name: "Eyob Tilahun",
+    image: "https://avatars.githubusercontent.com/u/22914424?v=4",
+    role: "Graphics Designer",
+    description: "create different Graphics about devmeet-up v3 to be shared on across social medias",
+    github: "https://github.com/eyobtilahun",
+    twitter: "https://x.com/itseyobworld",
+    linkedin: "https://www.linkedin.com/in/eyobtilahun/"
+  }
+
+];
+
 export const keynoteSpeakers = [
   {
-    name: "Getnet Aseffa",
-    image: dagi,
-    title: "CEO & Founder at iCog Labs",
-    description: "Leading expert in AI and robotics, pioneering technological advancement in Ethiopia and Africa.",
-    linkedin: "https://www.linkedin.com/in/getnet-aseffa",
-    twitter: "https://twitter.com/getnetaseffa"
+    name: "mirafe gebriel marcos ",
+    image: mirafe,
+    title: "Regional Director, African Leadership Group (ALG) / ALX",
+    description: "a leading technology skills provider offering programs in digital transformation, business intelligence, and entrepreneurship.",
+    linkedin: "https://www.linkedin.com/in/mirafegmarcos/",
+    twitter: "https://x.com/GMirafe"
   },
   {
-    name: "Betelhem Dessie",
-    image: luna,
-    title: "CEO at Anyone Can Code",
-    description: "Tech prodigy and advocate for youth education in technology, inspiring the next generation of developers.",
-    linkedin: "https://www.linkedin.com/in/betelhem-dessie",
-    twitter: "https://twitter.com/betelhemdessiee"
+    name: "Beek Kefyalew",
+    image: beek,
+    title: "CEO of OPENFLOW",
+    description: "Leading innovation in grant management solutions, driving OpenFlow's success with a commitment to excellence and efficiency.",
+    linkedin: "https://www.linkedin.com/in/beek-kefyalew/",
+    twitter: "https://twitter.com/"
   },
   {
-    name: "Chapi",
+    name: "someone",
     image: chapi,
-    title: "CTO at Qene Games",
+    title: "someone from safaricom",
     description: "Gaming industry pioneer, leading the development of African-inspired games and fostering local talent.",
     linkedin: "https://www.linkedin.com/in/nael-hailemariam",
     github: "https://github.com/naelh"

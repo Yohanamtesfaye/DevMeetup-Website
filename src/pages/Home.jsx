@@ -42,13 +42,13 @@ const highlights = [
 function Home() {
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="bg-white">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="">
       <main>
         {/* Hero Section */}
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div className="relative   -xl sm:rounded-2xl sm:overflow-hidden">
+            <div className="relative   -xl sm:rounded-2xl sm: ">
               <div className="absolute inset-0">
                 <img
                   className="h-full w-full object-cover"
@@ -128,7 +128,7 @@ function Home() {
         {/* <Testimonials /> */}
 
         {/* Sponsors Section */}
-        <section className="w-full overflow-hidden">
+        <section className="w-full  ">
         <EventSponsors/>
 
         </section>

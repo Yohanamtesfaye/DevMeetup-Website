@@ -10,9 +10,9 @@ const Gallery = ({ galleryImages }) => {
   return (
     <div className='m-5'>
       <h2 className="text-4xl font-semibold flex justify-center text-purple-600 mb-8">Memories</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 rounded-md md:grid-cols-4 gap-2">
         {galleryImages.slice(0, 9).map((image, index) => (
-          <div key={index} className="h-80">
+          <div key={index} className="h-80 rounded-md">
             <img
               src={image}
               alt={`Gallery image ${index + 1}`}

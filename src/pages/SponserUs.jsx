@@ -76,7 +76,7 @@ function SponsorUs() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="relative overflow-hidden">
+                <Card className="relative ">
                   <CardContent className="p-6">
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold text-indigo-600 mb-2">{tier.name}</h3>
