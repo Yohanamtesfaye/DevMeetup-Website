@@ -6,8 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "wrangler:login": "wrangler login",
+    "wrangler:dev": "wrangler dev",
+    "wrangler:deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create devmeetup_registrations",
+    "db:migrate": "wrangler d1 execute devmeetup_registrations --file=./workers/schema.sql"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.3",
@@ -21,6 +26,7 @@
     "swiper": "^11.2.2"
   },
   "devDependencies": {
+    "@cloudflare/wrangler": "^1.21.0",
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
@@ -33,6 +39,12 @@
     "globals": "^15.14.0",
     "postcss": "^8.5.1",
     "tailwindcss": "^4.0.3",
-    "vite": "^6.0.5"
-  }
+    "vite": "^6.0.5",
+    "wrangler": "^3.108.1"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

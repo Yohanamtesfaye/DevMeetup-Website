@@ -1,0 +1,22 @@
+name = "devmeetup-registration"
+main = "workers/registration.js"
+compatibility_date = "2024-01-01"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "devmeetup-db"
+database_id = "b98e194e-dd56-4d7c-8c05-0114e5116548"
+
+# Email service binding
+[env.production]
+vars = { SENDER_EMAIL = "info@devmeetup.et" }
+
+# Custom domain configuration
+[env.production.routes]
+pattern = "api.devmeetup.et"
+custom_domain = true
+
+# CORS configuration
+[env.production.vars]
+ALLOWED_ORIGIN = "https://devmeetup.et"
