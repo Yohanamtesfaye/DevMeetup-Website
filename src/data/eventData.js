@@ -7,15 +7,16 @@ import luna from "../assets/luna.jpg"
 import dagi from "../assets/dagi.jpeg"
 import mirafe from "../assets/mirafe.jpg"
 import beek from "../assets/beek.jpg"
+
 export const eventData1 = {
-  name: 'DevMeetup-V1',
+  name: 'Dev Meetup v1',
   title: 'Everything started here',
-  date: '2023-03-15',
+  date: 'Sep 10, 2023',
   time: '9:00 AM',
-  eventVenue: 'ALX Hub, Addis Ababa',
-  organizers: 'Codenight Community Admins',
-  participant: '90+ developers and tech professionals',
-  description: 'Join us for an exciting day of tech talks, workshops, and networking opportunities!'
+  eventVenue: 'Addis Amba Hotel, Addis Ababa',
+  organizers: 'Temikin Mengistu(chapi), Meron Abate',
+  participant: '100+ developers and tech professionals',
+  description: 'self sponsered by Chapi, the first dev meetup featured Join an exciting day of tech talks, workshops, and networking opportunities!'
 };
 export const eventData2 = {
   name: 'DevMeetup-V2',
