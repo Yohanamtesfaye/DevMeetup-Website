@@ -10,6 +10,7 @@ import KeynoteSpeakers from '../components/KeynoteSpeakers';
 import VolunteersSection from '../components/VolunteersSection';
 import EventOrganizers from '../components/EventOrganizers';
 import { Facebook, Github, Instagram, Twitter, Linkedin, Youtube, Slack, Dribbble } from 'lucide-react';
+import CountdownTimer from '../components/TimeCounter';
 
 const images = [
   "src/assets/pic/573A3634.jpg",
@@ -129,25 +130,18 @@ const V3 = () => {
   };
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change image every 4 seconds
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-    <div className="min-h-screen  bg-white pb-12">
-
+    <div className="min-h-screen bg-white pb-12 overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative flex flex-col md:h-screen md:grid md:grid-cols-2 border-y-2 shadow-lg border-white py-4">
-        <div className=" mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
-        <div className="mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: "70%" }}>
+        <div className="mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative min-h-[400px]">
             <div className="mx-auto px-4 pt-16 relative z-10">
               <motion.h1
-                className="text-5xl md:text-7xl text-indigo-600 font-bold mb-6 text-center"
+                className="text-5xl md:text-6xl text-indigo-600 font-bold mb-6 text-center"
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -160,7 +154,7 @@ const V3 = () => {
                 Dev Meetup V3
               </motion.h1>
               <motion.p
-                className="text-xl text-gray-600 md:text-2xl text-center mb-12"
+                className="text-xl text-gray-600 md:text-xl text-center mb-6"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -168,6 +162,17 @@ const V3 = () => {
               >
                 Time to meet Codenighters you have been seeking out for long
               </motion.p>
+
+              {/* Countdown Timer */}
+              <motion.div
+                className="flex justify-center space-x-4 mb-6"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+               <CountdownTimer />
+              </motion.div>
+
               <motion.div
                 className="flex justify-center space-x-4"
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -187,38 +192,35 @@ const V3 = () => {
             </div>
           </motion.div>
         </div>
-
-        </div>
-        <div className="relative hidden md:flex flex-col h-full" style={{ height: '70%' }}>
-          <div className="first-row flex-grow flex items-center  justify-center">
+        <div className="relative  hidden md:flex flex-col h-full" style={{ height: '70%' }}>
+          <div className="first-row flex-grow flex items-center justify-center">
             <div className="right-trapezoid">
               {images.map((image, index) => (
-                <div 
+                <div
                   key={index}
-                  className={`right-trapezoid-inner ${index === currentImageIndex ? 'active' : ''}`} 
+                  className={`right-trapezoid-inner ${index === currentImageIndex ? 'active' : ''}`}
                   style={{ backgroundImage: `url(${image})` }}
                 ></div>
               ))}
             </div>
           </div>
         </div>
-         {/* Sponsors Section */}
-      <section className="w-full  mt-9 md:mt-6 md:top-95 md:absolute " >
-        <h2 className="text-xl  font-bold md:ml-10 text-gray-800 ml-5 mb-4">POWERED BY</h2>
-        <div className="grid grid-cols-3 px-4 md:flex md:flex-wrap justify-center md:justify-start gap-4 w-full">
+      </section>
+
+      {/* Sponsors Section */}
+      <section className="w-full lg:mt-24 mt-9 md:mt-6 md:absolute md:top-95 ">
+        <h2 className="text-xl font-bold text-gray-800 ml-5 md:ml-10 mb-4">POWERED BY</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap justify-center md:justify-start gap-4 px-4 w-full max-w-screen-xl mx-auto">
           {sponsorLogos.map((logo, index) => (
-            <img 
-              key={index} 
-              src={logo} 
-              alt={`Sponsor ${index + 1}`} 
-              className={`h-10 md:h-20 w-20 md:w-40 object-contain ${index === 5 ? 'lg:ml-8' : ''}`} 
+            <img
+              key={index}
+              src={logo}
+              alt={`Sponsor ${index + 1}`}
+              className={`h-10 md:h-20 w-auto object-contain ${index === 5 ? 'md:ml-8' : ''}`}
             />
           ))}
         </div>
       </section>
-      </section>
-
-     
 
       {/* Event Details Section */}
       <section>
@@ -226,14 +228,14 @@ const V3 = () => {
           <EventSchedule scheduleItems={scheduleItems} />
         </div>
       </section>
-  
+
       {/* Keynote Speakers Section */}
       <section>
         <KeynoteSpeakers speakers={keynoteSpeakers} />
       </section>
 
       {/* Sponsors Section */}
-      <section className='w-full'>
+      <section className="w-full">
         <div ref={sponsorsRef}>
           <EventSponsors sponsors={sponsors} />
         </div>
