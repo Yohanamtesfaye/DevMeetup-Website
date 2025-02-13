@@ -144,9 +144,9 @@ const V3 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white pb-12 overflow-x-hidden">
+    <div className="min-h-screen bg-white pb-1 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative flex flex-col md:h-screen md:grid md:grid-cols-2 border-y-2 shadow-lg border-white py-4">
+      <section className="relative flex flex-col md:h-screen md:grid md:grid-cols-2 border-y-2  border-white pt-4">
         <div className="mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative min-h-[400px]">
             <div className="mx-auto px-4 p relative z-10">
@@ -218,7 +218,7 @@ const V3 = () => {
       </section>
 
       {/* Sponsors Section */}
-      <section className="w-full lg:mt-24 mt-9 md:mt-6 md:absolute md:top-95 ">
+      <section className="w-full md:mt-28 mt-9 md:absolute md:top-95 ">
         <h2 className="text-xl font-bold text-gray-800 ml-5 md:ml-10 mb-4">POWERED BY</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap justify-center md:justify-start gap-4 px-4 w-full max-w-screen-xl mx-auto">
           {sponsorLogos.map((logo, index) => (
@@ -233,7 +233,7 @@ const V3 = () => {
       </section>
 
       {/* Event Details Section */}
-      <section className='mt-16'>
+      <section className='max-md:mt-12'>
         <div ref={scheduleRef}>
           <EventSchedule scheduleItems={scheduleItems} />
         </div>
