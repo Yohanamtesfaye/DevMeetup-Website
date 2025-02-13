@@ -458,3 +458,14 @@ export const keynoteSpeakers = [
     github: "https://github.com/naelh"
   }
 ];
+
+
+export const keynoteSpeakerv1 = [
+  {
+    name: "Temkin Mengistu ",
+    image: chapi,
+    title: "Senior SOftware Developer",
+    description: "a leading technology skills provider offering programs in digital transformation, business intelligence, and entrepreneurship.",
+    linkedin: "https://www.linkedin.com/in/chapimenge/",
+    twitter: "https://x.com/"
+  }];
