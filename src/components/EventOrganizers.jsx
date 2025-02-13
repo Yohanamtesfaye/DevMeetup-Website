@@ -72,7 +72,7 @@ const EventOrganizers = () => {
   ];
 
   return (
-    <section className="py-12 max-md:px-10 bg-white">
+    <section className="py-12 max-md:px-5 bg-white">
       <div className="mx-auto">
         <h2 className="text-2xl font-bold text-center mb-3">Event Organizers</h2>
         <p className="text-gray-600 text-center text-sm mb-8 max-w-3xl mx-auto">
