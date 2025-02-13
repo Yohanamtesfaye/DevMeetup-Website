@@ -124,7 +124,7 @@
 
 .right-trapezoid-inner.active {
   opacity: 1;
-
+  transform: scale(); /* Slight zoom effect */
 }
 /* Add these styles to your CSS file */
 .right-trapezoid {
