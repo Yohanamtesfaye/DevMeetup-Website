@@ -109,8 +109,8 @@ function EventSchedule() {
                 onClick={() => setExpandedItem(expandedItem === index ? null : index)}
               >
                 <div className="mb-2 sm:mb-0">
-                  <p className="text-sm font-medium text-gray-600">{item.time}</p>
-                  <h3 className="text-gray-600">{item.event}</h3>
+                  <p className="xl:text-lg font-medium text-gray-600">{item.time}</p>
+                  <h3 className="text-gray-600 xl:text-2xl">{item.event}</h3>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
                   {item.speaker && item.speakerLink && item.speaker.split(', ').map((speaker, i) => (
