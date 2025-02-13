@@ -63,7 +63,7 @@ const organizers = [
     description: "Community Manager"
   }
 ];
-const galleryImages= [food, disscusion, 
+const galleryImages= [food, disscusion, organizer,QA,
   ppl,guest, organizer, QA];
 
 

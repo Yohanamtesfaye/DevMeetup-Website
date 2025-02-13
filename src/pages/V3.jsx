@@ -223,7 +223,7 @@ const V3 = () => {
       </section>
 
       {/* Event Details Section */}
-      <section>
+      <section className='mt-16'>
         <div ref={scheduleRef}>
           <EventSchedule scheduleItems={scheduleItems} />
         </div>
