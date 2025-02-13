@@ -235,7 +235,7 @@ const V3 = () => {
       </section>
 
       {/* Sponsors Section */}
-      <section className="w-full">
+      <section >
         <div ref={sponsorsRef}>
           <EventSponsors sponsors={sponsors} />
         </div>

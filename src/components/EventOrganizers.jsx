@@ -75,10 +75,10 @@ const EventOrganizers = () => {
     <section className="py-12 max-md:px-5 bg-white">
       <div className="mx-auto">
         <h2 className="text-2xl font-bold text-center mb-3">Event Organizers</h2>
-        <p className="text-gray-600  text-center text-sm mb-8 max-w-3xl mx-auto">
+        <p className="text-gray-600 text-center text-sm mb-8 max-w-3xl mx-auto">
           Meet the dedicated team behind DevMeetup V3
         </p>
-        <div className="grid max-md:px-5 grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {organizers.map((organizer, index) => (
             <div key={index} className="text-center shadow-lg rounded-xl p-4">
               <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
