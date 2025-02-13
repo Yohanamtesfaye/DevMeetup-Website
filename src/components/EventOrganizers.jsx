@@ -1,5 +1,12 @@
 import React from 'react';
 import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import chapi from '../assets/chapi.jpg';
+import meron from '../assets/meron.jpg';
+import luna from '../assets/luna.jpg';
+import simon from '../assets/simon.jpg';
+import muhammed from '../assets/muhammed.jpg';
+import lydia from '../assets/lydia.jpg';
+
 
 const EventOrganizers = () => {
   const organizers = [
@@ -7,7 +14,7 @@ const EventOrganizers = () => {
       name: "Temkin mengistu",
       role: "Lead Organizer",
       description: "DevMeetup Lead Organizer",
-      image: "/src/assets/chapi.jpg",
+      image: chapi,
       socials: {
         twitter: "https://x.com/chapimenge3",
         linkedin: "https://www.linkedin.com/in/chapimenge/",
@@ -18,7 +25,7 @@ const EventOrganizers = () => {
       name: "Meron Abate",
       role: "Lead Organizer",
       description: "DevMeetup Lead Organizer",
-      image: "/src/assets/meron.jpg",
+      image: meron,
       socials: {
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/meronabate/",
@@ -29,7 +36,7 @@ const EventOrganizers = () => {
       name: "Mulu Tsega",
       role: "Guest Coordinator",
       description: "Coordinating guest speakers and attendees",
-      image: "/src/assets/luna.jpg",
+      image: luna,
       socials: {
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/mulu-tsega943/",
@@ -40,7 +47,7 @@ const EventOrganizers = () => {
       name: "Simon Asaye",
       role: "Agenda Coordinator",
       description: "Managing event schedule and activities",
-      image: "/src/assets/simon.jpg",
+      image: simon,
       socials: {
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/simon-asnake/",
@@ -51,7 +58,7 @@ const EventOrganizers = () => {
       name: "Mohammed Ibrahim",
       role: "Guest Coordinator",
       description: "Coordinating guest speakers and attendees",
-      image: "/src/assets/muhammed.jpg",
+      image: muhammed,
       socials: {
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/mohammed-ibrahim-45a1b9247/",
@@ -62,7 +69,7 @@ const EventOrganizers = () => {
       name: "Lydia A Firew",
       role: "Logistics Coordinator",
       description: "Managing event logistics and operations",
-      image: "/src/assets/lydia.jpg",
+      image: lydia,
       socials: {
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/lydiaabrahamfirew/",
