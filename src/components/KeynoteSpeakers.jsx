@@ -4,7 +4,7 @@ import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 const KeynoteSpeakers = ({ speakers }) => {
   return (
     <section className="py-12  bg-white">
-      <div className="container mx-auto px-20">
+      <div className="container mx-auto max-md:px-5 lg:px-20">
         <h2 className="text-2xl font-bold text-center mb-3">Keynote Speakers</h2>
         <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
           Learn from industry leaders and innovators
