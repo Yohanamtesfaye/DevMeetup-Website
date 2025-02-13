@@ -110,15 +110,20 @@ function EventSchedule() {
               >
                 <div className="mb-2 sm:mb-0">
                   <p className="text-sm font-medium text-gray-600">{item.time}</p>
-                  <h3 className=" text-gray-600">{item.event}</h3>
+                  <h3 className="text-gray-600">{item.event}</h3>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
-                  {item.speaker.split(', ').map((speaker, i) => (
+                  {item.speaker && item.speakerLink && item.speaker.split(', ').map((speaker, i) => (
                     <div key={i} className="flex items-center text-sm bg-gray-100 rounded-full px-2 py-1 shadow-sm">
                       <p className="text-sm text-gray-600 mr-2">{speaker}</p>
-                      <a href={item.speakerLink.split(', ')[i]} target="_blank" rel="noopener noreferrer" className="text-indigo-500  hover:text-indigo-700">
+                      <a href={item.speakerLink.split(', ')[i]} target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:text-indigo-700">
                         <FaLinkedin />
                       </a>
+                    </div>
+                  ))}
+                  {item.speaker && !item.speakerLink && item.speaker.split(', ').map((speaker, i) => (
+                    <div key={i} className="flex items-center text-sm bg-gray-100 rounded-full px-2 py-1 shadow-sm">
+                      <p className="text-sm text-gray-600 mr-2">{speaker}</p>
                     </div>
                   ))}
                   <motion.svg
@@ -131,7 +136,7 @@ function EventSchedule() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-slate-400 ml-4 "
+                    className="text-slate-400 ml-4"
                     animate={{ rotate: expandedItem === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >

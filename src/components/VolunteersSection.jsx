@@ -10,7 +10,7 @@ const VolunteersSection = ({ volunteers }) => (
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {volunteers.map((volunteer, index) => (
-          <div key={index} className="text-center shadow-2xl rounded-xl p-4">
+          <div key={index} className="text-center shadow-md rounded-xl p-4">
             <div className="w-16 h-16 mx-auto mb-2 overflow-hidden rounded-full">
               <img
                 src={volunteer.image}
