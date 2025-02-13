@@ -68,6 +68,78 @@ const galleryImages= [food, disscusion,
 
 
 function V1() {
+  const sponsors = [
+    {
+      name: "ALX-Ethiopia",
+      logo: "/src/assets/alx.jpg",
+      level: "Platinum",
+      description: "Leading IT training in Ethiopia.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/alx-ethiopia",
+        instagram: "https://www.instagram.com/alx_ethiopia"
+      }
+    },
+    {
+      name: "SAND Technologies",
+      logo: "/src/assets/sand.jpg",
+      level: "Platinum",
+      description: "Pioneering technology solutions for sustainable development.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/sand-technologies",
+        instagram: "https://www.instagram.com/sand_technologies"
+      }
+    },
+    {
+      name: "ICE Addis",
+      logo: "/src/assets/iceaddis.jpg-removebg-preview.png",
+      level: "Platinum",
+      description: "Innovation hub fostering tech entrepreneurship.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/iceaddis",
+        instagram: "https://www.instagram.com/iceaddis"
+      }
+    },
+    {
+      name: "Chapa",
+      logo: "/src/assets/chapa.jpg",
+      level: "Platinum",
+      description: "Leading payment solutions provider in Ethiopia.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/chapa",
+        instagram: "https://www.instagram.com/chapa"
+      }
+    },
+    {
+      name: "Convex",
+      logo: "/src/assets/convex-logo.png",
+      level: "Platinum",
+      description: "Innovative tech solutions provider.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/convex",
+        instagram: "https://www.instagram.com/convex"
+      }
+    },
+    {
+      name: "Horan Tech",
+      logo: "/src/assets/horan.jpg",
+      level: "Silver",
+      description: "Innovative tech solutions for modern businesses.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/horan-tech",
+        instagram: "https://www.instagram.com/horan_tech"
+      }
+    },
+    {
+      name: "Dagmawi Babi",
+      logo: "/src/assets/dagi.jpg",
+      level: "Individual",
+      description: "Individual Sponsor",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/dagmawi-babi",
+        instagram: "https://www.instagram.com/dagmawi.babi"
+      }
+    }
+  ];
   return (<>
     <motion.div
       initial={{ opacity: 0 }}
@@ -92,7 +164,7 @@ function V1() {
 
         
         <section className="w-full  ">
-       <EventSponsors/>
+        <EventSponsors sponsors={sponsors} />
 
 
         </section>

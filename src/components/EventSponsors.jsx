@@ -37,8 +37,8 @@ const SponsorCard = ({ sponsor }) => (
   </div>
 );
 
-const EventSponsors = () => {
-  const sponsors = [
+const EventSponsors = ({sponsors}) => {
+  const sponsor = [
     {
       name: "ALX-Ethiopia",
       logo: "/src/assets/alx.jpg",

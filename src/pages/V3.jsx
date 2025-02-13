@@ -39,6 +39,79 @@ const sponsorLogos = [
 ];
 
 const V3 = () => {
+  const sponsors = [
+    {
+      name: "ALX-Ethiopia",
+      logo: "/src/assets/alx.jpg",
+      level: "Platinum",
+      description: "Leading IT training in Ethiopia.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/alx-ethiopia",
+        instagram: "https://www.instagram.com/alx_ethiopia"
+      }
+    },
+    {
+      name: "SAND Technologies",
+      logo: "/src/assets/sand.jpg",
+      level: "Platinum",
+      description: "Pioneering technology solutions for sustainable development.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/sand-technologies",
+        instagram: "https://www.instagram.com/sand_technologies"
+      }
+    },
+    {
+      name: "ICE Addis",
+      logo: "/src/assets/iceaddis.jpg-removebg-preview.png",
+      level: "Platinum",
+      description: "Innovation hub fostering tech entrepreneurship.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/iceaddis",
+        instagram: "https://www.instagram.com/iceaddis"
+      }
+    },
+    {
+      name: "Chapa",
+      logo: "/src/assets/chapa.jpg",
+      level: "Platinum",
+      description: "Leading payment solutions provider in Ethiopia.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/chapa",
+        instagram: "https://www.instagram.com/chapa"
+      }
+    },
+    {
+      name: "Convex",
+      logo: "/src/assets/convex-logo.png",
+      level: "Platinum",
+      description: "Innovative tech solutions provider.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/convex",
+        instagram: "https://www.instagram.com/convex"
+      }
+    },
+    {
+      name: "Horan Tech",
+      logo: "/src/assets/horan.jpg",
+      level: "Silver",
+      description: "Innovative tech solutions for modern businesses.",
+      socials: {
+        linkedin: "https://www.linkedin.com/company/horan-tech",
+        instagram: "https://www.instagram.com/horan_tech"
+      }
+    },
+    {
+      name: "Dagmawi Babi",
+      logo: "/src/assets/dagi.jpg",
+      level: "Individual",
+      description: "Individual Sponsor",
+      socials: {
+        linkedin: "https://www.linkedin.com/in/dagmawi-babi",
+        instagram: "https://www.instagram.com/dagmawi.babi"
+      }
+    }
+  ];
+
   const navigate = useNavigate();
   const scheduleRef = useRef(null);
   const sponsorsRef = useRef(null);
@@ -69,10 +142,10 @@ const V3 = () => {
 
       {/* Hero Section */}
       <section className="relative h-screen grid grid-cols-2 py-4">
-        <div className="container mx-auto px-4 flex flex-col z-10 ml-12 justify-between" style={{ height: '70%' }}>
+        <div className=" mx-auto px-4 flex flex-col z-10 ml-12 justify-between" style={{ height: '70%' }}>
           <div>
             <div className="text-center mt-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 italic" style={{ fontFamily: "'Shadows Into Light', cursive" }}>
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 " style={{ fontFamily: "'Shadows Into Light', cursive" }}>
                 ET-Developers Meetup V3
               </h1>
               <p className="text-2xl md:text-4xl md:ml-8 absolute z-10 text-gray-700 mb-4" style={{ fontFamily: "'Caveat', cursive" }}>
@@ -114,8 +187,8 @@ const V3 = () => {
           </div>
         </div>
          {/* Sponsors Section */}
-      <section className="w-full top-95 absolute " style={{ height: '20%' }}>
-        <h2 className="text-2xl  font-bold text-gray-800 ml-10 mb-4">Powered by</h2>
+      <section className="w-full ml-20 mt-10 top-95 absolute " style={{ height: '20%' }}>
+        <h2 className="text-2xl  font-bold lg:ml-72 text-gray-800 ml-10 mb-4">POWERED BY</h2>
         <div className="flex flex-wrap justify-start gap-4 w-full">
           {sponsorLogos.map((logo, index) => (
             <img 
@@ -146,7 +219,7 @@ const V3 = () => {
       {/* Sponsors Section */}
       <section className='w-full'>
         <div ref={sponsorsRef}>
-          <EventSponsors />
+          <EventSponsors sponsors={sponsors} />
         </div>
       </section>
 

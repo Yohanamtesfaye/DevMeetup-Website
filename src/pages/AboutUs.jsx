@@ -150,7 +150,7 @@ function AboutUs() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-xl  "
+                className="group relative  rounded-xl  "
               >
                 <img
                   src={image.src || "/placeholder.svg"}
