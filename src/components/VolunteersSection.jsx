@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const VolunteersSection = ({ volunteers }) => (
-  <section className="py-8 lg:px-28 max-md:px-10 bg-gray-50">
+  <section className="py-8 lg:px-28 max-md:px-5 bg-gray-50">
     <div className="container mx-auto px-4">
       <h2 className="text-2xl font-bold text-center mb-3">Our Volunteers</h2>
       <p className="text-gray-600 text-center text-sm mb-8 max-w-2xl mx-auto">
@@ -10,7 +10,7 @@ const VolunteersSection = ({ volunteers }) => (
       </p>
       <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-4">
         {volunteers.map((volunteer, index) => (
-          <div key={index} className="text-center shadow-2xl rounded-xl p-4">
+          <div key={index} className="text-center shadow-md rounded-xl p-4">
             <div className="w-16 h-16 mx-auto mb-2 overflow-hidden rounded-full">
               <img
                 src={volunteer.image}

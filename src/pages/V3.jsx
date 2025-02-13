@@ -247,7 +247,7 @@ const V3 = () => {
       </section>
 
       {/* Volunteers Section */}
-      <section>
+      <section className='bg-white'>
         <VolunteersSection volunteers={volunteersV3} />
       </section>
     </div>
