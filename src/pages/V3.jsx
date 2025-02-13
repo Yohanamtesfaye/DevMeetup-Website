@@ -139,7 +139,7 @@ const V3 = () => {
       <section className="relative flex flex-col md:h-screen md:grid md:grid-cols-2 border-y-2 shadow-lg border-white py-4">
         <div className="mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative min-h-[400px]">
-            <div className="mx-auto px-4 pt-16 relative z-10">
+            <div className="mx-auto px-4 p relative z-10">
               <motion.h1
                 className="text-5xl md:text-6xl text-indigo-600 font-bold mb-6 text-center"
                 initial={{ opacity: 0, y: -100 }}
