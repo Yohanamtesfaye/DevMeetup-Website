@@ -16,15 +16,41 @@ function MobileNavLink({ to, children, setIsOpen, className = "" }) {
   )
 }
 
+function DesktopNavLink({ to, children, className = "" }) {
+  return (
+    <Link
+      to={to}
+      className={`border-transparent hover:bg-indigo-50 hover:border-indigo-500 hover:text-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${className}`}
+    >
+      {children}
+    </Link>
+  )
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <nav className="bg-white shadow">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold">
-          My Website
+        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
+        DevMeetup
         </Link>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden sm:flex space-x-4">
+          <DesktopNavLink to="/">Home</DesktopNavLink>
+          <DesktopNavLink to="/v1">V1</DesktopNavLink>
+          <DesktopNavLink to="/v2">V2</DesktopNavLink>
+          <DesktopNavLink to="/about-us">About Us</DesktopNavLink>
+          <DesktopNavLink to="/contact-us">Contact Us</DesktopNavLink>
+          <DesktopNavLink to="/sponser-us" className="text-indigo-600 font-semibold">
+            Sponsor Us
+          </DesktopNavLink>
+          <DesktopNavLink to="/help-us">Help Us</DesktopNavLink>
+        </div>
+
+        {/* Mobile Menu Button */}
         <button className="sm:hidden focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,11 +68,13 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
+
+      {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0  bg-black/20 backdrop-blur-sm z-40 sm:hidden"
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 sm:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -118,4 +146,3 @@ export default function Navbar() {
     </nav>
   )
 }
-

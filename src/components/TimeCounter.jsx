@@ -57,7 +57,7 @@ const CountdownTimer = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
           >
-            <div className="bg-gradient-to-br pt-2 from-indigo-600 to-purple-600 rounded-2xl p-1">
+            <div className="bg-gradient-to-br pt-2 xl:p-6 from-indigo-600 to-purple-600 rounded-2xl p-1">
               <div className="bg-black/10 backdrop-blur-lg rounded-xl p-4">
                 <div className="relative flex flex-col items-center justify-center h-4 md:h-4">
                   <motion.span 
@@ -89,7 +89,7 @@ const CountdownTimer = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
       >
-        <p className="text-sm md:text-base text-gray-600">
+        <p className="text-sm xl:text-lg md:text-base text-gray-600">
           Join us for an amazing event! Don't miss out.
         </p>
       </motion.div>

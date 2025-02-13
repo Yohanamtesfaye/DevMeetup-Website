@@ -144,14 +144,14 @@ const V3 = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white pb-1 overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative flex flex-col md:h-screen md:grid md:grid-cols-2 border-y-2  border-white pt-4">
-        <div className="mx-auto md:px-4 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
+    <div className=" bg-white pb-1 overflow-x-hidden">
+      {/* Hero Section */}<section className="relative flex flex-col min-h-screen md:grid md:grid-cols-2 border-y-2 border-white pt-4">
+
+        <div className="mx-auto md:px-4 xl:mt-10 2xl:mt-5 flex md:flex-col z-10 md:ml-12 md:justify-between" style={{ height: '70%' }}>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative min-h-[400px]">
             <div className="mx-auto px-4 p relative z-10">
               <motion.h1
-                className="text-5xl md:text-6xl text-indigo-600 font-bold mb-6 text-center"
+                className="text-5xl md:text-6xl 2xl:text-[90px] xl:text-7xl text-indigo-600 font-bold mb-6 text-center"
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -164,7 +164,7 @@ const V3 = () => {
                 Dev Meetup V3
               </motion.h1>
               <motion.p
-                className="text-xl text-gray-600 md:text-xl text-center mb-6"
+                className="text-xl xl:text-2xl text-gray-600 md:text-xl text-center mb-6"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -191,7 +191,7 @@ const V3 = () => {
               >
                 <Link to="/register">
                   <motion.button
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 transition duration-300"
+                    className="bg-blue-600 xl:px-20 xl:py-5 hover:bg-blue-700 text-white font-bold py-3 px-6 transition duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -202,7 +202,7 @@ const V3 = () => {
             </div>
           </motion.div>
         </div>
-        <div className="relative hidden md:flex flex-col h-full" style={{ height: '70%' }}>
+        <div className="relative hidden md:flex flex-col h-full" style={{ height: '66%' }}>
           <div className="first-row flex-grow flex items-center justify-center">
             <div className="right-trapezoid">
               {images.map((image, index) => (
@@ -217,23 +217,23 @@ const V3 = () => {
         </div>
       </section>
 
-      {/* Sponsors Section */}
-      <section className="w-full md:mt-28 mt-9 md:absolute md:top-95 ">
-        <h2 className="text-xl font-bold text-gray-800 ml-5 md:ml-10 mb-4">POWERED BY</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap justify-center md:justify-start gap-4 px-4 w-full max-w-screen-xl mx-auto">
-          {sponsorLogos.map((logo, index) => (
-            <img
-              key={index}
-              src={logo}
-              alt={`Sponsor ${index + 1}`}
-              className={`h-10 md:h-16 w-32 object-contain ${index === 5 ? 'md:ml-8' : ''}`}
-            />
-          ))}
-        </div>
-      </section>
+      {/* Sponsors Section  */}
+        <section className="w-full  2xl:ml-16 xl:mt-44 mt-9 md:absolute 2xl:top-105 lg:top-110">
+          <h2 className="text-xl font-bold text-gray-800 ml-5 md:ml-10 mb-4">POWERED BY</h2>
+          <div className="grid xl:ml-0 grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap justify-center md:justify-start gap-4 px-4 w-full 2xl:max-w-screen-md mx-auto 2xl:grid 2xl:grid-cols-3">
+            {sponsorLogos.map((logo, index) => (
+          <img
+            key={index}
+            src={logo}
+            alt={`Sponsor ${index + 1}`}
+            className={`h-10 md:h-16 w-32 xl:w-34 object-contain ${index === 5 ? 'md:ml-8' : ''}`}
+          />
+            ))}
+          </div>
+        </section>
 
-      {/* Event Details Section */}
-      <section className='max-md:mt-12'>
+        {/* Event Details Section */}
+        <section className="relative xl:-mt-44 2xl:-mt-54">
         <div ref={scheduleRef}>
           <EventSchedule scheduleItems={scheduleItems} />
         </div>
