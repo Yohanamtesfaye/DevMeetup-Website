@@ -91,7 +91,7 @@ function EventSchedule() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto lg:px-20 py-8"
+      className="container mx-auto  lg:px-20 pb-8"
     >
       <section className="mb-16 bg-white">
         <h2 className="text-3xl font-semibold mb-6 text-indigo-600 text-center">Event Schedule</h2>
@@ -99,7 +99,7 @@ function EventSchedule() {
           {schedule.map((item, index) => (
             <motion.div
               key={index}
-              className={`border-b border-gray-200 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+              className={`border-b  border-gray-200 ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
               initial={false}
               animate={{ backgroundColor: expandedItem === index ? "#EEF2FF" : "inherit" }}
               transition={{ duration: 0.3 }}
@@ -109,8 +109,8 @@ function EventSchedule() {
                 onClick={() => setExpandedItem(expandedItem === index ? null : index)}
               >
                 <div className="mb-2 sm:mb-0">
-                  <p className="text-sm font-medium text-gray-600">{item.time}</p>
-                  <h3 className="text-gray-600">{item.event}</h3>
+                  <p className="xl:text-lg font-medium text-gray-600">{item.time}</p>
+                  <h3 className="text-gray-600 xl:text-2xl">{item.event}</h3>
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
                   {item.speaker && item.speakerLink && item.speaker.split(', ').map((speaker, i) => (

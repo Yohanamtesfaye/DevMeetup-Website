@@ -270,7 +270,7 @@ function V2() {
         </div>
       </section>
     </motion.div>
-    <section className="m-10">
+    <section className="my-10">
             <Gallery galleryImages={galleryImages}/>
     </section>
 
